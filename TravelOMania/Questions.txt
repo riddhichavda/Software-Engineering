@@ -1,0 +1,8 @@
+- 6 Avatars only in the Avatar Store or 6 Avatars per Continent?
+- Login local or server based?
+- What is the mapping of level to content?
+    - Does each continent need to have easy, medium and hard varieties
+    - Or is a continent only Easy, Medium or Hard?
+    - Is the continent only a single level?
+- What does inactive mean? 
+    - If the application is Paused?
