@@ -6,3 +6,7 @@
     - Is the continent only a single level?
 - What does inactive mean? 
     - If the application is Paused?
+    - Switching Applications?
+- Admin - Why does the admin own level_attempts?
+- What does game mean in the ER diagram?
+    - Why does it have username as a foreign key?
