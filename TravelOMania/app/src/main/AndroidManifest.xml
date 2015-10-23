@@ -15,6 +15,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".LoginActivity" >
+        </activity>
+        <activity android:name=".RulesActivity" >
+        </activity>
+        <activity android:name=".PlayerHistoryActivity" >
+        </activity>
+        <activity android:name=".ContinentSelectionActivity" >
+        </activity>
+        <activity android:name=".AvatarSelectionActivity" >
+        </activity>
+        <activity android:name=".CategorySelectionActivity" >
+        </activity>
+        <activity android:name=".LevelActivity" >
+        </activity>
+        <activity android:name=".ScoreCardActivity" >
+        </activity>
+        <activity android:name=".NavigationActivity" >
+        </activity>
+        <activity android:name=".EndActivity" >
+        </activity>
     </application>
 
 </manifest>
