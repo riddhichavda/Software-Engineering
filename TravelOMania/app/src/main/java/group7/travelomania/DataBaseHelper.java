@@ -23,7 +23,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     private String DB_PATH;
 
-    private static String DB_NAME = "travel_db";
+    private static String DB_NAME = "travel_db.sqlite";
 
     private SQLiteDatabase database;
 
