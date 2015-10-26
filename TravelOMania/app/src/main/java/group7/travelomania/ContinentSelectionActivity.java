@@ -16,6 +16,8 @@ import android.graphics.Bitmap;
 
 public class ContinentSelectionActivity extends AppCompatActivity {
 
+    Continents selectedContinent;
+
 
     private ImageView map;
     private ImageView avatar;
@@ -58,11 +60,13 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                         Float.toString(mapY));
 
                 //Grab bitmap from map ImageView.
-
-                bitmapMap = ((BitmapDrawable)map.getDrawable()).getBitmap();
+                if(Build.VERSION.SDK_INT >= 21)
+                    bitmapMap = Bitmap.createBitmap(((BitmapDrawable)getDrawable(R.drawable.map_colors)).getBitmap());
+                else
+                    bitmapMap = Bitmap.createBitmap(((BitmapDrawable) getResources().getDrawable(R.drawable.map_colors)).getBitmap());
 
                 Log.v("Map W, H, X, Y", Integer.toString(bitmapMap.getWidth()) + " " +
-                        Integer.toString((int) Math.floor(bitmapMap.getWidth() * 0.61087511d)));
+                        Integer.toString((int) Math.floor(bitmapMap.getHeight())));
 
             }
         });
@@ -94,8 +98,8 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
 
                 if(trueMapTouchY >= 0 && trueMapTouchY <= mapHeight && trueMapTouchX >= 0 && trueMapTouchX <= mapWidth){
-                    trueMapTouchX = (int)Math.floor(((float)trueMapTouchX/mapWidth) * bitmapMap.getWidth());
-                    trueMapTouchY = (int)Math.floor(((float)trueMapTouchY/mapHeight) * bitmapMap.getHeight());
+                    trueMapTouchX = (int)Math.floor((((float)trueMapTouchX)/mapWidth) * bitmapMap.getWidth());
+                    trueMapTouchY = (int)Math.floor((((float)trueMapTouchY)/mapHeight) * bitmapMap.getHeight());
                 }
                 else{
                     trueMapTouchX = 0;
@@ -105,13 +109,44 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 //TODO Check if antarctica!
 
 
+
+
                 int pixel = bitmapMap.getPixel(trueMapTouchX, trueMapTouchY);
 
-                Log.v("Continent Color", Integer.toString(Color.red(pixel)) + " " + Integer.toString(Color.green(pixel)) + " " + Integer.toString(Color.blue(pixel)));
+                Log.v("Continent Color", Integer.toString(pixel) + " " + Integer.toString(Color.red(pixel)) + " " + Integer.toString(Color.green(pixel)) + " " + Integer.toString(Color.blue(pixel)));
                 Log.v("True Touch Position", Integer.toString(trueMapTouchX) + " " + Integer.toString(trueMapTouchY));
                 //goToNextActivity(nextContinent);
 
                 //TODO check which continent with corresponding color.
+
+                switch(pixel){
+                    //Africa
+                    case -76498:
+                        selectedContinent = Continents.Africa;
+                        break;
+                    //Antarctica
+                    case -16760577:
+                        selectedContinent = Continents.Antarctica;
+                        break;
+                    //Asia
+                    case -836095:
+                        selectedContinent = Continents.Asia;
+                        break;
+                    //Australia
+                    case -4177792:
+                        break;
+                    //Europe
+                    case -4128768:
+                        break;
+                    //NorthAmerica
+                    case -16724992:
+                        break;
+                    //SouthAmerica
+                    case 16744448:
+                        break;
+                    default:
+                        break;
+                }
 
 
                 return false;
