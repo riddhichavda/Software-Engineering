@@ -70,6 +70,12 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 //TODO Find Continent
                 //Find the clicked continent by observing the event, and extrapolating the color
                 //of which the event clicked.
+                //The event gives where we touch in the whole screen(because
+
+                Log.v("Touch X, Y", Integer.toString(touchX) +" " + Integer.toString(touchY));
+
+
+
 
                 return false;
             }

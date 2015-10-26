@@ -4,4 +4,5 @@
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="navigation_layout_MapContentDescription">Display of a World Map.</string>
     <string name="navigation_layout_PlaneContentDescription">Airplane</string>
+    <string name="help_button_text">\?</string>
 </resources>
