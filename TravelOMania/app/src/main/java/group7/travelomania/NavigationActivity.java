@@ -1,8 +1,10 @@
 package group7.travelomania;
 
+import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.media.Image;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -62,8 +64,8 @@ public class NavigationActivity extends AppCompatActivity {
                     map.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 else
                     map.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                mapHeight = (int) Math.floor(map.getWidth() * 0.61087511d);
                 mapWidth = map.getWidth();
+                mapHeight = (int) Math.floor(mapWidth * 0.61087511d);
                 mapX = map.getX();
                 mapY = map.getY() + (int) Math.ceil((map.getHeight() - mapHeight) / 2);
                 Log.v("Map W, H, X, Y", Integer.toString(mapWidth) + " " +
@@ -173,10 +175,65 @@ public class NavigationActivity extends AppCompatActivity {
 
         planeAnimation.start();
 
+        planeAnimation.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                goToNextActivity();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
         currentLocationX = newLocationX;
         currentLocationY = newLocationY;
 
         //((TextView)findViewById(R.id.textView_CurrentContinent)).setText("Current Continent: " + continent);
+    }
+
+    private void goToNextActivity(){
+        Intent intent = new Intent(this, CategorySelectionActivity.class);
+        int continent;
+        switch(CurrentContinent){
+            case Africa:
+                continent = 0;
+                break;
+            case Antarctica:
+                continent = 1;
+                break;
+            case Asia:
+                continent = 2;
+                break;
+            case Australia:
+                continent = 3;
+                break;
+            case Europe:
+                continent = 4;
+                break;
+            case NorthAmerica:
+                continent = 5;
+                break;
+            case SouthAmerica:
+                continent = 6;
+                break;
+            default:
+                continent = -1;
+                break;
+        }
+        intent.putExtra("Continent", continent);
+        startActivity(intent);
     }
 
 
