@@ -1,5 +1,7 @@
 package group7.travelomania;
 
+import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,7 +31,6 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         map = (ImageView) findViewById(R.id.imageView_map);
         avatar = (ImageView) findViewById(R.id.imageView_avatar);
 
-
         map.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -48,7 +49,14 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                         Integer.toString(mapHeight) + " " +
                         Float.toString(mapX) + " " +
                         Float.toString(mapY));
-                //Now you can get the width and height from content
+
+                //Grab bitmap from map ImageView.
+
+                bitmapMap = ((BitmapDrawable)map.getDrawable()).getBitmap();
+
+                Log.v("Map W, H, X, Y", Integer.toString(bitmapMap.getWidth()) + " " +
+                        Integer.toString((int) Math.floor(bitmapMap.getWidth() * 0.61087511d)));
+
             }
         });
 
