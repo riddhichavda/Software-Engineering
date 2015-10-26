@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.HashMap;
@@ -19,6 +20,7 @@ import java.util.HashMap;
 public class NavigationActivity extends AppCompatActivity {
 
     public Continents CurrentContinent;
+    public Continents goTo;
 
     private HashMap<Continents, float[]> continentPositions;
 
@@ -40,9 +42,12 @@ public class NavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
+        CurrentContinent = Continents.Africa;
+
         map = (ImageView) findViewById(R.id.imageView_map);
         plane = (ImageView) findViewById(R.id.imageView_plane);
 
+        Log.v("Start Navigation", "");
         continentPositions = new HashMap<>(7);
 
         continentPositions.put(Continents.Africa, new float[]{0.56f,0.46f});
@@ -50,8 +55,36 @@ public class NavigationActivity extends AppCompatActivity {
         continentPositions.put(Continents.Asia, new float[]{0.77f,0.18f});
         continentPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
         continentPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
-        continentPositions.put(Continents.NorthAmerica, new float[]{0.13f,0.30f});
-        continentPositions.put(Continents.SouthAmerica, new float[]{0.29f,0.57f});
+        continentPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
+        continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
+
+        Intent intent = getIntent();
+        switch (intent.getExtras().getInt("Continent")) {
+            case 0:
+                goTo = Continents.Africa;
+                break;
+            case 1:
+                goTo = Continents.Antarctica;
+                break;
+            case 2:
+                goTo = Continents.Asia;
+                break;
+            case 3:
+                goTo = Continents.Australia;
+                break;
+            case 4:
+                goTo = Continents.Europe;
+                break;
+            case 5:
+                goTo = Continents.NorthAmerica;
+                break;
+            case 6:
+                goTo = Continents.SouthAmerica;
+                break;
+            default:
+                goTo = Continents.NorthAmerica;
+                break;
+        }
 
 
         map.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -113,6 +146,14 @@ public class NavigationActivity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus){
+        if(hasFocus){
+            goToContinent(goTo);
+        }
+        super.onWindowFocusChanged(hasFocus);
+    }
 
     public void goToContinent(Continents Destination){
         //PreviousPlaneLocation = PlaneLocation;
@@ -234,6 +275,7 @@ public class NavigationActivity extends AppCompatActivity {
         }
         intent.putExtra("Continent", continent);
         startActivity(intent);
+        finish();
     }
 
 

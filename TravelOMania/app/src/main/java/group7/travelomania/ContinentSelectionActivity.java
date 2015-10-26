@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.graphics.Bitmap;
 
@@ -34,11 +35,22 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_continent_selection);
 
+        selectedContinent = null;
+
         Intent intent = getIntent();
         intent.getBooleanExtra("newGame", true);
 
         map = (ImageView) findViewById(R.id.imageView_map);
         avatar = (ImageView) findViewById(R.id.imageView_avatar);
+
+        final Button btn_Next = (Button)findViewById(R.id.btn_Next);
+
+        btn_Next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToNextActivity(selectedContinent);
+            }
+        });
 
         map.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -134,19 +146,24 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                         break;
                     //Australia
                     case -4177792:
+                        selectedContinent = Continents.Australia;
                         break;
                     //Europe
                     case -4128768:
+                        selectedContinent = Continents.Europe;
                         break;
                     //NorthAmerica
                     case -16724992:
+                        selectedContinent = Continents.NorthAmerica;
                         break;
                     //SouthAmerica
                     case 16744448:
+                        selectedContinent = Continents.SouthAmerica;
                         break;
                     default:
                         break;
                 }
+
 
 
                 return false;
@@ -156,10 +173,39 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
 
     private void goToNextActivity(Continents nextContinent){
+        if(nextContinent != null) {
+            Intent intent = new Intent(this, NavigationActivity.class);
+            int continent;
+            switch (nextContinent) {
+                case Africa:
+                    continent = 0;
+                    break;
+                case Antarctica:
+                    continent = 1;
+                    break;
+                case Asia:
+                    continent = 2;
+                    break;
+                case Australia:
+                    continent = 3;
+                    break;
+                case Europe:
+                    continent = 4;
+                    break;
+                case NorthAmerica:
+                    continent = 5;
+                    break;
+                case SouthAmerica:
+                    continent = 6;
+                    break;
+                default:
+                    continent = -1;
+                    break;
+            }
 
-
-
-
+            intent.putExtra("Continent", continent);
+            startActivity(intent);
+        }
     }
 
 }
