@@ -1,10 +1,12 @@
 package group7.travelomania;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.Touch;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,6 +20,8 @@ public class ContinentSelectionActivity extends AppCompatActivity {
     private ImageView map;
     private ImageView avatar;
 
+    boolean newGame;
+
     private Bitmap bitmapMap;
 
     private int mapHeight, mapWidth;
@@ -27,6 +31,9 @@ public class ContinentSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_continent_selection);
+
+        Intent intent = getIntent();
+        intent.getBooleanExtra("newGame", true);
 
         map = (ImageView) findViewById(R.id.imageView_map);
         avatar = (ImageView) findViewById(R.id.imageView_avatar);
@@ -74,17 +81,50 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
                 Log.v("Touch X, Y", Integer.toString(touchX) +" " + Integer.toString(touchY));
 
+                //Continents nextContinent;
 
+                /*
+                  Get the true x and y of the pixel in our bitmap for the Map.
+                 */
+
+                //TODO create another image to ensure we always touch a color when touching a continent.
+
+                int trueMapTouchX = (int)Math.floor(touchX - mapX);
+                int trueMapTouchY = (int)Math.floor(touchY - mapY);
+
+
+                if(trueMapTouchY >= 0 && trueMapTouchY <= mapHeight && trueMapTouchX >= 0 && trueMapTouchX <= mapWidth){
+                    trueMapTouchX = (int)Math.floor(((float)trueMapTouchX/mapWidth) * bitmapMap.getWidth());
+                    trueMapTouchY = (int)Math.floor(((float)trueMapTouchY/mapHeight) * bitmapMap.getHeight());
+                }
+                else{
+                    trueMapTouchX = 0;
+                    trueMapTouchY = 0;
+                }
+
+                //TODO Check if antarctica!
+
+
+                int pixel = bitmapMap.getPixel(trueMapTouchX, trueMapTouchY);
+
+                Log.v("Continent Color", Integer.toString(Color.red(pixel)) + " " + Integer.toString(Color.green(pixel)) + " " + Integer.toString(Color.blue(pixel)));
+                Log.v("True Touch Position", Integer.toString(trueMapTouchX) + " " + Integer.toString(trueMapTouchY));
+                //goToNextActivity(nextContinent);
+
+                //TODO check which continent with corresponding color.
 
 
                 return false;
             }
         });
+    }
 
 
+    private void goToNextActivity(Continents nextContinent){
 
 
 
 
     }
+
 }
