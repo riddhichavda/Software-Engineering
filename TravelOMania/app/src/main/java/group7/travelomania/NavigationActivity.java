@@ -70,7 +70,7 @@ public class NavigationActivity extends AppCompatActivity {
                 goTo = Continents.Asia;
                 break;
             case 3:
-                goTo = Continents.Australia;
+                goTo = Continents.Oceania;
                 break;
             case 4:
                 goTo = Continents.Europe;

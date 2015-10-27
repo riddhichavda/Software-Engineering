@@ -144,7 +144,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                         break;
                     //Australia
                     case -4177792:
-                        selectedContinent = Continents.Australia;
+                        selectedContinent = Continents.Oceania;
                         break;
                     //Europe
                     case -4128768:
@@ -190,7 +190,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 case Asia:
                     continent = 2;
                     break;
-                case Australia:
+                case Oceania:
                     continent = 3;
                     break;
                 case Europe:
@@ -219,7 +219,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                     case Asia:
                         continent = 2;
                         break;
-                    case Australia:
+                    case Oceania:
                         continent = 3;
                         break;
                     case Europe:
