@@ -6,7 +6,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.Touch;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,17 +17,19 @@ import android.graphics.Bitmap;
 public class ContinentSelectionActivity extends AppCompatActivity {
 
     Continents selectedContinent;
+    Continents currentContinent;
 
 
     private ImageView map;
     private ImageView avatar;
 
-    boolean newGame;
+    private boolean isNewGame;
 
     private Bitmap bitmapMap;
 
     private int mapHeight, mapWidth;
     private float mapX, mapY;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         selectedContinent = null;
 
         Intent intent = getIntent();
-        intent.getBooleanExtra("newGame", true);
+        isNewGame = intent.getBooleanExtra("newGame", true);
 
         map = (ImageView) findViewById(R.id.imageView_map);
         avatar = (ImageView) findViewById(R.id.imageView_avatar);
@@ -87,17 +88,14 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
+
+                //Get touch event position.
+
                 int touchX = (int) event.getX();
                 int touchY = (int) event.getY();
 
-                //TODO Find Continent
-                //Find the clicked continent by observing the event, and extrapolating the color
-                //of which the event clicked.
-                //The event gives where we touch in the whole screen(because
-
                 Log.v("Touch X, Y", Integer.toString(touchX) +" " + Integer.toString(touchY));
 
-                //Continents nextContinent;
 
                 /*
                   Get the true x and y of the pixel in our bitmap for the Map.
@@ -174,7 +172,13 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
     private void goToNextActivity(Continents nextContinent){
         if(nextContinent != null) {
-            Intent intent = new Intent(this, NavigationActivity.class);
+            Intent intent;
+            if(isNewGame){
+                intent = new Intent(this, CategorySelectionActivity.class);
+            }
+            else{
+                intent = new Intent(this, NavigationActivity.class);
+            }
             int continent;
             switch (nextContinent) {
                 case Africa:
@@ -203,7 +207,37 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                     break;
             }
 
-            intent.putExtra("Continent", continent);
+            intent.putExtra("prevContinent", continent);
+            if(!isNewGame){
+                switch (currentContinent) {
+                    case Africa:
+                        continent = 0;
+                        break;
+                    case Antarctica:
+                        continent = 1;
+                        break;
+                    case Asia:
+                        continent = 2;
+                        break;
+                    case Australia:
+                        continent = 3;
+                        break;
+                    case Europe:
+                        continent = 4;
+                        break;
+                    case NorthAmerica:
+                        continent = 5;
+                        break;
+                    case SouthAmerica:
+                        continent = 6;
+                        break;
+                    default:
+                        continent = -1;
+                        break;
+                }
+                intent.putExtra("curContinent", continent);
+
+            }
             startActivity(intent);
         }
     }
