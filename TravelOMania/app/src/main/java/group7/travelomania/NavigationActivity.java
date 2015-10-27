@@ -46,7 +46,7 @@ public class NavigationActivity extends AppCompatActivity {
         continentPositions = new HashMap<>(7);
 
         continentPositions.put(Continents.Africa, new float[]{0.56f,0.46f});
-        continentPositions.put(Continents.Australia, new float[]{0.93f,0.64f});
+        continentPositions.put(Continents.Oceania, new float[]{0.93f,0.64f});
         continentPositions.put(Continents.Asia, new float[]{0.77f,0.18f});
         continentPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
         continentPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
@@ -216,7 +216,7 @@ public class NavigationActivity extends AppCompatActivity {
             case Asia:
                 continent = 2;
                 break;
-            case Australia:
+            case Oceania:
                 continent = 3;
                 break;
             case Europe:
