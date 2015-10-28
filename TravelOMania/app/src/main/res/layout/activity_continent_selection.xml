@@ -23,7 +23,8 @@
         android:src="@drawable/basic_avatar"
         android:layout_alignBottom="@+id/btn_help"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/imageView_Avatar_Description" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -38,7 +39,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="@string/btn_next_text"
         android:id="@+id/btn_Next"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/imageView_avatar"

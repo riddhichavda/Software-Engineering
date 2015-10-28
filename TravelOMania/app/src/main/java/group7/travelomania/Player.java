@@ -1,5 +1,7 @@
 package group7.travelomania;
 
+import android.util.Log;
+
 /**
  * Created by Matt on 10/27/15.
  *
@@ -31,7 +33,7 @@ public class Player {
     }
 
     public static void viewRules(){
-
+        Log.v("Player", "View Rules");
     }
 
     public void playGame(String uname){

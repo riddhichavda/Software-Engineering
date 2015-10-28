@@ -14,6 +14,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.graphics.Bitmap;
 
+
+//TODO Load bitmaps more efficiently.
+
 public class ContinentSelectionActivity extends AppCompatActivity {
 
     Continents selectedContinent;
@@ -96,10 +99,10 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                     map.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 else
                     map.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                mapHeight = (int) Math.floor(map.getWidth() * 0.61087511d);
+                mapHeight = (int) Math.round(map.getWidth() * 0.61087511d);
                 mapWidth = map.getWidth();
                 mapX = map.getX();
-                mapY = map.getY() + (int) Math.ceil((map.getHeight() - mapHeight) / 2);
+                mapY = map.getY() + Math.round((map.getHeight() - mapHeight) / 2);
                 Log.v("Map W, H, X, Y", Integer.toString(mapWidth) + " " +
                         Integer.toString(mapHeight) + " " +
                         Float.toString(mapX) + " " +
@@ -134,8 +137,6 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                   Get the true x and y of the pixel in our bitmap for the Map.
                  */
 
-                //TODO create another image to ensure we always touch a color when touching a continent.
-
                 int trueMapTouchX = (int)Math.floor(touchX - mapX);
                 int trueMapTouchY = (int)Math.floor(touchY - mapY);
 
@@ -149,8 +150,6 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                     trueMapTouchY = 0;
                 }
 
-                //TODO Check if antarctica!
-
 
 
 
@@ -160,7 +159,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 Log.v("True Touch Position", Integer.toString(trueMapTouchX) + " " + Integer.toString(trueMapTouchY));
                 //goToNextActivity(nextContinent);
 
-                //TODO check which continent with corresponding color.
+                //Check which continent with corresponding color.
 
                 switch(pixel){
                     //Africa

@@ -10,17 +10,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.HashMap;
@@ -44,6 +39,8 @@ public class NavigationActivity extends AppCompatActivity {
     private int mapWidth;
     private float mapX;
     private float mapY;
+
+    private float planeSpeed = .1f;
 
 
     @Override
@@ -108,9 +105,9 @@ public class NavigationActivity extends AppCompatActivity {
                 else
                     map.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 mapWidth = map.getWidth();
-                mapHeight = (int) Math.floor(mapWidth * 0.61087511d);
+                mapHeight = (int) Math.round(mapWidth * 0.61087511d);
                 mapX = map.getX();
-                mapY = map.getY() + (int) Math.ceil((map.getHeight() - mapHeight) / 2);
+                mapY = map.getY() + (int) Math.round((map.getHeight() - mapHeight) / 2.0);
                 Log.v("Map W, H, X, Y", Integer.toString(mapWidth) + " " +
                         Integer.toString(mapHeight) + " " +
                         Float.toString(mapX) + " " +
@@ -219,6 +216,7 @@ public class NavigationActivity extends AppCompatActivity {
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(Color.TRANSPARENT);
         paint.setStyle(Paint.Style.FILL);
+
         //canvas.drawPaint(paint);
         //canvas.drawColor(Color.TRANSPARENT);
         canvas.drawPaint(paint);
@@ -226,20 +224,12 @@ public class NavigationActivity extends AppCompatActivity {
         paint.setColor(Color.RED);
         canvas.drawCircle(50, 50, 10, paint);
         paint.setStyle(Paint.Style.STROKE);
+        //paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeWidth(10);
 
-
         canvas.drawPath(planePath, paint);
-
-
-
-
         planePaths.setImageBitmap(tempBitmap);
-
-
-        //TODO Update the animation to accurately represent the plane path.
-
-        //planePath.moveTo(0,0);
 
 
         ValueAnimator pathAnimator = ValueAnimator.ofObject(new PathEvaluator(planePath), new float[2], new float[2]);
@@ -255,7 +245,7 @@ public class NavigationActivity extends AppCompatActivity {
         ValueAnimator rotate = ObjectAnimator.ofFloat(plane, "rotation", (float) theta);
         ValueAnimator rotateBack = ObjectAnimator.ofFloat(plane, "rotation", 0.0f);
 
-        pathAnimator.setDuration(2000);
+        pathAnimator.setDuration((int) Math.ceil(distance / planeSpeed));
         rotate.setDuration(1000);
         rotateBack.setDuration(1000);
 
@@ -276,15 +266,8 @@ public class NavigationActivity extends AppCompatActivity {
 
         planeAnimation.start();
 
-
-        //pathAnimator.start();
-
-
-
         currentLocationX = newLocationX;
         currentLocationY = newLocationY;
-
-        //((TextView)findViewById(R.id.textView_CurrentContinent)).setText("Current Continent: " + continent);
     }
 
     private Path getPlanePath(int newLocationX, int newLocationY){
@@ -292,7 +275,7 @@ public class NavigationActivity extends AppCompatActivity {
         path.moveTo((float)currentLocationX, (float)currentLocationY);
 
         final float xControl = (newLocationX + currentLocationX)/2;
-        final float yControl = Math.min(newLocationY, currentLocationX);
+        final float yControl = Math.min(newLocationY, currentLocationY);
 
         //path.quadTo(xControl, yControl, newLocationX, newLocationY);
         path.quadTo(xControl, yControl, (float) newLocationX, (float) newLocationY);

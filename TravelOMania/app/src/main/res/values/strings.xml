@@ -4,6 +4,9 @@
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="navigation_layout_MapContentDescription">Display of a World Map.</string>
     <string name="navigation_layout_PlaneContentDescription">Airplane</string>
-    <string name="help_button_text">\?</string>
     <string name="navigation_layout_PathContentDescription">Display of the paths the plane has traveled.</string>
+    <string name="help_button_text">\?</string>
+    <string name="btn_next_text">Next</string>
+    <string name="imageView_Avatar_Description">Avatar</string>
+    <string name="avatar_selection_layout_title_text">Select an Avatar!</string>
 </resources>
