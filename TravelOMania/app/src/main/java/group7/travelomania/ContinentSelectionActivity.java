@@ -39,17 +39,50 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         selectedContinent = null;
 
         Intent intent = getIntent();
-        isNewGame = intent.getBooleanExtra("newGame", true);
+        isNewGame = intent.getBooleanExtra("newGame", false);
+
+        switch (intent.getIntExtra("Continent", -1)) {
+            case 0:
+                currentContinent = Continents.Africa;
+                break;
+            case 1:
+                currentContinent = Continents.Antarctica;
+                break;
+            case 2:
+                currentContinent = Continents.Asia;
+                break;
+            case 3:
+                currentContinent = Continents.Oceania;
+                break;
+            case 4:
+                currentContinent = Continents.Europe;
+                break;
+            case 5:
+                currentContinent = Continents.NorthAmerica;
+                break;
+            case 6:
+                currentContinent = Continents.SouthAmerica;
+                break;
+            default:
+                currentContinent = Continents.NorthAmerica;
+                break;
+        }
 
         map = (ImageView) findViewById(R.id.imageView_map);
         avatar = (ImageView) findViewById(R.id.imageView_avatar);
 
         final Button btn_Next = (Button)findViewById(R.id.btn_Next);
-
+        final Button btn_Help = (Button)findViewById(R.id.btn_help);
         btn_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToNextActivity(selectedContinent);
+            }
+        });
+        btn_Help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Player.viewRules();
             }
         });
 
@@ -155,7 +188,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                         selectedContinent = Continents.NorthAmerica;
                         break;
                     //SouthAmerica
-                    case 16744448:
+                    case -16744448:
                         selectedContinent = Continents.SouthAmerica;
                         break;
                     default:
@@ -207,7 +240,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                     break;
             }
 
-            intent.putExtra("prevContinent", continent);
+            intent.putExtra("nextContinent", continent);
             if(!isNewGame){
                 switch (currentContinent) {
                     case Africa:

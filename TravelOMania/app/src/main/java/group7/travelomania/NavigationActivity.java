@@ -5,6 +5,12 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +33,7 @@ public class NavigationActivity extends AppCompatActivity {
 
     private ImageView plane;
     private ImageView map;
+    private ImageView planePaths;
 
     private int currentLocationX;
     private int currentLocationY;
@@ -46,6 +53,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         map = (ImageView) findViewById(R.id.imageView_map);
         plane = (ImageView) findViewById(R.id.imageView_plane);
+        planePaths = (ImageView) findViewById(R.id.imageView_draw);
 
         Log.v("Start Navigation", "");
         continentPositions = new HashMap<>(7);
@@ -59,7 +67,7 @@ public class NavigationActivity extends AppCompatActivity {
         continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
 
         Intent intent = getIntent();
-        switch (intent.getExtras().getInt("Continent")) {
+        switch (intent.getIntExtra("nextContinent",-1)) {
             case 0:
                 goTo = Continents.Africa;
                 break;
@@ -171,13 +179,15 @@ public class NavigationActivity extends AppCompatActivity {
         double distance = Math.sqrt((newLocationX-currentLocationX)*(newLocationX-currentLocationX) +
                 (newLocationY-currentLocationY)*(newLocationY-currentLocationY));
 
+        Log.v("Distance", Double.toString(distance));
+
         double theta;
         if(newLocationY > currentLocationY)
             theta = Math.asin((newLocationY-currentLocationY)/distance)*180/Math.PI;
         else
             theta = Math.asin((currentLocationY-newLocationY)/distance)*180/Math.PI;
         Log.v("Theta", Float.toString((float) theta));
-        if(theta == Double.NaN) theta = 0;
+        if(theta == Double.NaN) theta = 0.0f;
 
 
         if(newLocationX>currentLocationX){
@@ -197,6 +207,35 @@ public class NavigationActivity extends AppCompatActivity {
         Log.v("Updated Theta", Float.toString((float) theta));
 
 
+
+
+
+        Path planePath = getPlanePath(newLocationX, newLocationY);
+        Bitmap tempBitmap = Bitmap.createBitmap(planePaths.getWidth(), planePaths.getHeight(), Bitmap.Config.ARGB_8888);
+        //Bitmap.crea
+        Canvas canvas = new Canvas(tempBitmap);
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(Color.TRANSPARENT);
+        paint.setStyle(Paint.Style.FILL);
+        //canvas.drawPaint(paint);
+        //canvas.drawColor(Color.TRANSPARENT);
+        canvas.drawPaint(paint);
+
+        paint.setColor(Color.RED);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(10);
+
+
+
+        canvas.drawPath(planePath, paint);
+        canvas.drawCircle(50,50,10,paint);
+
+
+
+        planePaths.setImageBitmap(tempBitmap);
+
+
+        //TODO Update the animation to accurately represent the plane path.
 
 
         ValueAnimator rotate = ObjectAnimator.ofFloat(plane, "rotation", (float) theta);
@@ -243,6 +282,23 @@ public class NavigationActivity extends AppCompatActivity {
 
         //((TextView)findViewById(R.id.textView_CurrentContinent)).setText("Current Continent: " + continent);
     }
+
+    private Path getPlanePath(int newLocationX, int newLocationY){
+        Path path = new Path();
+        path.moveTo((float)currentLocationX, (float)currentLocationY);
+
+        final float xControl = (newLocationX + currentLocationX)/3;
+        final float yControl = (newLocationY + currentLocationY)/3;
+
+        //path.quadTo(xControl, yControl, newLocationX, newLocationY);
+        path.quadTo(xControl, yControl, (float) newLocationX, (float) newLocationY);
+        //Log.v("Path", path.toString());
+        //path.close();
+        return path;
+
+    }
+
+
 
     private void goToNextActivity(){
         Intent intent = new Intent(this, CategorySelectionActivity.class);
