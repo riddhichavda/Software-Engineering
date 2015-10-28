@@ -19,6 +19,13 @@
         android:contentDescription="@string/navigation_layout_MapContentDescription" />
 
     <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView_draw"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:id="@+id/imageView_plane"
@@ -28,12 +35,5 @@
         android:src="@drawable/plane"
         android:visibility="invisible"
         android:contentDescription="@string/navigation_layout_PlaneContentDescription" />
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageView_draw"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

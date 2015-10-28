@@ -18,6 +18,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -165,12 +167,12 @@ public class NavigationActivity extends AppCompatActivity {
 
     public void goToContinent(Continents Destination){
         //PreviousPlaneLocation = PlaneLocation;
-        int newLocationX;
-        int newLocationY;
+        //int newLocationX;
+        //int newLocationY;
         CurrentContinent = Destination;
 
-        newLocationX = (int)Math.floor(continentPositions.get(Destination)[0] * mapWidth + mapX - plane.getWidth()/2);
-        newLocationY = (int)Math.floor(continentPositions.get(Destination)[1] * mapHeight + mapY - plane.getHeight()/2);
+        final int newLocationX = (int)Math.floor(continentPositions.get(Destination)[0] * mapWidth + mapX - plane.getWidth()/2);
+        final int newLocationY = (int)Math.floor(continentPositions.get(Destination)[1] * mapHeight + mapY - plane.getHeight()/2);
         Log.v("Check", Integer.toString(newLocationX) + " " + Integer.toString(newLocationY));
         Log.v("Continent Check", Float.toString(continentPositions.get(Destination)[0]) + " " +
                 Float.toString(continentPositions.get(Destination)[1]));
@@ -222,13 +224,13 @@ public class NavigationActivity extends AppCompatActivity {
         canvas.drawPaint(paint);
 
         paint.setColor(Color.RED);
+        canvas.drawCircle(50, 50, 10, paint);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(10);
 
 
-
         canvas.drawPath(planePath, paint);
-        canvas.drawCircle(50,50,10,paint);
+
 
 
 
@@ -237,7 +239,48 @@ public class NavigationActivity extends AppCompatActivity {
 
         //TODO Update the animation to accurately represent the plane path.
 
+        //planePath.moveTo(0,0);
 
+
+        ValueAnimator pathAnimator = ValueAnimator.ofObject(new PathEvaluator(planePath), new float[2], new float[2]);
+        pathAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float[] pos = (float[]) animation.getAnimatedValue();
+                plane.setX(pos[0]);
+                plane.setY(pos[1]);
+            }
+        });
+
+        ValueAnimator rotate = ObjectAnimator.ofFloat(plane, "rotation", (float) theta);
+        ValueAnimator rotateBack = ObjectAnimator.ofFloat(plane, "rotation", 0.0f);
+
+        pathAnimator.setDuration(2000);
+        rotate.setDuration(1000);
+        rotateBack.setDuration(1000);
+
+        AnimatorSet planeAnimation = new AnimatorSet();
+        planeAnimation.play(rotate).before(pathAnimator);
+        planeAnimation.play(pathAnimator).before(rotateBack);
+
+        planeAnimation.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {}
+            @Override
+            public void onAnimationEnd(Animator animation) {goToNextActivity();}
+            @Override
+            public void onAnimationCancel(Animator animation) {}
+            @Override
+            public void onAnimationRepeat(Animator animation) {}
+        });
+
+        planeAnimation.start();
+
+
+        //pathAnimator.start();
+
+
+        /*
         ValueAnimator rotate = ObjectAnimator.ofFloat(plane, "rotation", (float) theta);
         ValueAnimator moveX = ObjectAnimator.ofFloat(plane, "x", newLocationX);
         ValueAnimator moveY = ObjectAnimator.ofFloat(plane, "y", newLocationY);
@@ -245,6 +288,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         moveX.setDuration(2000);
         moveY.setDuration(2000);
+
         rotate.setDuration(1000);
         rotateBack.setDuration(1000);
 
@@ -253,29 +297,24 @@ public class NavigationActivity extends AppCompatActivity {
         planeAnimation.play(moveX).with(moveY);
         planeAnimation.play(moveX).before(rotateBack);
 
-        planeAnimation.start();
+
 
         planeAnimation.addListener(new Animator.AnimatorListener() {
             @Override
-            public void onAnimationStart(Animator animation) {
-
-            }
-
+            public void onAnimationStart(Animator animation) {}
             @Override
             public void onAnimationEnd(Animator animation) {
                 goToNextActivity();
             }
-
             @Override
-            public void onAnimationCancel(Animator animation) {
-
-            }
-
+            public void onAnimationCancel(Animator animation) {}
             @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
+            public void onAnimationRepeat(Animator animation) {}
         });
+
+        planeAnimation.start();
+        */
+
 
         currentLocationX = newLocationX;
         currentLocationY = newLocationY;
@@ -287,8 +326,8 @@ public class NavigationActivity extends AppCompatActivity {
         Path path = new Path();
         path.moveTo((float)currentLocationX, (float)currentLocationY);
 
-        final float xControl = (newLocationX + currentLocationX)/3;
-        final float yControl = (newLocationY + currentLocationY)/3;
+        final float xControl = (newLocationX + currentLocationX)/2;
+        final float yControl = Math.min(newLocationY, currentLocationX);
 
         //path.quadTo(xControl, yControl, newLocationX, newLocationY);
         path.quadTo(xControl, yControl, (float) newLocationX, (float) newLocationY);
