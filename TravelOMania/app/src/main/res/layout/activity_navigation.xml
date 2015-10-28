@@ -21,9 +21,10 @@
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/imageView_draw"
+        android:id="@+id/imageView_paths"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/navigation_layout_PathContentDescription" />
 
     <ImageView
         android:layout_width="30dp"

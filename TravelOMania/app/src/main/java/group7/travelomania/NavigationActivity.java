@@ -55,7 +55,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         map = (ImageView) findViewById(R.id.imageView_map);
         plane = (ImageView) findViewById(R.id.imageView_plane);
-        planePaths = (ImageView) findViewById(R.id.imageView_draw);
+        planePaths = (ImageView) findViewById(R.id.imageView_paths);
 
         Log.v("Start Navigation", "");
         continentPositions = new HashMap<>(7);
@@ -279,41 +279,6 @@ public class NavigationActivity extends AppCompatActivity {
 
         //pathAnimator.start();
 
-
-        /*
-        ValueAnimator rotate = ObjectAnimator.ofFloat(plane, "rotation", (float) theta);
-        ValueAnimator moveX = ObjectAnimator.ofFloat(plane, "x", newLocationX);
-        ValueAnimator moveY = ObjectAnimator.ofFloat(plane, "y", newLocationY);
-        ValueAnimator rotateBack = ObjectAnimator.ofFloat(plane, "rotation", 0.0f);
-
-        moveX.setDuration(2000);
-        moveY.setDuration(2000);
-
-        rotate.setDuration(1000);
-        rotateBack.setDuration(1000);
-
-        AnimatorSet planeAnimation = new AnimatorSet();
-        planeAnimation.play(rotate).before(moveX);
-        planeAnimation.play(moveX).with(moveY);
-        planeAnimation.play(moveX).before(rotateBack);
-
-
-
-        planeAnimation.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {}
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                goToNextActivity();
-            }
-            @Override
-            public void onAnimationCancel(Animator animation) {}
-            @Override
-            public void onAnimationRepeat(Animator animation) {}
-        });
-
-        planeAnimation.start();
-        */
 
 
         currentLocationX = newLocationX;
