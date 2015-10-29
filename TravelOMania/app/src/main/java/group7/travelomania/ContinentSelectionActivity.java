@@ -95,7 +95,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         btn_Help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Player.viewRules();
+                showRules();
             }
         });
 
@@ -206,6 +206,10 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         else {
             isNewGame = true;
         }
+    }
+
+    private void showRules(){
+            Player.viewRules(this);
     }
 
 

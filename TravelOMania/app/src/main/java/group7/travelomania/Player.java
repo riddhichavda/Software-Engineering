@@ -1,5 +1,6 @@
 package group7.travelomania;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
@@ -58,8 +59,13 @@ public class Player {
 
     }
 
-    public static void viewRules(){
+    public static void viewRules(Context context){
         Log.v("Player", "View Rules");
+
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.rules_popup);
+        dialog.setTitle("Rules");
+        dialog.show();
     }
 
     public void playGame(String uname){
