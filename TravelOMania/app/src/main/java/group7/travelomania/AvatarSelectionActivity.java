@@ -73,7 +73,8 @@ public class AvatarSelectionActivity extends AppCompatActivity {
                         updatePlayerAvatar(BitmapUtility.avatar_SA);
                         break;
                     default:
-                        updatePlayerAvatar(BitmapUtility.avatar_NA);
+                        //updatePlayerAvatar(BitmapUtility.avatar_NA);
+                        break;
                 }
                 goToNextActivity();
             }

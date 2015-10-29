@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.graphics.drawable.LayerDrawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
@@ -19,31 +20,126 @@ import java.util.HashMap;
 public class BitmapUtility {
 
     public static volatile Bitmap avatar_AF, avatar_AS, avatar_EU, avatar_OC, avatar_NA, avatar_SA, avatar_basic;
-    public static volatile Bitmap map, mapKey;
+    public static volatile Bitmap map_bw, mapKey, plane;
+    public static volatile Bitmap map_af, map_an, map_as, map_eu, map_oc, map_na, map_sa;
     public static volatile Bitmap planePaths;
+    public static volatile Bitmap map_addition_selection, map_addition_navigation;
+
+    public static volatile int mapHeight, mapWidth;
+    //public static volatile float mapX, mapY;
+
     public static volatile HashMap<Continents, float[]> continentPositions;
 
 
     public static void initialize(Context context){
 
         Resources resources = context.getResources();
-
-        if(BitmapUtility.map == null) {
+        DisplayMetrics size = resources.getDisplayMetrics();
+        mapWidth = size.widthPixels;
+        mapHeight = (int)Math.round(size.widthPixels * 0.62087511d);
+        if(BitmapUtility.map_bw == null) {
             //Get size of screen.
-            DisplayMetrics size = resources.getDisplayMetrics();
-            map = BitmapUtility.decodeSampledBitmapFromResource(resources,
-                    R.drawable.map_2,
+
+            map_bw = BitmapUtility.decodeSampledBitmapFromResource(resources,
+                    R.drawable.map_bw,
+                    size.widthPixels,
+                    (int) Math.round(size.widthPixels * 0.61087511d));
+            Log.v("Load", "Bitmap Map Load");
+        }
+        if(BitmapUtility.map_addition_selection == null) {
+
+
+            BitmapUtility.map_addition_selection = Bitmap.createBitmap(BitmapUtility.map_bw.getWidth(), BitmapUtility.map_bw.getHeight(), Bitmap.Config.ARGB_8888);
+            Log.v("Load", "map_addition Load");
+        }
+
+        if(BitmapUtility.map_addition_navigation == null) {
+
+
+            BitmapUtility.map_addition_navigation = Bitmap.createBitmap(BitmapUtility.map_bw.getWidth(), BitmapUtility.map_bw.getHeight(), Bitmap.Config.ARGB_8888);
+            Log.v("Load", "map_addition Load");
+        }
+
+        if(BitmapUtility.map_af == null) {
+
+
+            map_af = BitmapUtility.decodeSampledBitmapFromResource(resources,
+                    R.drawable.map_af,
+                    size.widthPixels,
+                    (int) Math.round(size.widthPixels * 0.61087511d));
+            Log.v("Load", "Bitmap Map Load");
+        }
+
+        if(BitmapUtility.map_an == null) {
+
+
+            map_an = BitmapUtility.decodeSampledBitmapFromResource(resources,
+                    R.drawable.map_an,
+                    size.widthPixels,
+                    (int) Math.round(size.widthPixels * 0.61087511d));
+            Log.v("Load", "Bitmap Map Load");
+        }
+
+        if(BitmapUtility.map_as == null) {
+
+            map_as = BitmapUtility.decodeSampledBitmapFromResource(resources,
+                    R.drawable.map_as,
+                    size.widthPixels,
+                    (int) Math.round(size.widthPixels * 0.61087511d));
+            Log.v("Load", "Bitmap Map Load");
+        }
+
+        if(BitmapUtility.map_eu == null) {
+
+            map_eu = BitmapUtility.decodeSampledBitmapFromResource(resources,
+                    R.drawable.map_eu,
+                    size.widthPixels,
+                    (int) Math.round(size.widthPixels * 0.61087511d));
+            Log.v("Load", "Bitmap Map Load");
+        }
+
+        if(BitmapUtility.map_oc == null) {
+
+            map_oc = BitmapUtility.decodeSampledBitmapFromResource(resources,
+                    R.drawable.map_oc,
+                    size.widthPixels,
+                    (int) Math.round(size.widthPixels * 0.61087511d));
+            Log.v("Load", "Bitmap Map Load");
+        }
+
+        if(BitmapUtility.map_na == null) {
+
+            map_na = BitmapUtility.decodeSampledBitmapFromResource(resources,
+                    R.drawable.map_na,
+                    size.widthPixels,
+                    (int) Math.round(size.widthPixels * 0.61087511d));
+            Log.v("Load", "Bitmap Map Load");
+        }
+
+        if(BitmapUtility.map_sa == null) {
+
+            map_sa = BitmapUtility.decodeSampledBitmapFromResource(resources,
+                    R.drawable.map_sa,
                     size.widthPixels,
                     (int) Math.round(size.widthPixels * 0.61087511d));
             Log.v("Load", "Bitmap Map Load");
         }
 
         if(BitmapUtility.mapKey == null){
+
             mapKey = BitmapUtility.decodeSampledBitmapFromResource(resources,
                     R.drawable.map_colors,
                     256,
                     (int) Math.round(256 * 0.61087511d));
             Log.v("Load", "Bitmap mapKey Load");
+        }
+
+        if(plane == null){
+
+            plane = BitmapUtility.decodeSampledBitmapFromResource(resources,
+                    R.drawable.plane,
+                    64,
+                    64);
         }
 
         if(BitmapUtility.continentPositions == null) {

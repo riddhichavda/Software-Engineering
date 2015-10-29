@@ -12,10 +12,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathMeasure;
 import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -72,8 +75,8 @@ public class NavigationActivity extends AppCompatActivity {
         planePaths = (ImageView) findViewById(R.id.imageView_paths);
 
 
-
-        map.setImageBitmap(BitmapUtility.map);
+        createBitmap();
+        map.setImageBitmap(BitmapUtility.map_addition_navigation);
 
 
         map.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -94,6 +97,7 @@ public class NavigationActivity extends AppCompatActivity {
                         Integer.toString(mapHeight) + " " +
                         Float.toString(mapX) + " " +
                         Float.toString(mapY));
+                //createBitmap();
                 //Now you can get the width and height from content
             }
         });
@@ -139,6 +143,7 @@ public class NavigationActivity extends AppCompatActivity {
     @Override
     public void onWindowFocusChanged(boolean hasFocus){
         if(hasFocus){
+            createBitmap();
             goToContinent(goTo);
         }
         super.onWindowFocusChanged(hasFocus);
@@ -162,34 +167,6 @@ public class NavigationActivity extends AppCompatActivity {
 
         Log.v("Distance", Double.toString(distance));
 
-        double theta;
-        if(newLocationY > currentLocationY)
-            theta = Math.asin((newLocationY-currentLocationY)/distance)*180/Math.PI;
-        else
-            theta = Math.asin((currentLocationY-newLocationY)/distance)*180/Math.PI;
-        Log.v("Theta", Float.toString((float) theta));
-        if(theta == Double.NaN) theta = 0.0f;
-
-
-        if(newLocationX>currentLocationX){
-            if(newLocationY<currentLocationY)
-                theta = 90-theta;
-            else
-                theta += 90;
-        }
-        else{
-            if(newLocationY<currentLocationY)
-                theta = theta - 90;
-
-            else
-                theta = -1*(90 + theta);
-
-        }
-        Log.v("Updated Theta", Float.toString((float) theta));
-
-
-
-
 
         Path planePath = getPlanePath(newLocationX, newLocationY);
 
@@ -197,18 +174,17 @@ public class NavigationActivity extends AppCompatActivity {
             BitmapUtility.planePaths = Bitmap.createBitmap(planePaths.getWidth(), planePaths.getHeight(), Bitmap.Config.ARGB_8888);
         }
         BitmapUtility.planePaths.eraseColor(Color.TRANSPARENT);
+
         Canvas canvas = new Canvas(BitmapUtility.planePaths);
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
         paint.setColor(Color.MAGENTA);
-        canvas.drawCircle(50, 50, 10, paint);
         paint.setStyle(Paint.Style.STROKE);
-        //paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeWidth(8);
-
         canvas.drawPath(planePath, paint);
         planePaths.setImageBitmap(BitmapUtility.planePaths);
+
 
 
         ValueAnimator pathAnimator = ValueAnimator.ofObject(new PathEvaluator(planePath), new float[2], new float[2]);
@@ -216,26 +192,41 @@ public class NavigationActivity extends AppCompatActivity {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float[] pos = (float[]) animation.getAnimatedValue();
-                if(plane.getY() < pos[1]) {
+                if (plane.getY() < pos[1]) {
                     Log.v("Direction", "Down.");
                     plane.setRotation((float) (180 + Math.toDegrees(Math.tan(-pos[2]))));
-                }
-                else {
+                } else {
                     Log.v("Direction", "Up.");
                     plane.setRotation((float) Math.toDegrees(Math.tan(pos[2])));
                 }
-
-
                 plane.setX(pos[0]);
                 plane.setY(pos[1]);
-                Log.v("UpdateListener", Float.toString(pos[0]) + " " + Float.toString(pos[1]) + " " + Double.toString(Math.toDegrees(Math.tan(pos[2]))));
+                //Log.v("UpdateListener", Float.toString(pos[0]) + " " + Float.toString(pos[1]) + " " + Double.toString(Math.toDegrees(Math.tan(pos[2]))));
             }
         });
 
-        ValueAnimator rotate = ObjectAnimator.ofFloat(plane, "rotation", (float) theta);
+        //ValueAnimator rotate = ObjectAnimator.ofFloat(plane, "rotation", (float) theta);
+
+
+        float[] tan = new float[2];
+        float theta;
+
+        PathMeasure pathMeasure = new PathMeasure(planePath, false);
+        pathMeasure.getPosTan(0,null,tan);
+
+        if(currentLocationY < newLocationY) {
+            theta = ((float) (180 + Math.toDegrees(Math.tan(-tan[0]))));
+        }
+        else {
+            theta = ((float) Math.toDegrees(Math.tan(tan[0])));
+        }
+
+        if(theta > 180) theta = theta - 360;
+
+        ValueAnimator rotate = ObjectAnimator.ofFloat(plane, "rotation", theta);
         ValueAnimator rotateBack = ObjectAnimator.ofFloat(plane, "rotation", 0.0f);
 
-        pathAnimator.setDuration((int) Math.ceil(distance / planeSpeed));
+        pathAnimator.setDuration((int) Math.round(distance / planeSpeed));
         rotate.setDuration(1000);
         rotateBack.setDuration(1000);
 
@@ -258,6 +249,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         currentLocationX = newLocationX;
         currentLocationY = newLocationY;
+
     }
 
     private Path getPlanePath(int newLocationX, int newLocationY){
@@ -269,7 +261,36 @@ public class NavigationActivity extends AppCompatActivity {
 
         path.quadTo(xControl, yControl, (float) newLocationX, (float) newLocationY);
         return path;
+    }
 
+    private void createBitmap(){
+        //BitmapUtility.map_bw.eraseColor(Color.TRANSPARENT);
+        Canvas canvas = new Canvas(BitmapUtility.map_addition_navigation);
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        canvas.drawBitmap(BitmapUtility.map_bw, 0,0, paint);
+        //canvas.drawBitmap(BitmapUtility.map_af, 0, 0, paint);
+        if(goTo == Continents.Africa | CurrentContinent == Continents.Africa){
+            canvas.drawBitmap(BitmapUtility.map_af, 0, 0, paint);
+        }
+        if(goTo == Continents.Antarctica | CurrentContinent == Continents.Antarctica){
+            canvas.drawBitmap(BitmapUtility.map_an, 0, 0, paint);
+        }
+        if(goTo == Continents.Asia | CurrentContinent == Continents.Asia){
+            canvas.drawBitmap(BitmapUtility.map_as, 0, 0, paint);
+        }
+        if(goTo == Continents.Europe | CurrentContinent == Continents.Europe){
+            canvas.drawBitmap(BitmapUtility.map_eu, 0, 0, paint);
+        }
+        if(goTo == Continents.Oceania | CurrentContinent == Continents.Oceania){
+            canvas.drawBitmap(BitmapUtility.map_oc, 0, 0, paint);
+        }
+        if(goTo == Continents.NorthAmerica | CurrentContinent == Continents.NorthAmerica){
+            canvas.drawBitmap(BitmapUtility.map_na, 0, 0, paint);
+        }
+        if(goTo == Continents.SouthAmerica | CurrentContinent == Continents.SouthAmerica){
+            canvas.drawBitmap(BitmapUtility.map_sa, 0, 0, paint);
+        }
+        //map.setImageBitmap(BitmapUtility.map_addition);
     }
 
     private void goToNextActivity(){

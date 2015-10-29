@@ -13,8 +13,8 @@ public enum Continents {
     Africa,
     Antarctica,
     Asia,
-    Oceania,
     Europe,
+    Oceania,
     NorthAmerica,
     SouthAmerica
 }

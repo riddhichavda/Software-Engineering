@@ -25,8 +25,8 @@ public class Admin {
     private int level_attempts;
 
     //Some way to see which continents the player has gone to.
-
     public ArrayList<Continents> continentsTraveled;
+
 
     public static Admin getInstance(Context context){
         if(admin == null){

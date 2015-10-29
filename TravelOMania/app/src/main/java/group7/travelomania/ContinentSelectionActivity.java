@@ -1,11 +1,10 @@
 package group7.travelomania;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.BitmapFactory;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.Paint;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,10 +14,8 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.graphics.Bitmap;
 
 
-//TODO Load bitmaps more efficiently.
 
 public class ContinentSelectionActivity extends AppCompatActivity {
 
@@ -31,10 +28,13 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
     private ImageView map;
     private ImageView avatar;
+    private ImageView plane;
+    private ImageView selection;
+
+
 
     private boolean isNewGame;
 
-    private int mapHeight, mapWidth;
     private float mapX, mapY;
 
 
@@ -68,11 +68,24 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         map = (ImageView) findViewById(R.id.imageView_map);
         avatar = (ImageView) findViewById(R.id.imageView_avatar);
         avatar.setImageBitmap(player.avatar);
+        selection = new ImageView(this);
+        selection.setVisibility(View.INVISIBLE);
+        selection.setImageDrawable(getDrawable(R.drawable.arrow_left));
+
+
+
+        if(currentContinent != null){
+            plane = new ImageView(this);
+            plane.setImageBitmap(BitmapUtility.plane);
+        }
+
+        createBitmap();
+        map.setImageBitmap(BitmapUtility.map_addition_selection);
 
         final Button btn_Next = (Button)findViewById(R.id.btn_Next);
         final Button btn_Help = (Button)findViewById(R.id.btn_help);
 
-        map.setImageBitmap(BitmapUtility.map);
+
 
         btn_Next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,12 +111,10 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                     map.getViewTreeObserver().removeGlobalOnLayoutListener(this);
 
 
-                mapHeight = (int) Math.round(map.getWidth() * 0.61087511d);
-                mapWidth = map.getWidth();
                 mapX = map.getX();
-                mapY = map.getY() + Math.round((map.getHeight() - mapHeight) / 2);
-                Log.v("Map W, H, X, Y", Integer.toString(mapWidth) + " " +
-                        Integer.toString(mapHeight) + " " +
+                mapY = map.getY() + Math.round((map.getHeight() - BitmapUtility.mapHeight) / 2);
+                Log.v("Map W, H, X, Y", Integer.toString(BitmapUtility.mapWidth) + " " +
+                        Integer.toString(BitmapUtility.mapHeight) + " " +
                         Float.toString(mapX) + " " +
                         Float.toString(mapY));
 
@@ -130,9 +141,9 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 int trueMapTouchY = (int)Math.floor(touchY - mapY);
                 int pixel = 0;
 
-                if(trueMapTouchY >= 0 && trueMapTouchY <= mapHeight && trueMapTouchX >= 0 && trueMapTouchX <= mapWidth){
-                    trueMapTouchX = (int)Math.floor((((float) trueMapTouchX) / mapWidth) * BitmapUtility.mapKey.getWidth());
-                    trueMapTouchY = (int)Math.floor((((float) trueMapTouchY) / mapHeight) * BitmapUtility.mapKey.getHeight());
+                if(trueMapTouchY >= 0 && trueMapTouchY <= BitmapUtility.mapHeight && trueMapTouchX >= 0 && trueMapTouchX <= BitmapUtility.mapWidth){
+                    trueMapTouchX = (int)Math.floor((((float) trueMapTouchX) / BitmapUtility.mapWidth) * BitmapUtility.mapKey.getWidth());
+                    trueMapTouchY = (int)Math.floor((((float) trueMapTouchY) / BitmapUtility.mapHeight) * BitmapUtility.mapKey.getHeight());
                     pixel = BitmapUtility.mapKey.getPixel(trueMapTouchX, trueMapTouchY);
                 }
                 else{
@@ -185,6 +196,8 @@ public class ContinentSelectionActivity extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         avatar.setImageBitmap(player.avatar);
+        createBitmap();
+        map.setImageBitmap(BitmapUtility.map_addition_selection);
         if(admin.continentsTraveled.size() > 0) {
             Log.v("Game","Continue Game");
             currentContinent = admin.continentsTraveled.get(0);
@@ -193,6 +206,37 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         else {
             isNewGame = true;
         }
+    }
+
+
+    private void createBitmap(){
+        //BitmapUtility.map_bw.eraseColor(Color.TRANSPARENT);
+        Canvas canvas = new Canvas(BitmapUtility.map_addition_selection);
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        canvas.drawBitmap(BitmapUtility.map_bw, 0,0, paint);
+        //canvas.drawBitmap(BitmapUtility.map_af, 0, 0, paint);
+        if(!admin.continentsTraveled.contains(Continents.Africa)){
+            canvas.drawBitmap(BitmapUtility.map_af, 0, 0, paint);
+        }
+        if(!admin.continentsTraveled.contains(Continents.Antarctica)){
+            canvas.drawBitmap(BitmapUtility.map_an, 0, 0, paint);
+        }
+        if(!admin.continentsTraveled.contains(Continents.Asia)){
+            canvas.drawBitmap(BitmapUtility.map_as, 0, 0, paint);
+        }
+        if(!admin.continentsTraveled.contains(Continents.Europe)){
+            canvas.drawBitmap(BitmapUtility.map_eu, 0, 0, paint);
+        }
+        if(!admin.continentsTraveled.contains(Continents.Oceania)){
+            canvas.drawBitmap(BitmapUtility.map_oc, 0, 0, paint);
+        }
+        if(!admin.continentsTraveled.contains(Continents.NorthAmerica)){
+            canvas.drawBitmap(BitmapUtility.map_na, 0, 0, paint);
+        }
+        if(!admin.continentsTraveled.contains(Continents.SouthAmerica)){
+            canvas.drawBitmap(BitmapUtility.map_sa, 0, 0, paint);
+        }
+        //map.setImageBitmap(BitmapUtility.map_addition);
     }
 
     private void goToNextActivity(Continents nextContinent){
