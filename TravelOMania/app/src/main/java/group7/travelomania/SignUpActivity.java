@@ -1,7 +1,9 @@
 package group7.travelomania;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +26,7 @@ public class SignUpActivity extends Activity
         loginDbHelper=new LoginDatabaseHelper(this);
         loginDbHelper=loginDbHelper.open();
 
-        // Get Refferences of Views
+        // Get References of Views
         editTextUserName=(EditText)findViewById(R.id.editTextUserName);
         editTextPassword=(EditText)findViewById(R.id.editTextPassword);
         editTextConfirmPassword=(EditText)findViewById(R.id.editTextConfirmPassword);
@@ -68,8 +70,22 @@ public class SignUpActivity extends Activity
             // Save the Data in Database
             loginDbHelper.insertEntry(userName, password, fullName, question, answer);
             Toast.makeText(getApplicationContext(), "Account Successfully Created ", Toast.LENGTH_LONG).show();
+            Handler handler = new Handler();
+            handler.postDelayed(goToHomeScreen, 1000);
+
         }
     }
+
+    private Runnable goToHomeScreen = new Runnable()
+    {
+        @Override
+        public void run()
+        {
+            Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
+            startActivity(intent);
+        }
+    };
+
     @Override
     protected void onDestroy() {
         // TODO Auto-generated method stub

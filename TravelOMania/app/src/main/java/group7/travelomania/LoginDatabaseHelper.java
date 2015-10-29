@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class LoginDatabaseHelper
 {
@@ -28,7 +29,12 @@ public class LoginDatabaseHelper
     }
     public LoginDatabaseHelper open() throws SQLException
     {
-        db = dbHelper.getWritableDatabase();
+        try {
+            db = dbHelper.openDataBase();
+        }
+        catch (java.sql.SQLException e){
+            Log.v("Database Check", e.getMessage());
+        }
         return this;
     }
     public void close()
@@ -65,14 +71,14 @@ public class LoginDatabaseHelper
     }
     public String getSinlgeEntry(String userName)
     {
-        Cursor cursor=db.query("PLAYER", null, " USERNAME=?", new String[]{userName}, null, null, null);
+        Cursor cursor=db.query("PLAYER", null, "USERNAME=?", new String[]{userName}, null, null, null);
         if(cursor.getCount()<1) // UserName Not Exist
         {
             cursor.close();
             return "NOT EXIST";
         }
         cursor.moveToFirst();
-        String password= cursor.getString(cursor.getColumnIndex("PASSWORD"));
+        String password= cursor.getString(cursor.getColumnIndex("password"));
         cursor.close();
         return password;
     }

@@ -9,4 +9,26 @@
     <string name="btn_next_text">Next</string>
     <string name="imageView_Avatar_Description">Avatar</string>
     <string name="avatar_selection_layout_title_text">Select an Avatar!</string>
+    <string name="rules_header"><b>Rules</b></string>
+    <string name="rules_text">
+        Welcome to TravelOMania, the world cultures trivia game! \n
+
+        In this game, you will travel around to each continent, and answer trivia questions in the category
+        of your choosing. The order that you play the continents is very important. There are seven continents,
+        and they increase in difficulty as follows: The first 3 will have easy questions, continents 4 and 5 will have
+        medium difficulty questions, and the 6th and 7th continents will consist of the most difficult questions. \n
+
+        Each continent will have six categories to choose from for questions. The categories are: \n
+        <b>Capitals</b> \n
+        <b>Cuisines</b> \n
+        <b>Festivals</b> \n
+        <b>Landmarks</b> \n
+        <b>Sports</b> \n
+        <b>Politics</b> \n
+
+        Within each category, you will have 7 multiple choice questions. If you answer 5 or more correctly,
+        you will be able to move on to the next Continent! Otherwise, you may choose a different category
+        and try again, with up to 3 attempts. With 3 failed categories, you will lose the game and will be
+        required to start the game again from the beginning!
+    </string>
 </resources>

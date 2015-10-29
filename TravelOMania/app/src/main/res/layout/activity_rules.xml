@@ -7,4 +7,46 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="group7.travelomania.RulesActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/rules_header"
+        android:id="@+id/textViewRulesHeader"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:enabled ="false"
+        android:clickable="false"
+        android:inputType = "none"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/rules_text"
+        android:id="@+id/textViewRulesText"
+        android:layout_below="@+id/textViewRulesHeader"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textViewRulesHeader"
+        android:layout_alignEnd="@+id/textViewRulesHeader"
+        android:enabled="false"
+        android:clickable="false"
+        android:inputType="none"
+        android:textColor="#000000" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play TravelOMania!"
+        android:id="@+id/btnPlayGame"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textViewRulesText"
+        android:layout_alignEnd="@+id/textViewRulesHeader" />
 </RelativeLayout>
