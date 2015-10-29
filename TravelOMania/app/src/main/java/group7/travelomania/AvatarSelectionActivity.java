@@ -13,16 +13,22 @@ import android.widget.ImageView;
 public class AvatarSelectionActivity extends AppCompatActivity {
 
 
-    private ImageView avatar1, avatar2, avatar3;
+    private ImageView imageView_avatar, avatar1, avatar2, avatar3;
     private ImageView leftArrow, rightArrow;
 
     private int avatarIndex, selectedIndex;
+
+    private Player player;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avatar_selection);
+
+        player = Player.getInstance(this);
+        imageView_avatar = (ImageView) findViewById(R.id.imageView_Avatar);
+        imageView_avatar.setImageBitmap(player.avatar);
 
         avatar1 = (ImageView) findViewById(R.id.imageView_Avatar1);
         avatar2 = (ImageView) findViewById(R.id.imageView_Avatar2);
@@ -206,7 +212,8 @@ public class AvatarSelectionActivity extends AppCompatActivity {
     }
 
     private void updatePlayerAvatar(Bitmap bitmap){
-
+        player.avatar = bitmap;
+        imageView_avatar.setImageBitmap(bitmap);
     }
 
     private void goToNextActivity(){

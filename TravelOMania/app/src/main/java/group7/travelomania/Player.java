@@ -1,5 +1,7 @@
 package group7.travelomania;
 
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.util.Log;
 
 /**
@@ -13,7 +15,7 @@ import android.util.Log;
 public class Player {
 
 
-    public static Player player;
+    public static volatile Player player;
 
 
     private String name;
@@ -23,6 +25,30 @@ public class Player {
     public String confirmPassword;
     public String securityAnswer;
 
+    public Bitmap avatar;
+
+    public static Player getInstance(Context context){
+
+        if(player == null){
+            synchronized (Player.class){
+                if(player == null){
+                    player = new Player(context);
+                }
+            }
+        }
+        return player;
+
+    }
+
+    private Player(Context context){
+        if(BitmapUtility.avatar_basic == null){
+            BitmapUtility.avatar_basic = BitmapUtility.decodeSampledBitmapFromResource(context.getResources(),
+                    R.drawable.basic_avatar,
+                    64,
+                    64);
+        }
+        avatar = BitmapUtility.avatar_basic;
+    }
 
     public void register(String n, String uname, String confirmPwd, String securityAns){
 

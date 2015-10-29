@@ -25,6 +25,9 @@ public class ContinentSelectionActivity extends AppCompatActivity {
     Continents selectedContinent;
     Continents currentContinent;
 
+    private Player player;
+    private Admin admin;
+
 
     private ImageView map;
     private ImageView avatar;
@@ -44,10 +47,14 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
         selectedContinent = null;
 
-        Intent intent = getIntent();
-        isNewGame = intent.getBooleanExtra("newGame", false);
+        //Intent intent = getIntent();
+        //isNewGame = intent.getBooleanExtra("newGame", false);
 
-        switch (intent.getIntExtra("Continent", -1)) {
+        player = Player.getInstance(this);
+        admin = Admin.getInstance(this);
+
+        //switch (intent.getIntExtra("Continent", -1)) {
+        /*switch (admin.continentsTraveled.get(0)) {
             case 0:
                 currentContinent = Continents.Africa;
                 break;
@@ -72,10 +79,24 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             default:
                 currentContinent = Continents.NorthAmerica;
                 break;
+        }*/
+        if(admin.continentsTraveled.size() > 0) {
+            Log.v("Game","Continue Game");
+            currentContinent = admin.continentsTraveled.get(0);
+            isNewGame = false;
         }
+        else {
+            isNewGame = true;
+        }
+
+
+
 
         map = (ImageView) findViewById(R.id.imageView_map);
         avatar = (ImageView) findViewById(R.id.imageView_avatar);
+
+        avatar.setImageBitmap(player.avatar);
+
 
         Point size = new Point();
         getWindowManager().getDefaultDisplay().getSize(size);
@@ -223,74 +244,29 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        avatar.setImageBitmap(player.avatar);
+        if(admin.continentsTraveled.size() > 0) {
+            Log.v("Game","Continue Game");
+            currentContinent = admin.continentsTraveled.get(0);
+            isNewGame = false;
+        }
+        else {
+            isNewGame = true;
+        }
+    }
 
     private void goToNextActivity(Continents nextContinent){
-        if(nextContinent != null) {
+        if(nextContinent != null && !admin.continentsTraveled.contains(nextContinent)) {
+            admin.continentsTraveled.add(0,nextContinent);
             Intent intent;
             if(isNewGame){
-                intent = new Intent(this, CategorySelectionActivity.class);
+                intent = new Intent(this, AvatarSelectionActivity.class);
             }
             else{
                 intent = new Intent(this, NavigationActivity.class);
-            }
-            int continent;
-            switch (nextContinent) {
-                case Africa:
-                    continent = 0;
-                    break;
-                case Antarctica:
-                    continent = 1;
-                    break;
-                case Asia:
-                    continent = 2;
-                    break;
-                case Oceania:
-                    continent = 3;
-                    break;
-                case Europe:
-                    continent = 4;
-                    break;
-                case NorthAmerica:
-                    continent = 5;
-                    break;
-                case SouthAmerica:
-                    continent = 6;
-                    break;
-                default:
-                    continent = -1;
-                    break;
-            }
-
-            intent.putExtra("nextContinent", continent);
-            if(!isNewGame){
-                switch (currentContinent) {
-                    case Africa:
-                        continent = 0;
-                        break;
-                    case Antarctica:
-                        continent = 1;
-                        break;
-                    case Asia:
-                        continent = 2;
-                        break;
-                    case Oceania:
-                        continent = 3;
-                        break;
-                    case Europe:
-                        continent = 4;
-                        break;
-                    case NorthAmerica:
-                        continent = 5;
-                        break;
-                    case SouthAmerica:
-                        continent = 6;
-                        break;
-                    default:
-                        continent = -1;
-                        break;
-                }
-                intent.putExtra("curContinent", continent);
-
             }
             startActivity(intent);
         }

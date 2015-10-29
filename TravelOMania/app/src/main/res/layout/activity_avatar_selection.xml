@@ -21,7 +21,6 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:id="@+id/imageView_Avatar"
-        android:src="@drawable/basic_avatar"
         android:contentDescription="@string/imageView_Avatar_Description"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"

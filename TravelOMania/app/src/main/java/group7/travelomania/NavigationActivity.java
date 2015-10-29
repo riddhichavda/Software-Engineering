@@ -45,13 +45,18 @@ public class NavigationActivity extends AppCompatActivity {
 
     private float planeSpeed = .1f;
 
+    private Admin admin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
-        CurrentContinent = Continents.Africa;
+        admin = Admin.getInstance(this);
+
+        CurrentContinent = admin.continentsTraveled.get(1);
+        goTo = admin.continentsTraveled.get(0);
 
         map = (ImageView) findViewById(R.id.imageView_map);
         plane = (ImageView) findViewById(R.id.imageView_plane);
@@ -81,34 +86,6 @@ public class NavigationActivity extends AppCompatActivity {
         continentPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
         continentPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
         continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
-
-        Intent intent = getIntent();
-        switch (intent.getIntExtra("nextContinent",-1)) {
-            case 0:
-                goTo = Continents.Africa;
-                break;
-            case 1:
-                goTo = Continents.Antarctica;
-                break;
-            case 2:
-                goTo = Continents.Asia;
-                break;
-            case 3:
-                goTo = Continents.Oceania;
-                break;
-            case 4:
-                goTo = Continents.Europe;
-                break;
-            case 5:
-                goTo = Continents.NorthAmerica;
-                break;
-            case 6:
-                goTo = Continents.SouthAmerica;
-                break;
-            default:
-                goTo = Continents.NorthAmerica;
-                break;
-        }
 
 
         map.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -227,18 +204,20 @@ public class NavigationActivity extends AppCompatActivity {
 
 
         Path planePath = getPlanePath(newLocationX, newLocationY);
-        Bitmap tempBitmap = Bitmap.createBitmap(planePaths.getWidth(), planePaths.getHeight(), Bitmap.Config.ARGB_8888);
-        //Bitmap.crea
-        Canvas canvas = new Canvas(tempBitmap);
-        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.TRANSPARENT);
-        paint.setStyle(Paint.Style.FILL);
 
+        if(BitmapUtility.planePaths == null) {
+            BitmapUtility.planePaths = Bitmap.createBitmap(planePaths.getWidth(), planePaths.getHeight(), Bitmap.Config.ARGB_8888);
+        }
+        BitmapUtility.planePaths.eraseColor(Color.TRANSPARENT);
+        Canvas canvas = new Canvas(BitmapUtility.planePaths);
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        //paint.setColor(Color.TRANSPARENT);
+        //paint.setStyle(Paint.Style.FILL);
         //canvas.drawPaint(paint);
         //canvas.drawColor(Color.TRANSPARENT);
-        canvas.drawPaint(paint);
+        //canvas.drawPaint(paint);
 
-        paint.setColor(Color.RED);
+        paint.setColor(Color.MAGENTA);
         canvas.drawCircle(50, 50, 10, paint);
         paint.setStyle(Paint.Style.STROKE);
         //paint.setStrokeJoin(Paint.Join.ROUND);
@@ -246,7 +225,7 @@ public class NavigationActivity extends AppCompatActivity {
         paint.setStrokeWidth(10);
 
         canvas.drawPath(planePath, paint);
-        planePaths.setImageBitmap(tempBitmap);
+        planePaths.setImageBitmap(BitmapUtility.planePaths);
 
 
         ValueAnimator pathAnimator = ValueAnimator.ofObject(new PathEvaluator(planePath), new float[2], new float[2]);

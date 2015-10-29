@@ -1,5 +1,7 @@
 package group7.travelomania;
 
+import android.content.Context;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -14,7 +16,7 @@ import java.util.ArrayList;
 public class Admin {
 
 
-    public static Admin admin;
+    public static volatile Admin admin;
 
 
     public int level;
@@ -25,6 +27,20 @@ public class Admin {
     //Some way to see which continents the player has gone to.
 
     public ArrayList<Continents> continentsTraveled;
+
+    public static Admin getInstance(Context context){
+        if(admin == null){
+            synchronized (Admin.class){
+                admin = new Admin(context);
+            }
+        }
+        return admin;
+    }
+
+    private Admin(Context context){
+        continentsTraveled = new ArrayList<>(7);
+        level = 0;
+    }
 
 
     public void storeRegisteredDetails(){
