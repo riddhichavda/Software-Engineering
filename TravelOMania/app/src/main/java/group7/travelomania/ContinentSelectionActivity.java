@@ -1,7 +1,10 @@
 package group7.travelomania;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +31,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
     private boolean isNewGame;
 
-    private Bitmap bitmapMap;
+    //private Bitmap bitmapMap;
 
     private int mapHeight, mapWidth;
     private float mapX, mapY;
@@ -74,6 +77,29 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         map = (ImageView) findViewById(R.id.imageView_map);
         avatar = (ImageView) findViewById(R.id.imageView_avatar);
 
+        Point size = new Point();
+        getWindowManager().getDefaultDisplay().getSize(size);
+
+        if(BitmapUtility.map == null) {
+            BitmapUtility.map = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
+                    R.drawable.map_2,
+                    size.x,
+                    (int) Math.round(size.x * 0.61087511d));
+            Log.v("Load", "Bitmap Map Load");
+        }
+
+        if(BitmapUtility.mapKey == null){
+            BitmapUtility.mapKey = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
+                    R.drawable.map_colors,
+                    256,
+                    (int) Math.round(256 * 0.61087511d));
+            Log.v("Load", "Bitmap mapKey Load");
+        }
+
+
+        map.setImageBitmap(BitmapUtility.map);
+
+
         final Button btn_Next = (Button)findViewById(R.id.btn_Next);
         final Button btn_Help = (Button)findViewById(R.id.btn_help);
         btn_Next.setOnClickListener(new View.OnClickListener() {
@@ -109,13 +135,9 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                         Float.toString(mapY));
 
                 //Grab bitmap from map ImageView.
-                if(Build.VERSION.SDK_INT >= 21)
-                    bitmapMap = Bitmap.createBitmap(((BitmapDrawable)getDrawable(R.drawable.map_colors)).getBitmap());
-                else
-                    bitmapMap = Bitmap.createBitmap(((BitmapDrawable) getResources().getDrawable(R.drawable.map_colors)).getBitmap());
 
-                Log.v("Map W, H, X, Y", Integer.toString(bitmapMap.getWidth()) + " " +
-                        Integer.toString((int) Math.floor(bitmapMap.getHeight())));
+                Log.v("Map W, H, X, Y", Integer.toString(BitmapUtility.mapKey.getWidth()) + " " +
+                        Integer.toString((int) Math.floor(BitmapUtility.mapKey.getHeight())));
 
             }
         });
@@ -142,8 +164,8 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
 
                 if(trueMapTouchY >= 0 && trueMapTouchY <= mapHeight && trueMapTouchX >= 0 && trueMapTouchX <= mapWidth){
-                    trueMapTouchX = (int)Math.floor((((float)trueMapTouchX)/mapWidth) * bitmapMap.getWidth());
-                    trueMapTouchY = (int)Math.floor((((float)trueMapTouchY)/mapHeight) * bitmapMap.getHeight());
+                    trueMapTouchX = (int)Math.floor((((float) trueMapTouchX) / mapWidth) * BitmapUtility.mapKey.getWidth());
+                    trueMapTouchY = (int)Math.floor((((float) trueMapTouchY) / mapHeight) * BitmapUtility.mapKey.getHeight());
                 }
                 else{
                     trueMapTouchX = 0;
@@ -153,7 +175,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
 
 
-                int pixel = bitmapMap.getPixel(trueMapTouchX, trueMapTouchY);
+                int pixel = BitmapUtility.mapKey.getPixel(trueMapTouchX, trueMapTouchY);
 
                 Log.v("Continent Color", Integer.toString(pixel) + " " + Integer.toString(Color.red(pixel)) + " " + Integer.toString(Color.green(pixel)) + " " + Integer.toString(Color.blue(pixel)));
                 Log.v("True Touch Position", Integer.toString(trueMapTouchX) + " " + Integer.toString(trueMapTouchY));
@@ -273,5 +295,8 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+
+
 
 }

@@ -5,11 +5,14 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Point;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -53,6 +56,20 @@ public class NavigationActivity extends AppCompatActivity {
         map = (ImageView) findViewById(R.id.imageView_map);
         plane = (ImageView) findViewById(R.id.imageView_plane);
         planePaths = (ImageView) findViewById(R.id.imageView_paths);
+
+        Point size = new Point();
+        getWindowManager().getDefaultDisplay().getSize(size);
+
+        if(BitmapUtility.map == null) {
+            BitmapUtility.map = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
+                    R.drawable.map_2,
+                    size.x,
+                    (int) Math.round(size.x * 0.61087511d));
+            Log.v("Load", "Bitmap Map Load");
+        }
+
+        map.setImageBitmap(BitmapUtility.map);
+
 
         Log.v("Start Navigation", "");
         continentPositions = new HashMap<>(7);
@@ -288,7 +305,7 @@ public class NavigationActivity extends AppCompatActivity {
 
 
     private void goToNextActivity(){
-        Intent intent = new Intent(this, CategorySelectionActivity.class);
+        Intent intent = new Intent(this, AvatarSelectionActivity.class);
         int continent;
         switch(CurrentContinent){
             case Africa:

@@ -21,13 +21,10 @@ public class PathEvaluator implements TypeEvaluator<float[]> {
         return evaluatePosition(fraction, 0, 1);
     }
 
-
     public float[] evaluatePosition(float fraction, float startValue, float endValue){
         float curDistance = fraction*pathMeasure.getLength();
         float[] pos = new float[2];
         pathMeasure.getPosTan(curDistance, pos, null);
         return pos;
     }
-
-
 }

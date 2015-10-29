@@ -15,7 +15,6 @@
         android:id="@+id/imageView_map"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/map_2"
         android:contentDescription="@string/navigation_layout_MapContentDescription" />
 
     <ImageView
