@@ -45,14 +45,15 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="Security Question"
-        android:inputType="textPassword" />
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/editTextSecurityAnswer"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="Answer"
-        android:inputType="textPassword" />
+        android:inputType="text"
+        />
 
     <Button
         android:id="@+id/buttonCreateAccount"
@@ -60,6 +61,13 @@
         android:layout_height="wrap_content"
         android:text="Create Account"
         android:layout_marginBottom="60dp" />
+
+    <!--<Button-->
+        <!--android:id="@+id/buttonCreateAccount2"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="A new button!"-->
+        <!--android:layout_marginBottom="60dp" />-->
 
 
 </LinearLayout>

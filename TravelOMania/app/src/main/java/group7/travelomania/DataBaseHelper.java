@@ -57,7 +57,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         SQLiteDatabase checkDB = null;
 
         try{
-            String path = DB_PATH + DB_NAME;
+            String path = DB_PATH;
             checkDB = SQLiteDatabase.openDatabase(path, null, SQLiteDatabase.OPEN_READONLY);
         }
         catch (SQLiteException e){
@@ -73,8 +73,11 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     }
 
     public void copyDataBase() throws IOException{
+        Log.v("Copy database", "Starting database copy");
         InputStream input = context.getAssets().open(DB_NAME);
-        String outFileName = DB_PATH + DB_NAME;
+        String outFileName = DB_PATH;
+        Log.v("copy database path", DB_PATH);
+        Log.v("copy database name", DB_NAME);
         OutputStream output = new FileOutputStream(outFileName);
 
         byte[] buffer = new byte[1024];
@@ -86,14 +89,14 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         output.flush();
         output.close();
         input.close();
-
+        Log.v("Copy database", "Finished database copy");
     }
 
-    public void openDataBase() throws SQLException{
+    public SQLiteDatabase openDataBase() throws SQLException{
 
-        String path = DB_PATH + DB_NAME;
-        database = SQLiteDatabase.openDatabase(path, null, SQLiteDatabase.OPEN_READONLY);
-
+        String path = DB_PATH;
+        database = SQLiteDatabase.openDatabase(path, null, SQLiteDatabase.OPEN_READWRITE);
+        return database;
     }
 
     @Override
