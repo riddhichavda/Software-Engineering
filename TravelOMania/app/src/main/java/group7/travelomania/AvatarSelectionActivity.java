@@ -25,6 +25,12 @@ public class AvatarSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avatar_selection);
+        Log.v("Start", "AvatarSelectionActivity");
+
+        //Initialize bitmaps and useful bitmap information.
+        Log.i("Start", "Bitmap.initialize");
+        BitmapUtility.initialize(this);
+        Log.i("End", "Bitmap.initialize");
 
         player = Player.getInstance(this);
         imageView_avatar = (ImageView) findViewById(R.id.imageView_Avatar);
@@ -39,49 +45,6 @@ public class AvatarSelectionActivity extends AppCompatActivity {
 
         avatarIndex = 0;
         selectedIndex = 0;
-
-        if(BitmapUtility.avatar_AF == null){
-            BitmapUtility.avatar_AF = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
-                    R.drawable.avatar_africa,
-                    64,
-                    64);
-            Log.v("Load", "Avatars");
-        }
-
-        if(BitmapUtility.avatar_AS == null){
-            BitmapUtility.avatar_AS = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
-                    R.drawable.avatar_asia,
-                    64,
-                    64);
-        }
-
-        if(BitmapUtility.avatar_EU == null){
-            BitmapUtility.avatar_EU = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
-                    R.drawable.avatar_europe,
-                    64,
-                    64);
-        }
-
-        if(BitmapUtility.avatar_OC == null){
-            BitmapUtility.avatar_OC = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
-                    R.drawable.avatar_ocieana,
-                    64,
-                    64);
-        }
-
-        if(BitmapUtility.avatar_NA == null){
-            BitmapUtility.avatar_NA = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
-                    R.drawable.avatar_na,
-                    64,
-                    64);
-        }
-
-        if(BitmapUtility.avatar_SA == null){
-            BitmapUtility.avatar_SA = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
-                    R.drawable.avatar_sa,
-                    64,
-                    64);
-        }
 
         updateAvatars();
 

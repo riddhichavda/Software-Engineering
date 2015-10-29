@@ -34,8 +34,6 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
     private boolean isNewGame;
 
-    //private Bitmap bitmapMap;
-
     private int mapHeight, mapWidth;
     private float mapX, mapY;
 
@@ -44,42 +42,16 @@ public class ContinentSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_continent_selection);
-
-        selectedContinent = null;
-
-        //Intent intent = getIntent();
-        //isNewGame = intent.getBooleanExtra("newGame", false);
+        Log.v("Start", "ContinentSelectionActivity");
 
         player = Player.getInstance(this);
         admin = Admin.getInstance(this);
 
-        //switch (intent.getIntExtra("Continent", -1)) {
-        /*switch (admin.continentsTraveled.get(0)) {
-            case 0:
-                currentContinent = Continents.Africa;
-                break;
-            case 1:
-                currentContinent = Continents.Antarctica;
-                break;
-            case 2:
-                currentContinent = Continents.Asia;
-                break;
-            case 3:
-                currentContinent = Continents.Oceania;
-                break;
-            case 4:
-                currentContinent = Continents.Europe;
-                break;
-            case 5:
-                currentContinent = Continents.NorthAmerica;
-                break;
-            case 6:
-                currentContinent = Continents.SouthAmerica;
-                break;
-            default:
-                currentContinent = Continents.NorthAmerica;
-                break;
-        }*/
+        //Initialize bitmaps and useful bitmap information.
+        Log.i("Start", "Bitmap.initialize");
+        BitmapUtility.initialize(this);
+        Log.i("End", "Bitmap.initialize");
+
         if(admin.continentsTraveled.size() > 0) {
             Log.v("Game","Continue Game");
             currentContinent = admin.continentsTraveled.get(0);
@@ -89,44 +61,22 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             isNewGame = true;
         }
 
+        selectedContinent = null;
 
 
-
+        //Initialize views.
         map = (ImageView) findViewById(R.id.imageView_map);
         avatar = (ImageView) findViewById(R.id.imageView_avatar);
-
         avatar.setImageBitmap(player.avatar);
-
-
-        Point size = new Point();
-        getWindowManager().getDefaultDisplay().getSize(size);
-
-        if(BitmapUtility.map == null) {
-            BitmapUtility.map = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
-                    R.drawable.map_2,
-                    size.x,
-                    (int) Math.round(size.x * 0.61087511d));
-            Log.v("Load", "Bitmap Map Load");
-        }
-
-        if(BitmapUtility.mapKey == null){
-            BitmapUtility.mapKey = BitmapUtility.decodeSampledBitmapFromResource(getResources(),
-                    R.drawable.map_colors,
-                    256,
-                    (int) Math.round(256 * 0.61087511d));
-            Log.v("Load", "Bitmap mapKey Load");
-        }
-
-
-        map.setImageBitmap(BitmapUtility.map);
-
 
         final Button btn_Next = (Button)findViewById(R.id.btn_Next);
         final Button btn_Help = (Button)findViewById(R.id.btn_help);
+
+        map.setImageBitmap(BitmapUtility.map);
+
         btn_Next.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                goToNextActivity(selectedContinent);
+            public void onClick(View v) {goToNextActivity(selectedContinent);
             }
         });
         btn_Help.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +96,8 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                     map.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 else
                     map.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+
+
                 mapHeight = (int) Math.round(map.getWidth() * 0.61087511d);
                 mapWidth = map.getWidth();
                 mapX = map.getX();
@@ -154,8 +106,6 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                         Integer.toString(mapHeight) + " " +
                         Float.toString(mapX) + " " +
                         Float.toString(mapY));
-
-                //Grab bitmap from map ImageView.
 
                 Log.v("Map W, H, X, Y", Integer.toString(BitmapUtility.mapKey.getWidth()) + " " +
                         Integer.toString((int) Math.floor(BitmapUtility.mapKey.getHeight())));
@@ -167,14 +117,10 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-
                 //Get touch event position.
-
                 int touchX = (int) event.getX();
                 int touchY = (int) event.getY();
-
                 Log.v("Touch X, Y", Integer.toString(touchX) +" " + Integer.toString(touchY));
-
 
                 /*
                   Get the true x and y of the pixel in our bitmap for the Map.
@@ -182,28 +128,22 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
                 int trueMapTouchX = (int)Math.floor(touchX - mapX);
                 int trueMapTouchY = (int)Math.floor(touchY - mapY);
-
+                int pixel = 0;
 
                 if(trueMapTouchY >= 0 && trueMapTouchY <= mapHeight && trueMapTouchX >= 0 && trueMapTouchX <= mapWidth){
                     trueMapTouchX = (int)Math.floor((((float) trueMapTouchX) / mapWidth) * BitmapUtility.mapKey.getWidth());
                     trueMapTouchY = (int)Math.floor((((float) trueMapTouchY) / mapHeight) * BitmapUtility.mapKey.getHeight());
+                    pixel = BitmapUtility.mapKey.getPixel(trueMapTouchX, trueMapTouchY);
                 }
                 else{
                     trueMapTouchX = 0;
                     trueMapTouchY = 0;
                 }
 
-
-
-
-                int pixel = BitmapUtility.mapKey.getPixel(trueMapTouchX, trueMapTouchY);
-
                 Log.v("Continent Color", Integer.toString(pixel) + " " + Integer.toString(Color.red(pixel)) + " " + Integer.toString(Color.green(pixel)) + " " + Integer.toString(Color.blue(pixel)));
                 Log.v("True Touch Position", Integer.toString(trueMapTouchX) + " " + Integer.toString(trueMapTouchY));
-                //goToNextActivity(nextContinent);
 
                 //Check which continent with corresponding color.
-
                 switch(pixel){
                     //Africa
                     case -76498:
@@ -217,7 +157,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                     case -836095:
                         selectedContinent = Continents.Asia;
                         break;
-                    //Australia
+                    //Oceania
                     case -4177792:
                         selectedContinent = Continents.Oceania;
                         break;
@@ -236,10 +176,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                     default:
                         break;
                 }
-
-
-
-                return false;
+                return true;
             }
         });
     }
@@ -269,6 +206,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 intent = new Intent(this, NavigationActivity.class);
             }
             startActivity(intent);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
     }
 
