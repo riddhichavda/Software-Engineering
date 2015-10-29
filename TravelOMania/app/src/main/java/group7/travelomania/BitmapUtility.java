@@ -12,8 +12,8 @@ import android.graphics.BitmapFactory;
  */
 public class BitmapUtility {
 
-    public static Bitmap avatar_AF, avatar_AS, avatar_EU, avatar_OC, avatar_NA, avatar_SA;
-    public static Bitmap map, mapKey;
+    public static volatile Bitmap avatar_AF, avatar_AS, avatar_EU, avatar_OC, avatar_NA, avatar_SA;
+    public static volatile Bitmap map, mapKey;
 
     public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
         // Raw height and width of image

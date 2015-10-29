@@ -62,7 +62,7 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:id="@+id/imageView_RightButton"
+            android:id="@+id/imageView_LeftArrow"
             android:src="@drawable/arrow_left" />
 
         <ImageView
@@ -83,7 +83,7 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:id="@+id/imageView_LeftButton"
+            android:id="@+id/imageView_RightArrow"
             android:src="@drawable/arrow_right" />
 
     </LinearLayout>
