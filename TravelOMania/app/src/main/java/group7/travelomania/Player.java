@@ -5,6 +5,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 /**
  * Created by Matt on 10/27/15.
  *
@@ -16,17 +18,21 @@ import android.util.Log;
 public class Player {
 
 
-    public static volatile Player player;
+    private static volatile Player player;
 
-
-    private String name;
 
     public String userName;
-    public String password;
-    public String confirmPassword;
-    public String securityAnswer;
-
+    public boolean hasPlayed;
     public Bitmap avatar;
+    public ArrayList<Continents> continentsTraveled;
+    public Continents currentContinent;
+
+    public boolean loggedIn;
+
+
+
+
+    private LoginDatabaseHelper loginDbHelper;
 
     public static Player getInstance(Context context){
 
@@ -49,13 +55,21 @@ public class Player {
                     64);
         }
         avatar = BitmapUtility.avatar_basic;
+        loggedIn = false;
+        hasPlayed = false;
+        loginDbHelper = new LoginDatabaseHelper(context);
     }
 
-    public void register(String n, String uname, String confirmPwd, String securityAns){
 
-    }
+    public void login(String uname){
+        loggedIn = true;
+        userName = uname;
+        continentsTraveled = loginDbHelper.getContinentsCompleted(userName);
+        currentContinent = loginDbHelper.getCurrentLevel(userName);
 
-    private void login(String uname, String pwd){
+        if(currentContinent != null || continentsTraveled != null){
+            hasPlayed = true;
+        }
 
     }
 

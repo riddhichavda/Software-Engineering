@@ -52,11 +52,11 @@ public class SignUpActivity extends Activity
         String question = editTextSecurityQuestion.getText().toString();
         String answer = editTextSecurityAnswer.getText().toString();
 
-        // check if any of the fields are vaccant
+        // check if any of the fields are vacant
         if(userName.equals("")||password.equals("")||confirmPassword.equals("")||fullName.equals("")
                 ||question.equals("")||answer.equals(""))
         {
-            Toast.makeText(getApplicationContext(), "Field Vaccant", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Field Vacant", Toast.LENGTH_LONG).show();
             return;
         }
         // check if both password matches
@@ -68,7 +68,7 @@ public class SignUpActivity extends Activity
         else
         {
             // Save the Data in Database
-            loginDbHelper.insertEntry(userName, password, fullName, question, answer);
+            loginDbHelper.addPlayer(userName, password, fullName, question, answer);
             Toast.makeText(getApplicationContext(), "Account Successfully Created ", Toast.LENGTH_LONG).show();
             Handler handler = new Handler();
             handler.postDelayed(goToHomeScreen, 1000);

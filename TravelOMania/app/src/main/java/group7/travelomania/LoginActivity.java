@@ -1,6 +1,7 @@
 package group7.travelomania;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,18 +42,54 @@ public class LoginActivity extends AppCompatActivity {
         String userName = editTextUserName.getText().toString();
         String password = editTextPassword.getText().toString();
 
-        String dbPassword = loginDbHelper.getSinlgeEntry(userName);
+        String dbPassword = loginDbHelper.getPlayerPassword(userName);
 
-        if(!password.equals(dbPassword)){
+        if(password.equals("NOT EXIST") || !password.equals(dbPassword)){
             Toast.makeText(getApplicationContext(), "No registered user with that Username/Password combination.", Toast.LENGTH_LONG).show();
             editTextPassword.setText("");
             return;
         }
         else{
+            Toast.makeText(getApplicationContext(), "Welcome, " + userName, Toast.LENGTH_SHORT);
+            int player_id = loginDbHelper.getPlayerId(userName);
+            Player p = Player.getInstance(this);
+            p.login(userName);
+
+            Handler handler = new Handler();
+
+            if(p.hasPlayed){
+                handler.postDelayed(goToHistory, 1000);
+            }
+            else{
+                handler.postDelayed(goToRules, 1000);
+            }
+
+
+
+
+        }
+    }
+
+    private Runnable goToRules = new Runnable()
+    {
+        @Override
+        public void run()
+        {
             Intent intent = new Intent(getApplicationContext(), RulesActivity.class);
             startActivity(intent);
         }
-    }
+    };
+
+    private Runnable goToHistory = new Runnable()
+    {
+        @Override
+        public void run()
+        {
+            //TODO: Change this line to go to history
+            Intent intent = new Intent(getApplicationContext(), RulesActivity.class);
+            startActivity(intent);
+        }
+    };
 
     @Override
     protected void onDestroy() {
@@ -131,7 +168,7 @@ public class SignUpActivity extends Activity
         else
         {
             // Save the Data in Database
-            loginDbHelper.insertEntry(userName, password, fullName, question, answer);
+            loginDbHelper.addPlayer(userName, password, fullName, question, answer);
             Toast.makeText(getApplicationContext(), "Account Successfully Created ", Toast.LENGTH_LONG).show();
         }
     }

@@ -20,7 +20,7 @@ public class Admin {
 
 
     public int level;
-    public int level_completed;
+    public int levels_completed;
     private int login_attempts;
     private int level_attempts;
 
@@ -46,14 +46,8 @@ public class Admin {
     public void storeRegisteredDetails(){
 
 
-
     }
 
-    public boolean verifyUser(String uname, String pwd){
-
-
-        return true;
-    }
 
     public void startGame(String uname){
 

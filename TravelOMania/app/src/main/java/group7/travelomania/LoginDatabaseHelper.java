@@ -7,21 +7,17 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class LoginDatabaseHelper
 {
-    static final String DATABASE_NAME = "login.db";
-    static final int DATABASE_VERSION = 1;
-    public static final int NAME_COLUMN = 1;
-    // TODO: Create public field for each column in your table.
-    // SQL Statement to create a new database.
-    static final String DATABASE_CREATE = "create table "+"LOGIN"+
-            "( " +"ID"+" integer primary key autoincrement,"+ "USERNAME  text,PASSWORD text); ";
     // Variable to hold the database instance
     public  SQLiteDatabase db;
     // Context of the application using the database.
     private final Context context;
     // Database open/upgrade helper
     private DataBaseHelper dbHelper;
+
     public  LoginDatabaseHelper(Context _context)
     {
         context = _context;
@@ -47,7 +43,7 @@ public class LoginDatabaseHelper
         return db;
     }
 
-    public void insertEntry(String userName, String password, String fullname, String question, String answer)
+    public void addPlayer(String userName, String password, String fullname, String question, String answer)
     {
         ContentValues newValues = new ContentValues();
         // Assign values for each row.
@@ -57,31 +53,69 @@ public class LoginDatabaseHelper
         newValues.put("SECURITY_QUESTION", question);
         newValues.put("SECURITY_ANSWER", answer);
 
-
         // Insert the row into your table
         db.insert("PLAYER", null, newValues);
-        ///Toast.makeText(context, "Reminder Is Successfully Saved", Toast.LENGTH_LONG).show();
-    }
-    public int deleteEntry(String UserName)
-    {
-        String where="USERNAME=?";
-        int numberOFEntriesDeleted= db.delete("PLAYER", where, new String[]{UserName}) ;
 
-        return numberOFEntriesDeleted;
+
+
     }
-    public String getSinlgeEntry(String userName)
+
+    public String getPlayerPassword(String userName)
     {
-        Cursor cursor=db.query("PLAYER", null, "USERNAME=?", new String[]{userName}, null, null, null);
-        if(cursor.getCount()<1) // UserName Not Exist
-        {
-            cursor.close();
+        Cursor cursor=getPlayerRow(userName);
+        if(cursor == null)
             return "NOT EXIST";
-        }
         cursor.moveToFirst();
         String password= cursor.getString(cursor.getColumnIndex("password"));
         cursor.close();
         return password;
     }
+
+    public int getPlayerId(String userName)
+    {
+        Cursor cursor = getPlayerRow(userName);
+        if(cursor == null)
+            return -1;
+        cursor.moveToFirst();
+        int id= cursor.getInt(cursor.getColumnIndex("_id"));
+        cursor.close();
+        return id;
+    }
+
+    public ArrayList<Continents> getContinentsCompleted(String userName){
+        ArrayList<Continents> ret = new ArrayList<>();
+        Cursor cursor = getPlayerRow(userName);
+        if(cursor == null)
+            return null;
+        String all_levels = cursor.getString(cursor.getColumnIndex("level_completed"));
+        String[] level_arr = all_levels.split(",");
+        for(String s: level_arr){
+            ret.add(Continents.valueOf(s));
+        }
+        cursor.close();
+        return ret;
+    }
+
+    public Continents getCurrentLevel(String userName){
+        Cursor cursor = getPlayerRow(userName);
+        if (cursor == null)
+            return null;
+        Continents c = Continents.valueOf(cursor.getString(cursor.getColumnIndex("current_level")));
+        cursor.close();
+        return c;
+    }
+
+    private Cursor getPlayerRow(String userName){
+        Cursor cursor=db.query("PLAYER", null, "USERNAME=?", new String[]{userName}, null, null, null);
+        if(cursor.getCount()<1) // UserName Not Exist
+        {
+            cursor.close();
+            return null;
+        }
+        return cursor;
+    }
+
+
     public void  updateEntry(String userName, String password, String fullname, String question, String answer)
     {
         // Define the updated row content.
