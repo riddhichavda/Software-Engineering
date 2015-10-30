@@ -31,4 +31,6 @@
         and try again, with up to 3 attempts. With 3 failed categories, you will lose the game and will be
         required to start the game again from the beginning!
     </string>
+    <string name="end_text">You won the Game!!!!\nCongratulations!!!</string>
+    <string name="end_play_again_button">Play again</string>
 </resources>

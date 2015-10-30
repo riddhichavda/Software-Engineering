@@ -101,6 +101,10 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
         final Button btn_Next = (Button)findViewById(R.id.btn_Next);
         final Button btn_Help = (Button)findViewById(R.id.btn_help);
+        final Button btn_EndTest = (Button)findViewById(R.id.btn_EndTest);
+
+
+        btn_EndTest.setVisibility(View.VISIBLE);
 
 
 
@@ -115,6 +119,13 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 showRules();
             }
         });
+        btn_EndTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToEnd();
+            }
+        });
+
 
         map.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -226,9 +237,9 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
                     selectionAnimation = new AnimatorSet();
                     ObjectAnimator up = ObjectAnimator.ofFloat(selection, "y", selection.getY() - 10);
-                    up.setDuration(1000);
+                    up.setDuration(700);
                     ObjectAnimator down = ObjectAnimator.ofFloat(selection, "y", selection.getY());
-                    down.setDuration(1000);
+                    down.setDuration(700);
 
                     selectionAnimation.play(up).before(down);
 
@@ -277,13 +288,17 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         else {
             isNewGame = true;
         }
+        if(admin.continentsTraveled.size() == 7){
+            findViewById(R.id.btn_EndTest).setVisibility(View.VISIBLE);
+        }
 
     }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus){
         if(!hasFocus){
-            selectionAnimation.cancel();
+            if(selectionAnimation!=null)
+                selectionAnimation.cancel();
         }
     }
 
@@ -335,6 +350,23 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
+    }
+
+    private void goToEnd(){
+
+        admin.continentsTraveled.clear();
+
+        admin.continentsTraveled.add(Continents.Africa);
+        admin.continentsTraveled.add(Continents.Antarctica);
+        admin.continentsTraveled.add(Continents.Oceania);
+        admin.continentsTraveled.add(Continents.Asia);
+        admin.continentsTraveled.add(Continents.NorthAmerica);
+        admin.continentsTraveled.add(Continents.SouthAmerica);
+        admin.continentsTraveled.add(Continents.Europe);
+
+        Intent intent = new Intent(this, EndActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 
