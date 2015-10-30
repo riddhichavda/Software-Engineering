@@ -125,21 +125,15 @@ public class EndActivity extends AppCompatActivity {
         canvas = new Canvas(BitmapUtility.planePaths);
 
         for(int continentIndex = 1; continentIndex < admin.continentsTraveled.size(); continentIndex++) {
-            int currentLocationX = (int) Math.floor(continentPositions.get(admin.continentsTraveled.get(continentIndex - 1))[0] * mapWidth + mapX - 30);
+            int currentLocationX = (int) Math.floor(continentPositions.get(admin.continentsTraveled.get(continentIndex - 1))[0] * mapWidth + mapX - 45);
             int currentLocationY = (int) Math.floor(continentPositions.get(admin.continentsTraveled.get(continentIndex - 1))[1] * mapHeight + mapY - 15);
-            int newLocationX = (int) Math.floor(continentPositions.get(admin.continentsTraveled.get(continentIndex))[0] * mapWidth + mapX - 30);
+            int newLocationX = (int) Math.floor(continentPositions.get(admin.continentsTraveled.get(continentIndex))[0] * mapWidth + mapX - 45);
             int newLocationY = (int) Math.floor(continentPositions.get(admin.continentsTraveled.get(continentIndex))[1] * mapHeight + mapY - 15);
             canvas.drawPath(getPlanePath(newLocationX, newLocationY, currentLocationX, currentLocationY), paint);
         }
-
-
-
     }
 
     private Path getPlanePath(int newLocationX, int newLocationY, int currentLocationX, int currentLocationY){
-
-
-
         Path path = new Path();
         path.moveTo((float) currentLocationX, (float) currentLocationY);
 

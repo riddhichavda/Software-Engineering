@@ -33,4 +33,6 @@
     </string>
     <string name="end_text">You won the Game!!!!\nCongratulations!!!</string>
     <string name="end_play_again_button">Play again</string>
+    <string name="history_resume">Resume Game</string>
+    <string name="history_restart">Restart Game</string>
 </resources>
