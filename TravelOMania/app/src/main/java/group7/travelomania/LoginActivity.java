@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         public void run()
         {
             //TODO: Change this line to go to history
-            Intent intent = new Intent(getApplicationContext(), RulesActivity.class);
+            Intent intent = new Intent(getApplicationContext(), PlayerHistoryActivity.class);
             startActivity(intent);
         }
     };
