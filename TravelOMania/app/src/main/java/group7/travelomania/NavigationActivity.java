@@ -31,7 +31,7 @@ public class NavigationActivity extends AppCompatActivity {
     public Continents CurrentContinent;
     public Continents goTo;
 
-    //private HashMap<Continents, float[]> continentPositions;
+    private HashMap<Continents, float[]> continentPositions;
 
 
     private ImageView plane;
@@ -79,6 +79,18 @@ public class NavigationActivity extends AppCompatActivity {
         map.setImageBitmap(BitmapUtility.map_addition_navigation);
 
 
+
+        continentPositions = new HashMap<>(7);
+        continentPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
+        continentPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
+        continentPositions.put(Continents.Asia, new float[]{0.77f, 0.18f});
+        continentPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
+        continentPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
+        continentPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
+        continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
+
+
+
         map.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -117,8 +129,8 @@ public class NavigationActivity extends AppCompatActivity {
 
                 //Update the current location of the plane based on the current continent the player is in.
 
-                currentLocationX = (int)Math.floor(BitmapUtility.continentPositions.get(CurrentContinent)[0] * mapWidth + mapX - plane.getWidth() / 2);
-                currentLocationY = (int)Math.floor(BitmapUtility.continentPositions.get(CurrentContinent)[1] * mapHeight + mapY - plane.getHeight()/2);
+                currentLocationX = (int)Math.floor(continentPositions.get(CurrentContinent)[0] * mapWidth + mapX - plane.getWidth() / 2);
+                currentLocationY = (int)Math.floor(continentPositions.get(CurrentContinent)[1] * mapHeight + mapY - plane.getHeight()/2);
 
                 plane.setX(currentLocationX);
                 plane.setY(currentLocationY);
@@ -155,11 +167,11 @@ public class NavigationActivity extends AppCompatActivity {
         //int newLocationY;
         CurrentContinent = Destination;
 
-        final int newLocationX = (int)Math.floor(BitmapUtility.continentPositions.get(Destination)[0] * mapWidth + mapX - plane.getWidth()/2);
-        final int newLocationY = (int)Math.floor(BitmapUtility.continentPositions.get(Destination)[1] * mapHeight + mapY - plane.getHeight()/2);
+        final int newLocationX = (int)Math.floor(continentPositions.get(Destination)[0] * mapWidth + mapX - plane.getWidth()/2);
+        final int newLocationY = (int)Math.floor(continentPositions.get(Destination)[1] * mapHeight + mapY - plane.getHeight()/2);
         Log.v("Check", Integer.toString(newLocationX) + " " + Integer.toString(newLocationY));
-        Log.v("Continent Check", Float.toString(BitmapUtility.continentPositions.get(Destination)[0]) + " " +
-                Float.toString(BitmapUtility.continentPositions.get(Destination)[1]));
+        Log.v("Continent Check", Float.toString(continentPositions.get(Destination)[0]) + " " +
+                Float.toString(continentPositions.get(Destination)[1]));
 
 
         double distance = Math.sqrt((newLocationX-currentLocationX)*(newLocationX-currentLocationX) +
@@ -192,13 +204,11 @@ public class NavigationActivity extends AppCompatActivity {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float[] pos = (float[]) animation.getAnimatedValue();
-                if (plane.getY() < pos[1]) {
-                    Log.v("Direction", "Down.");
+                if (plane.getY() < pos[1])
                     plane.setRotation((float) (180 + Math.toDegrees(Math.tan(-pos[2]))));
-                } else {
-                    Log.v("Direction", "Up.");
+                else
                     plane.setRotation((float) Math.toDegrees(Math.tan(pos[2])));
-                }
+
                 plane.setX(pos[0]);
                 plane.setY(pos[1]);
                 //Log.v("UpdateListener", Float.toString(pos[0]) + " " + Float.toString(pos[1]) + " " + Double.toString(Math.toDegrees(Math.tan(pos[2]))));

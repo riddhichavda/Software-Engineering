@@ -1,7 +1,9 @@
 package group7.travelomania;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -15,6 +17,7 @@ import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.util.HashMap;
 
 
 public class ContinentSelectionActivity extends AppCompatActivity {
@@ -28,13 +31,16 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
     private ImageView map;
     private ImageView avatar;
-    private ImageView plane;
     private ImageView selection;
 
 
+    private AnimatorSet selectionAnimation;
 
     private boolean isNewGame;
 
+    public HashMap<Continents, float[]> continentPositions;
+
+    private float mapWidth, mapHeight;
     private float mapX, mapY;
 
 
@@ -68,19 +74,30 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         map = (ImageView) findViewById(R.id.imageView_map);
         avatar = (ImageView) findViewById(R.id.imageView_avatar);
         avatar.setImageBitmap(player.avatar);
-        selection = new ImageView(this);
+        selection = (ImageView) findViewById(R.id.imageView_arrowSelection);
         selection.setVisibility(View.INVISIBLE);
-        selection.setImageDrawable(getDrawable(R.drawable.arrow_left));
+        selection.setRotation(90f);
+
 
 
 
         if(currentContinent != null){
-            plane = new ImageView(this);
-            plane.setImageBitmap(BitmapUtility.plane);
+            //plane = new ImageView(this);
+            //plane.setImageBitmap(BitmapUtility.plane);
         }
 
         createBitmap();
         map.setImageBitmap(BitmapUtility.map_addition_selection);
+
+        continentPositions = new HashMap<>(7);
+        continentPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
+        continentPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
+        continentPositions.put(Continents.Asia, new float[]{0.77f, 0.18f});
+        continentPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
+        continentPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
+        continentPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
+        continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
+
 
         final Button btn_Next = (Button)findViewById(R.id.btn_Next);
         final Button btn_Help = (Button)findViewById(R.id.btn_help);
@@ -110,7 +127,8 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 else
                     map.getViewTreeObserver().removeGlobalOnLayoutListener(this);
 
-
+                mapWidth = map.getWidth();
+                mapHeight = (int) Math.round(mapWidth * 0.61087511d);
                 mapX = map.getX();
                 mapY = map.getY() + Math.round((map.getHeight() - BitmapUtility.mapHeight) / 2);
                 Log.v("Map W, H, X, Y", Integer.toString(BitmapUtility.mapWidth) + " " +
@@ -120,6 +138,9 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
                 Log.v("Map W, H, X, Y", Integer.toString(BitmapUtility.mapKey.getWidth()) + " " +
                         Integer.toString((int) Math.floor(BitmapUtility.mapKey.getHeight())));
+
+                //selection.setX();
+
 
             }
         });
@@ -187,6 +208,52 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                     default:
                         break;
                 }
+
+                //selection.setX(BitmapUtility.continentPositions.get(selectedContinent)[0] * BitmapUtility.mapWidth + mapX - selection.getWidth()/2);
+                //selection.setY(BitmapUtility.continentPositions.get(selectedContinent)[1] * BitmapUtility.mapHeight + mapY - selection.getHeight() / 2);
+
+                //selection.getLayoutParams().height = 30;
+                //selection.getLayoutParams().width = 30;
+
+                if(!admin.continentsTraveled.contains(selectedContinent)) {
+                    selection.setX((float) Math.floor(continentPositions.get(selectedContinent)[0] * mapWidth + mapX - (selection.getWidth() / 2)));
+                    selection.setY((float) Math.floor(continentPositions.get(selectedContinent)[1] * mapHeight + mapY - (selection.getHeight() / 1.5)));
+
+                    //final AnimatorSet selectionAnimation = new AnimatorSet();
+                    if (selectionAnimation != null) {
+                        selectionAnimation.cancel();
+                    }
+
+                    selectionAnimation = new AnimatorSet();
+                    ObjectAnimator up = ObjectAnimator.ofFloat(selection, "y", selection.getY() - 10);
+                    up.setDuration(1000);
+                    ObjectAnimator down = ObjectAnimator.ofFloat(selection, "y", selection.getY());
+                    down.setDuration(1000);
+
+                    selectionAnimation.play(up).before(down);
+
+                    selectionAnimation.addListener(new Animator.AnimatorListener() {
+                        private boolean canceled;
+
+                        @Override
+                        public void onAnimationStart(Animator animation) {canceled = false;}
+
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            if (!canceled) {selectionAnimation.start();}
+                        }
+
+                        @Override
+                        public void onAnimationCancel(Animator animation) {canceled = true;}
+
+                        @Override
+                        public void onAnimationRepeat(Animator animation) {}
+                    });
+
+                    selectionAnimation.start();
+
+                    selection.setVisibility(View.VISIBLE);
+                }
                 return true;
             }
         });
@@ -198,6 +265,10 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         avatar.setImageBitmap(player.avatar);
         createBitmap();
         map.setImageBitmap(BitmapUtility.map_addition_selection);
+        if(selectionAnimation != null){
+            selectionAnimation.cancel();
+        }
+        selection.setVisibility(View.INVISIBLE);
         if(admin.continentsTraveled.size() > 0) {
             Log.v("Game","Continue Game");
             currentContinent = admin.continentsTraveled.get(0);
@@ -205,6 +276,14 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         }
         else {
             isNewGame = true;
+        }
+
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus){
+        if(!hasFocus){
+            selectionAnimation.cancel();
         }
     }
 

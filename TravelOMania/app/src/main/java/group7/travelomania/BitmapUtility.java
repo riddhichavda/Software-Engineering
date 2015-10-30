@@ -28,7 +28,7 @@ public class BitmapUtility {
     public static volatile int mapHeight, mapWidth;
     //public static volatile float mapX, mapY;
 
-    public static volatile HashMap<Continents, float[]> continentPositions;
+    //public static volatile HashMap<Continents, float[]> continentPositions;
 
 
     public static void initialize(Context context){
@@ -142,7 +142,7 @@ public class BitmapUtility {
                     64);
         }
 
-        if(BitmapUtility.continentPositions == null) {
+        /*if(BitmapUtility.continentPositions == null) {
             continentPositions = new HashMap<>(7);
             continentPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
             continentPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
@@ -151,7 +151,7 @@ public class BitmapUtility {
             continentPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
             continentPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
             continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
-        }
+        }*/
 
         if(BitmapUtility.avatar_AF == null){
             BitmapUtility.avatar_AF = BitmapUtility.decodeSampledBitmapFromResource(resources,
