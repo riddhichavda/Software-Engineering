@@ -4,12 +4,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Point;
-import android.graphics.drawable.LayerDrawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
-
-import java.util.HashMap;
 
 
 /**
@@ -24,6 +20,7 @@ public class BitmapUtility {
     public static volatile Bitmap map_af, map_an, map_as, map_eu, map_oc, map_na, map_sa;
     public static volatile Bitmap planePaths;
     public static volatile Bitmap map_addition_selection, map_addition_navigation;
+
 
     public static volatile int mapHeight, mapWidth;
     //public static volatile float mapX, mapY;
