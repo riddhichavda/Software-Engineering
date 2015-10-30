@@ -181,7 +181,7 @@ public class AvatarSelectionActivity extends AppCompatActivity {
     }
 
     private void goToNextActivity(){
-        Intent intent = new Intent(this, CategorySelectionActivity.class);
+        Intent intent = new Intent(this, Antarctica_CategoryActivity.class);
         startActivity(intent);
     }
 
