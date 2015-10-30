@@ -2,6 +2,7 @@ package group7.travelomania;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.util.Log;
 
@@ -85,6 +86,18 @@ public class Player {
     public void playGame(String uname){
 
     }
+
+    public String getContinentString(){
+        String ret = "";
+
+        for(Continents c: continentsTraveled){
+            ret = ret + c.toString() + ",";
+        }
+        ret = ret.substring(0, ret.length()-2);
+
+        return ret;
+    }
+
 
 
 

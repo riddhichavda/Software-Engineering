@@ -96,6 +96,7 @@ public class LoginDatabaseHelper
         return ret;
     }
 
+
     public Continents getCurrentLevel(String userName){
         Cursor cursor = getPlayerRow(userName);
         if (cursor == null)
@@ -116,18 +117,22 @@ public class LoginDatabaseHelper
     }
 
 
-    public void  updateEntry(String userName, String password, String fullname, String question, String answer)
+    public void resetProgress(String userName)
     {
         // Define the updated row content.
         ContentValues updatedValues = new ContentValues();
         // Assign values for each row.
         updatedValues.put("USERNAME", userName);
-        updatedValues.put("PASSWORD",password);
-        updatedValues.put("FULL_NAME", fullname);
-        updatedValues.put("SECURITY_QUESTION", question);
-        updatedValues.put("SECURITY_ANSWER", answer);
+        updatedValues.put("LEVEL_ATTEMPTS",0);
+        updatedValues.put("CURRENT_LEVEL", "");
+        updatedValues.put("LEVELS_COMPLETED", "");
+        updatedValues.put("CURRENT_CATEGORY", "");
+        updatedValues.put("NUM_HINTS", 0);
+        updatedValues.put("TOTAL_SCORE", 0);
+        updatedValues.put("LEVEL_SCORE", 0);
+
 
         String where="USERNAME = ?";
-        db.update("LOGIN",updatedValues, where, new String[]{userName});
+        db.update("PLAYER",updatedValues, where, new String[]{userName});
     }
 }
