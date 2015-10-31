@@ -44,7 +44,8 @@ public class AvatarSelectionActivity extends AppCompatActivity {
         rightArrow = (ImageView) findViewById(R.id.imageView_RightArrow);
 
         avatarIndex = 0;
-        selectedIndex = 0;
+        selectedIndex = player.avatarId < 0 ? 0 : player.avatarId;
+        Log.v("avatarIndex", Integer.toString(selectedIndex));
 
         updateAvatars();
 
@@ -76,6 +77,7 @@ public class AvatarSelectionActivity extends AppCompatActivity {
                         //updatePlayerAvatar(BitmapUtility.avatar_NA);
                         break;
                 }
+                player.avatarId = selectedIndex;
                 goToNextActivity();
             }
         });

@@ -3,6 +3,7 @@ package group7.travelomania;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,6 +18,10 @@ public class HomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home_screen);
+
+		Log.i("Start", "Bitmap.initialize");
+		BitmapUtility.initialize(this);
+		Log.i("End", "Bitmap.initialize");
 
 		//copy the database to device storage if it hasn't been done already
 		dbHelper = new DataBaseHelper(getApplicationContext());
@@ -57,7 +62,7 @@ public class HomeScreen extends AppCompatActivity {
 	}
 
 	private void goToContinentSelectionActvity(){
-		Intent intent = new Intent(getApplicationContext(), ContinentSelectionActivity.class);
+		Intent intent = new Intent(getApplicationContext(), LevelActivity.class);
 		startActivity(intent);
 	}
 

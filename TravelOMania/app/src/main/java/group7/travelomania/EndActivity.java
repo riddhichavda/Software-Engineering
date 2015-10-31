@@ -26,7 +26,7 @@ public class EndActivity extends AppCompatActivity {
 
     private HashMap<Continents, float[]> continentPositions;
 
-    private Admin admin;
+    //private Admin admin;
     private Player player;
 
     private ImageView map;
@@ -56,7 +56,7 @@ public class EndActivity extends AppCompatActivity {
         continentPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
         continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
 
-        admin = Admin.getInstance(this);
+        //admin = Admin.getInstance(this);
         player = Player.getInstance(this);
 
         final Button btn_playAgain = (Button) findViewById(R.id.btn_playAgain);
@@ -64,7 +64,9 @@ public class EndActivity extends AppCompatActivity {
         btn_playAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                admin.continentsTraveled.clear();
+                //admin.continentsTraveled.clear();
+                player.newGame(player.userName);
+
                 goToNextActivity();
             }
         });
@@ -124,11 +126,11 @@ public class EndActivity extends AppCompatActivity {
 
         canvas = new Canvas(BitmapUtility.planePaths);
 
-        for(int continentIndex = 1; continentIndex < admin.continentsTraveled.size(); continentIndex++) {
-            int currentLocationX = (int) Math.floor(continentPositions.get(admin.continentsTraveled.get(continentIndex - 1))[0] * mapWidth + mapX - 45);
-            int currentLocationY = (int) Math.floor(continentPositions.get(admin.continentsTraveled.get(continentIndex - 1))[1] * mapHeight + mapY - 15);
-            int newLocationX = (int) Math.floor(continentPositions.get(admin.continentsTraveled.get(continentIndex))[0] * mapWidth + mapX - 45);
-            int newLocationY = (int) Math.floor(continentPositions.get(admin.continentsTraveled.get(continentIndex))[1] * mapHeight + mapY - 15);
+        for(int continentIndex = 0; continentIndex < player.continentsTraveled.size(); continentIndex++) {
+            int currentLocationX = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex - 1))[0] * mapWidth + mapX - 45);
+            int currentLocationY = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex - 1))[1] * mapHeight + mapY - 15);
+            int newLocationX = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex))[0] * mapWidth + mapX - 45);
+            int newLocationY = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex))[1] * mapHeight + mapY - 15);
             canvas.drawPath(getPlanePath(newLocationX, newLocationY, currentLocationX, currentLocationY), paint);
         }
     }

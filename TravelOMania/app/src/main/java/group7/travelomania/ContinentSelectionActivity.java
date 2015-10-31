@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class ContinentSelectionActivity extends AppCompatActivity {
 
     Continents selectedContinent;
-    Continents currentContinent;
+    //Continents currentContinent;
 
     private Player player;
     private Admin admin;
@@ -60,7 +60,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
         if(admin.continentsTraveled.size() > 0) {
             Log.v("Game","Continue Game");
-            currentContinent = admin.continentsTraveled.get(0);
+            //currentContinent = admin.continentsTraveled.get(0);
             isNewGame = false;
         }
         else {
@@ -78,13 +78,6 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         selection.setVisibility(View.INVISIBLE);
         selection.setRotation(90f);
 
-
-
-
-        if(currentContinent != null){
-            //plane = new ImageView(this);
-            //plane.setImageBitmap(BitmapUtility.plane);
-        }
 
         createBitmap();
         map.setImageBitmap(BitmapUtility.map_addition_selection);
@@ -226,7 +219,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 //selection.getLayoutParams().height = 30;
                 //selection.getLayoutParams().width = 30;
 
-                if(!admin.continentsTraveled.contains(selectedContinent)) {
+                if(!player.continentsTraveled.contains(selectedContinent)) {
                     selection.setX((float) Math.floor(continentPositions.get(selectedContinent)[0] * mapWidth + mapX - (selection.getWidth() / 2)));
                     selection.setY((float) Math.floor(continentPositions.get(selectedContinent)[1] * mapHeight + mapY - (selection.getHeight() / 1.5)));
 
@@ -280,15 +273,14 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             selectionAnimation.cancel();
         }
         selection.setVisibility(View.INVISIBLE);
-        if(admin.continentsTraveled.size() > 0) {
+        if(player.continentsTraveled.size() > 0) {
             Log.v("Game","Continue Game");
-            currentContinent = admin.continentsTraveled.get(0);
             isNewGame = false;
         }
         else {
             isNewGame = true;
         }
-        if(admin.continentsTraveled.size() == 7){
+        if(player.continentsTraveled.size() == 7){
             findViewById(R.id.btn_EndTest).setVisibility(View.VISIBLE);
         }
 
@@ -313,33 +305,34 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         canvas.drawBitmap(BitmapUtility.map_bw, 0,0, paint);
         //canvas.drawBitmap(BitmapUtility.map_af, 0, 0, paint);
-        if(!admin.continentsTraveled.contains(Continents.Africa)){
+        if(!player.continentsTraveled.contains(Continents.Africa)){
             canvas.drawBitmap(BitmapUtility.map_af, 0, 0, paint);
         }
-        if(!admin.continentsTraveled.contains(Continents.Antarctica)){
+        if(!player.continentsTraveled.contains(Continents.Antarctica)){
             canvas.drawBitmap(BitmapUtility.map_an, 0, 0, paint);
         }
-        if(!admin.continentsTraveled.contains(Continents.Asia)){
+        if(!player.continentsTraveled.contains(Continents.Asia)){
             canvas.drawBitmap(BitmapUtility.map_as, 0, 0, paint);
         }
-        if(!admin.continentsTraveled.contains(Continents.Europe)){
+        if(!player.continentsTraveled.contains(Continents.Europe)){
             canvas.drawBitmap(BitmapUtility.map_eu, 0, 0, paint);
         }
-        if(!admin.continentsTraveled.contains(Continents.Oceania)){
+        if(!player.continentsTraveled.contains(Continents.Oceania)){
             canvas.drawBitmap(BitmapUtility.map_oc, 0, 0, paint);
         }
-        if(!admin.continentsTraveled.contains(Continents.NorthAmerica)){
+        if(!player.continentsTraveled.contains(Continents.NorthAmerica)){
             canvas.drawBitmap(BitmapUtility.map_na, 0, 0, paint);
         }
-        if(!admin.continentsTraveled.contains(Continents.SouthAmerica)){
+        if(!player.continentsTraveled.contains(Continents.SouthAmerica)){
             canvas.drawBitmap(BitmapUtility.map_sa, 0, 0, paint);
         }
         //map.setImageBitmap(BitmapUtility.map_addition);
     }
 
     private void goToNextActivity(Continents nextContinent){
-        if(nextContinent != null && !admin.continentsTraveled.contains(nextContinent)) {
-            admin.continentsTraveled.add(0,nextContinent);
+        if(nextContinent != null && !player.continentsTraveled.contains(nextContinent)) {
+            //player.continentsTraveled.add(0,nextContinent);
+            player.currentContinent = nextContinent;
             Intent intent;
             if(isNewGame){
                 intent = new Intent(this, AvatarSelectionActivity.class);
@@ -354,15 +347,15 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
     private void goToEnd(){
 
-        admin.continentsTraveled.clear();
+        player.continentsTraveled.clear();
 
-        admin.continentsTraveled.add(Continents.Africa);
-        admin.continentsTraveled.add(Continents.Antarctica);
-        admin.continentsTraveled.add(Continents.Oceania);
-        admin.continentsTraveled.add(Continents.Asia);
-        admin.continentsTraveled.add(Continents.NorthAmerica);
-        admin.continentsTraveled.add(Continents.SouthAmerica);
-        admin.continentsTraveled.add(Continents.Europe);
+        player.continentsTraveled.add(Continents.Africa);
+        player.continentsTraveled.add(Continents.Antarctica);
+        player.continentsTraveled.add(Continents.Oceania);
+        player.continentsTraveled.add(Continents.Asia);
+        player.continentsTraveled.add(Continents.NorthAmerica);
+        player.continentsTraveled.add(Continents.SouthAmerica);
+        player.continentsTraveled.add(Continents.Europe);
 
         Intent intent = new Intent(this, EndActivity.class);
         startActivity(intent);

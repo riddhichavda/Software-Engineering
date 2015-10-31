@@ -52,11 +52,18 @@ public class LoginDatabaseHelper
         newValues.put("FULL_NAME", fullname);
         newValues.put("SECURITY_QUESTION", question);
         newValues.put("SECURITY_ANSWER", answer);
+        newValues.put("LEVEL_ATTEMPTS",0);
+        newValues.put("CURRENT_LEVEL", "");
+        newValues.put("LEVELS_COMPLETED", "");
+        newValues.put("CURRENT_CATEGORY", "");
+        newValues.put("AVATAR", -1);
+        newValues.put("NUM_HINTS", 0);
+        newValues.put("TOTAL_SCORE", 0);
+        newValues.put("LEVEL_SCORE", 0);
+
 
         // Insert the row into your table
         db.insert("PLAYER", null, newValues);
-
-
 
     }
 
@@ -87,10 +94,17 @@ public class LoginDatabaseHelper
         Cursor cursor = getPlayerRow(userName);
         if(cursor == null)
             return null;
-        String all_levels = cursor.getString(cursor.getColumnIndex("level_completed"));
+        cursor.moveToNext();
+        String all_levels;
+        all_levels = cursor.getString(cursor.getColumnIndex("levels_completed"));
         String[] level_arr = all_levels.split(",");
-        for(String s: level_arr){
-            ret.add(Continents.valueOf(s));
+        for (String s : level_arr) {
+            try {
+                ret.add(Continents.valueOf(s));
+            }
+            catch (Exception e){
+                Log.e("Exception", e.toString());
+            }
         }
         cursor.close();
         return ret;
@@ -101,10 +115,53 @@ public class LoginDatabaseHelper
         Cursor cursor = getPlayerRow(userName);
         if (cursor == null)
             return null;
-        Continents c = Continents.valueOf(cursor.getString(cursor.getColumnIndex("current_level")));
+        Log.v("index", Integer.toString(cursor.getColumnIndex("current_level")) + " " + Integer.toString(cursor.getColumnIndex("current_level")));
+
+        Continents c;
+        cursor.moveToNext();
+        String cc = "RED";
+        Log.v("cc", cc + " " + cursor.getString(cursor.getColumnIndex("current_level")));
+        try{
+            c = Continents.valueOf(cursor.getString(cursor.getColumnIndex("current_level")));
+        }
+        catch (Exception e){
+            Log.v("Exception", e.toString());
+            c = null;
+        }
+
+        Log.v("cc", "Obama");
+        Log.v("cc", cc);
+        //c = Continents.valueOf(cc);
         cursor.close();
         return c;
     }
+
+    public int getNumHints(String userName){
+        Cursor cursor = getPlayerRow(userName);
+        if (cursor == null){
+            return 0;
+        }
+        int numHints = 0;
+        cursor.moveToNext();
+        if(cursor.getColumnIndex("num_hints")>=0)
+            numHints = cursor.getInt(cursor.getColumnIndex("num_hints"));
+        cursor.close();
+        return numHints;
+    }
+
+    public int getAvatar(String userName){
+        Cursor cursor = getPlayerRow(userName);
+        if(cursor == null){
+            return -1;
+        }
+
+        cursor.moveToNext();
+        return cursor.getInt(cursor.getColumnIndex("avatar"));
+
+
+
+    }
+
 
     private Cursor getPlayerRow(String userName){
         Cursor cursor=db.query("PLAYER", null, "USERNAME=?", new String[]{userName}, null, null, null);
@@ -135,4 +192,26 @@ public class LoginDatabaseHelper
         String where="USERNAME = ?";
         db.update("PLAYER",updatedValues, where, new String[]{userName});
     }
+
+    public void saveProgress(String userName, int level_attempts, String current_level, String levels_completed, String current_category, int num_hints, int total_score, int level_score, int avatar)
+    {
+        // Define the updated row content.
+        ContentValues updatedValues = new ContentValues();
+        // Assign values for each row.
+        updatedValues.put("USERNAME", userName);
+        updatedValues.put("LEVEL_ATTEMPTS",level_attempts);
+        updatedValues.put("CURRENT_LEVEL", current_level);
+        updatedValues.put("LEVELS_COMPLETED", levels_completed);
+        updatedValues.put("CURRENT_CATEGORY", current_category);
+        updatedValues.put("NUM_HINTS", num_hints);
+        updatedValues.put("TOTAL_SCORE", total_score);
+        updatedValues.put("LEVEL_SCORE", level_score);
+        updatedValues.put("AVATAR", avatar);
+
+
+        String where="USERNAME = ?";
+        db.update("PLAYER",updatedValues, where, new String[]{userName});
+    }
+
+
 }

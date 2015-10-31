@@ -48,7 +48,7 @@ public class NavigationActivity extends AppCompatActivity {
 
     private float planeSpeed = .1f;
 
-    private Admin admin;
+    private Player player;
 
 
     @Override
@@ -57,17 +57,18 @@ public class NavigationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_navigation);
         Log.i("Start", "NavigationActivity");
 
-        //Get admin instance.
-        admin = Admin.getInstance(this);
+        //Get player instance.
+        player = Player.getInstance(this);
+
 
         //Initialize bitmaps and useful bitmap information.
         Log.i("Start", "Bitmap.initialize");
         BitmapUtility.initialize(this);
         Log.i("End", "Bitmap.initialize");
 
-        //Initialize continents from the admin construct.
-        CurrentContinent = admin.continentsTraveled.get(1);
-        goTo = admin.continentsTraveled.get(0);
+        //Initialize continents from the player construct.
+        CurrentContinent = player.continentsTraveled.get(0);
+        goTo = player.currentContinent;
 
         //Initialize views.
         map = (ImageView) findViewById(R.id.imageView_map);
