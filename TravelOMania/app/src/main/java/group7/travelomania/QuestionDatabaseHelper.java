@@ -46,7 +46,7 @@ public class QuestionDatabaseHelper {
     public ArrayList<Question> getQuestions(String continent, String difficulty, String category)
     {
         ArrayList<Question> ret = new ArrayList<>();
-        Cursor cursor=db.query("QUESTION_DB", null, "CONTINENT=? AND DIFFICULTY_LEVEL=? AND CATEGORY=?", new String[]{continent, difficulty, category}, null, null, null);
+        Cursor cursor=db.query("QUESTIONS_DB", null, "CONTINENT=? AND \"DIFFICULTY LEVEL\"=? AND CATEGORY=?", new String[]{continent, difficulty, category}, null, null, null);
         if(cursor.getCount()<1) // UserName Not Exist
         {
             cursor.close();
