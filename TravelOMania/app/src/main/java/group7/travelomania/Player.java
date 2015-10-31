@@ -27,11 +27,12 @@ public class Player {
     public ArrayList<Continents> continentsTraveled;
     public Continents currentContinent;
 
+    public Category selectedCategory;
+
     public int numHints;
     public int totalScore;
 
     public boolean loggedIn;
-
 
     private LoginDatabaseHelper loginDbHelper;
 

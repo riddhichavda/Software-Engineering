@@ -1,16 +1,18 @@
 package group7.travelomania;
 
-import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.media.Image;
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
-import android.widget.Chronometer;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -30,6 +32,7 @@ public class LevelActivity extends AppCompatActivity {
     private Question currentQuestion;
     private int questionCounter;
     private boolean questionAnswered;
+    private boolean hintUsed;
 
     private TextView textView_level;
     private TextView textView_questionNumber;
@@ -38,6 +41,12 @@ public class LevelActivity extends AppCompatActivity {
     private ArrayList<Button> buttonList;
     private ArrayList<String> nameList;
     private Button correctButton;
+    private Button btn_next;
+    private RelativeLayout btn_hint;
+
+    private ImageView imageView_bulb;
+    private TextView textView_numHints;
+
 
 
     @Override
@@ -45,9 +54,17 @@ public class LevelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level);
 
-        //player = player.getInstance(this);
+        player = player.getInstance(this);
+
+        player.totalScore = 0;
+
+
         final TextView textView_timer = (TextView) findViewById(R.id.textView_Timer);
-        final Button btn_next = (Button) findViewById(R.id.btn_next);
+        btn_next = (Button) findViewById(R.id.btn_next);
+        final Button btn_help = (Button) findViewById(R.id.btn_help);
+        final ImageView imageView_avatar = (ImageView) findViewById(R.id.imageView_Avatar);
+        //imageView_avatar.setImageBitmap(player.avatar);
+
         buttonList = new ArrayList<>();
         buttonList.add((Button) findViewById(R.id.btn_option1));
         buttonList.add((Button) findViewById(R.id.btn_option2));
@@ -56,6 +73,11 @@ public class LevelActivity extends AppCompatActivity {
         textView_question = (TextView) findViewById(R.id.textView_question);
         textView_questionNumber = (TextView) findViewById(R.id.textView_questionNumber);
         textView_level = (TextView) findViewById(R.id.textView_level);
+        textView_level.setText("LEVEL " + (player.continentsTraveled.size()+1));
+        btn_hint = (RelativeLayout) findViewById(R.id.btn_hint);
+        imageView_bulb = (ImageView) findViewById(R.id.imageView_bulb);
+        textView_numHints = (TextView) findViewById(R.id.textView_numHints);
+
 
         nameList = new ArrayList<>();
         nameList.add("a. ");
@@ -65,7 +87,9 @@ public class LevelActivity extends AppCompatActivity {
 
         QuestionDatabaseHelper qdbh = new QuestionDatabaseHelper(this);
         qdbh.open();
-        questions = qdbh.getQuestions("NorthAmerica", "easy", "capitals");
+        questions = qdbh.getQuestions(player.currentContinent.toString(),
+                                      player.continentsTraveled.size()+1 > 3 ? (player.continentsTraveled.size()+1 > 6 ? "hard":"medium"):"easy",
+                                      player.selectedCategory.toString());
         qdbh.close();
 
         for(Question q: questions)
@@ -78,7 +102,7 @@ public class LevelActivity extends AppCompatActivity {
 
         questionIter = questions.iterator();
         questionCounter = 0;
-        nextQuestion();
+
 
         countDownTimer = new CountDownTimer(59999, 1000) {
             @Override
@@ -94,65 +118,82 @@ public class LevelActivity extends AppCompatActivity {
             }
         };
 
-        countDownTimer.start();
+
 
 
         buttonList.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textView_timer.setBackgroundColor(Color.TRANSPARENT);
-                checkCorectness((Button) v);
+                checkCorrectness((Button) v);
             }
         });
         buttonList.get(1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textView_timer.setBackgroundColor(Color.TRANSPARENT);
-                checkCorectness((Button)v);
+                checkCorrectness((Button) v);
             }
         });
         buttonList.get(2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textView_timer.setBackgroundColor(Color.TRANSPARENT);
-                checkCorectness((Button)v);
+                checkCorrectness((Button) v);
             }
         });
         buttonList.get(3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textView_timer.setBackgroundColor(Color.TRANSPARENT);
-                checkCorectness((Button)v);
+                checkCorrectness((Button) v);
             }
         });
 
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(questionAnswered)
+                if (questionAnswered)
                     nextQuestion();
             }
         });
+        btn_hint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showHint();
+            }
+        });
+        btn_help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showRules();
+            }
+        });
+
+        nextQuestion();
     }
 
-    private void checkCorectness(Button choice){
+    private void checkCorrectness(Button choice){
         if(!questionAnswered) {
             questionAnswered = true;
             countDownTimer.cancel();
             if (choice.equals(correctButton)) {
                 choice.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
+                player.totalScore += 10;
             } else {
                 correctButton.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
                 choice.getBackground().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
             }
+            btn_next.getBackground().setColorFilter(null);
         }
     }
 
     private void nextQuestion(){
         if(questionIter.hasNext()) {
             questionAnswered = false;
+            hintUsed = false;
             questionCounter++;
-            textView_questionNumber.setText(questionCounter + "/7");
+            textView_questionNumber.setText(questionCounter + "/" + questions.size());
             currentQuestion = questionIter.next();
             textView_question.setText(currentQuestion.question);
             long seed = System.nanoTime();
@@ -165,15 +206,51 @@ public class LevelActivity extends AppCompatActivity {
             correctButton = buttonList.get(0);
 
             for(Button btn: buttonList) btn.getBackground().setColorFilter(null);
+            btn_next.getBackground().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
+            countDownTimer.start();
         }
         else{
             //TODO quiz is done.
+            Intent intent = new Intent(this, ScoreCardActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 
     private void resetTimer(){
         countDownTimer.cancel();
         countDownTimer.start();
+    }
+
+    private void showHint(){
+        if(player.numHints>0 && !hintUsed){
+            long seed = System.nanoTime();
+            Collections.shuffle(buttonList, new Random(seed));
+            Collections.shuffle(nameList, new Random(seed));
+
+            int answersTakenOff = 0;
+            int index = 0;
+            while(answersTakenOff < 2){
+                if(!buttonList.get(index).equals(correctButton)){
+                    buttonList.get(index).getBackground().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
+                    answersTakenOff++;
+                }
+                index++;
+            }
+
+            if(Build.VERSION.SDK_INT >= 21)
+                imageView_bulb.setImageDrawable(getDrawable(R.drawable.bulb_on));
+            else
+                imageView_bulb.setImageDrawable(getResources().getDrawable(R.drawable.bulb_on));
+
+            player.numHints--;
+            textView_numHints.setText(player.numHints);
+            hintUsed = true;
+        }
+    }
+
+    private void showRules(){
+        Player.viewRules(this);
     }
 
 }
