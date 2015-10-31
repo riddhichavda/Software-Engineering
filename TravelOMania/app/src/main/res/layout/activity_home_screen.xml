@@ -8,13 +8,6 @@
     android:orientation="vertical">
 
     <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Continent Selection"
-        android:id="@+id/button_ContinentSelection"
-         />
-
-    <Button
         android:id="@+id/buttonSignIN"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

@@ -37,14 +37,7 @@ public class HomeScreen extends AppCompatActivity {
 
 		btnSignIn = (Button) findViewById(R.id.buttonSignIN);
 		btnSignUp = (Button) findViewById(R.id.buttonSignUP);
-		btnContinent = (Button) findViewById(R.id.button_ContinentSelection);
 
-		btnContinent.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				goToContinentSelectionActvity();
-			}
-		});
 
 		btnSignIn.setOnClickListener(new View.OnClickListener() {
 			@Override
