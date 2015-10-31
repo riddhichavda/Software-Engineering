@@ -3,8 +3,8 @@ package group7.travelomania;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,27 +12,23 @@ import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
 
-
-public class CategorySelectionActivity extends AppCompatActivity
-{
+public class Antarctica_CategoryActivity extends AppCompatActivity {
 
     Category categorySelected;
 
     private ImageView category;
-    //private float categoryX,categoryY;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category_selection);
+        setContentView(R.layout.activity_antarctica__category);
 
         categorySelected = null;
+        category = (ImageView) findViewById(R.id.imageView_antarctica);
+        final Button btnNext = (Button) findViewById(R.id.btnNext);
 
-
-        category = (ImageView) findViewById(R.id.imageView_category);
-        final Button buttonNext = (Button) findViewById(R.id.buttonNext);
-
-        buttonNext.setOnClickListener(new View.OnClickListener() {
+        btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToNextActivity();
@@ -43,10 +39,9 @@ public class CategorySelectionActivity extends AppCompatActivity
         category.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                if (Build.VERSION.SDK_INT >= 16){
+                if (Build.VERSION.SDK_INT >= 16) {
                     category.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                }
-                else category.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                } else category.getViewTreeObserver().removeGlobalOnLayoutListener(this);
 
                 //categoryX = category.getX();
                 //categoryY = category.getY();
@@ -66,39 +61,41 @@ public class CategorySelectionActivity extends AppCompatActivity
                 //int realX = (int) (touchX - categoryX);
                 //int realY = (int) (touchY - categoryY);
 
-                int pixel = ((BitmapDrawable)category.getDrawable()).getBitmap().getPixel(touchX,touchY);
-                Log.v("pixel color",Integer.toString(pixel));
+                int pixel = ((BitmapDrawable) category.getDrawable()).getBitmap().getPixel(touchX, touchY);
+                Log.v("pixel color", Integer.toString(pixel));
 
-                switch(pixel){
-                    case -14882191:
-                        categorySelected = Category.Sports;
+                switch (pixel) {
+                    case -313229:
+                        categorySelected = Category.Research_Facilities;
                         break;
-                    case -10255826:
+                    case -16524679:
+                        categorySelected = Category.Biodiversity;
+                        break;
+                    case -13176842:
+                        categorySelected = Category.Research;
+                        break;
+                    case -3575364:
+                        categorySelected = Category.Geography_and_Geology;
+                        break;
+                    case -15412862:
+                        categorySelected = Category.History_of_Exploration;
+                        break;
+                    case -3977263:
                         categorySelected = Category.Politics;
-                        break;
-                    case  -14192504:
-                        categorySelected = Category.Landmarks;
-                        break;
-                    case -16133868:
-                        categorySelected = Category.Festivals;
-                        break;
-                    case -12767980:
-                        categorySelected = Category.Cuisines;
-                        break;
-                    case -990562:
-                        categorySelected = Category.Capitals;
                         break;
                 }
                 return true;
             }
         });
-}
+    }
+
+
+
+
     private void goToNextActivity(){
         Intent intent = new Intent(this, ScoreCardActivity.class);
         startActivity(intent);
 
 
     }
-        }
-
-
+}

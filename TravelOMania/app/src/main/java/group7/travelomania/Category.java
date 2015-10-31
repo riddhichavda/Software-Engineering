@@ -8,6 +8,11 @@ public enum Category {
     Sports,
     Landmarks,
     Cuisines,
-    Fesitvals,
-    Capitals
+    Festivals,
+    Capitals,
+    Research_Facilities,
+    Biodiversity,
+    Research,
+    Geography_and_Geology,
+    History_of_Exploration
 }
