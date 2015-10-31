@@ -41,8 +41,6 @@
         </activity>
         <activity android:name=".EndActivity" >
         </activity>
-        <activity android:name=".Antarctica_CategoryActivity" >
-        </activity>
     </application>
 
 </manifest>
