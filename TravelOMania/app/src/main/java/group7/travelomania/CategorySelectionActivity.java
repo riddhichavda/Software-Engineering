@@ -19,7 +19,8 @@ public class CategorySelectionActivity extends AppCompatActivity
     Category categorySelected;
 
     private ImageView category;
-    //private float categoryX,categoryY;
+
+    Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +28,31 @@ public class CategorySelectionActivity extends AppCompatActivity
         setContentView(R.layout.activity_category_selection);
 
         categorySelected = null;
+        player = Player.getInstance(this);
+
+        if(player.currentContinent == Continents.Antarctica){
+            if(Build.VERSION.SDK_INT >= 21){
+                category.setImageDrawable(getDrawable(R.drawable.antarctica));
+            }
+            else category.setImageDrawable(getResources().getDrawable(R.drawable.antarctica));
+        }
+
+        else {
+            category = (ImageView) findViewById(R.id.imageView_category);
 
 
-        category = (ImageView) findViewById(R.id.imageView_category);
+
+            category.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    if (Build.VERSION.SDK_INT >= 16) {
+                        category.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    } else category.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+
+                }
+            });
+        }
         final Button buttonNext = (Button) findViewById(R.id.buttonNext);
-
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,20 +60,6 @@ public class CategorySelectionActivity extends AppCompatActivity
 
             }
         });
-
-        category.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                if (Build.VERSION.SDK_INT >= 16){
-                    category.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                }
-                else category.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-
-                //categoryX = category.getX();
-                //categoryY = category.getY();
-            }
-        });
-
         category.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -62,34 +69,55 @@ public class CategorySelectionActivity extends AppCompatActivity
                 Log.v("Touch X, Y", Integer.toString(touchX) + " " + Integer.toString(touchY));
 
 
-                // get the true x and y in pixel in bitmap
-                //int realX = (int) (touchX - categoryX);
-                //int realY = (int) (touchY - categoryY);
+                int pixel = ((BitmapDrawable) category.getDrawable()).getBitmap().getPixel(touchX, touchY);
+                Log.v("pixel color", Integer.toString(pixel));
 
-                int pixel = ((BitmapDrawable)category.getDrawable()).getBitmap().getPixel(touchX,touchY);
-                Log.v("pixel color",Integer.toString(pixel));
+                if (player.currentContinent == Continents.Antarctica) {
 
-                switch(pixel){
-                    case -14882191:
-                        categorySelected = Category.Sports;
-                        break;
-                    case -10255826:
-                        categorySelected = Category.Politics;
-                        break;
-                    case  -14192504:
-                        categorySelected = Category.Landmarks;
-                        break;
-                    case -16133868:
-                        categorySelected = Category.Festivals;
-                        break;
-                    case -12767980:
-                        categorySelected = Category.Cuisines;
-                        break;
-                    case -990562:
-                        categorySelected = Category.Capitals;
-                        break;
+                    switch (pixel) {
+                        case -313229:
+                            categorySelected = Category.Research_Facilities;
+                            break;
+                        case -16524679:
+                            categorySelected = Category.Biodiversity;
+                            break;
+                        case -13176842:
+                            categorySelected = Category.Research;
+                            break;
+                        case -3575364:
+                            categorySelected = Category.Geography_and_Geology;
+                            break;
+                        case -15412862:
+                            categorySelected = Category.History_of_Exploration;
+                            break;
+                        case -3977263:
+                            categorySelected = Category.Politics;
+                            break;
+                    }
+                    return true;
+                } else {
+                    switch (pixel) {
+                        case -14882191:
+                            categorySelected = Category.Sports;
+                            break;
+                        case -10255826:
+                            categorySelected = Category.Politics;
+                            break;
+                        case -14192504:
+                            categorySelected = Category.Landmarks;
+                            break;
+                        case -16133868:
+                            categorySelected = Category.Festivals;
+                            break;
+                        case -12767980:
+                            categorySelected = Category.Cuisines;
+                            break;
+                        case -990562:
+                            categorySelected = Category.Capitals;
+                            break;
+                    }
+                    return true;
                 }
-                return true;
             }
         });
 }
