@@ -97,7 +97,7 @@ public class Player {
                 break;
         }
 
-        if(currentContinent != null || continentsTraveled != null){
+        if(continentsTraveled.size() != 0){
             hasPlayed = true;
         }
     }
