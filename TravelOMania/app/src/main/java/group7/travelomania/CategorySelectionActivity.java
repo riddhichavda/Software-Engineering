@@ -120,7 +120,7 @@ public class CategorySelectionActivity extends AppCompatActivity
         });
 }
     private void goToNextActivity(){
-        Intent intent = new Intent(this, ScoreCardActivity.class);
+        Intent intent = new Intent(this, LevelActivity.class);
         startActivity(intent);
 
 
