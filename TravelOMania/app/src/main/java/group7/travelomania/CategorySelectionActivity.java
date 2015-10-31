@@ -27,6 +27,7 @@ public class CategorySelectionActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_selection);
 
+        category = (ImageView) findViewById(R.id.imageView_category);
         categorySelected = null;
         player = Player.getInstance(this);
 
@@ -36,9 +37,6 @@ public class CategorySelectionActivity extends AppCompatActivity
             }
             else category.setImageDrawable(getResources().getDrawable(R.drawable.antarctica));
         }
-
-        else {
-            category = (ImageView) findViewById(R.id.imageView_category);
 
 
 
@@ -51,7 +49,7 @@ public class CategorySelectionActivity extends AppCompatActivity
 
                 }
             });
-        }
+
         final Button buttonNext = (Button) findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
