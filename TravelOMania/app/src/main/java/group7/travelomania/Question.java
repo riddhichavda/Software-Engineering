@@ -17,4 +17,11 @@ public class Question {
     public boolean isCorrect(String ans){
         return ans.equals(answer);
     }
+
+    public String toString(){
+        String ret;
+        ret = question + "\n" + answer;
+        return ret;
+    }
+
 }
