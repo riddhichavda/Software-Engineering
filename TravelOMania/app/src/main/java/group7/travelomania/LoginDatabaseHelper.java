@@ -93,7 +93,7 @@ public class LoginDatabaseHelper
         ArrayList<Continents> ret = new ArrayList<>();
         Cursor cursor = getPlayerRow(userName);
         if(cursor == null)
-            return null;
+            return ret;
         cursor.moveToNext();
         String all_levels;
         all_levels = cursor.getString(cursor.getColumnIndex("levels_completed"));
