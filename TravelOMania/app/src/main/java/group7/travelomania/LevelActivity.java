@@ -54,7 +54,7 @@ public class LevelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level);
 
-        player = player.getInstance(this);
+        player = Player.getInstance(this);
 
         player.totalScore = 0;
 
@@ -62,8 +62,8 @@ public class LevelActivity extends AppCompatActivity {
         final TextView textView_timer = (TextView) findViewById(R.id.textView_Timer);
         btn_next = (Button) findViewById(R.id.btn_next);
         final Button btn_help = (Button) findViewById(R.id.btn_help);
-        final ImageView imageView_avatar = (ImageView) findViewById(R.id.imageView_Avatar);
-        //imageView_avatar.setImageBitmap(player.avatar);
+        final ImageView imageView_avatar = (ImageView) findViewById(R.id.imageView_avatar);
+        imageView_avatar.setImageBitmap(player.avatar);
 
         buttonList = new ArrayList<>();
         buttonList.add((Button) findViewById(R.id.btn_option1));
@@ -77,6 +77,7 @@ public class LevelActivity extends AppCompatActivity {
         btn_hint = (RelativeLayout) findViewById(R.id.btn_hint);
         imageView_bulb = (ImageView) findViewById(R.id.imageView_bulb);
         textView_numHints = (TextView) findViewById(R.id.textView_numHints);
+        textView_numHints.setText(Integer.toString(player.numHints));
 
 
         nameList = new ArrayList<>();
@@ -89,7 +90,7 @@ public class LevelActivity extends AppCompatActivity {
         qdbh.open();
         questions = qdbh.getQuestions(player.currentContinent.toString(),
                                       player.continentsTraveled.size()+1 > 3 ? (player.continentsTraveled.size()+1 > 6 ? "hard":"medium"):"easy",
-                                      player.selectedCategory.toString());
+                                      player.selectedCategory.toString().toLowerCase());
         qdbh.close();
 
         for(Question q: questions)
@@ -115,6 +116,7 @@ public class LevelActivity extends AppCompatActivity {
             public void onFinish() {
                 textView_timer.setBackgroundColor(Color.RED);
                 textView_timer.setText("00:00");
+                checkCorrectness(null);
             }
         };
 
@@ -124,28 +126,24 @@ public class LevelActivity extends AppCompatActivity {
         buttonList.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView_timer.setBackgroundColor(Color.TRANSPARENT);
                 checkCorrectness((Button) v);
             }
         });
         buttonList.get(1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView_timer.setBackgroundColor(Color.TRANSPARENT);
                 checkCorrectness((Button) v);
             }
         });
         buttonList.get(2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView_timer.setBackgroundColor(Color.TRANSPARENT);
                 checkCorrectness((Button) v);
             }
         });
         buttonList.get(3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView_timer.setBackgroundColor(Color.TRANSPARENT);
                 checkCorrectness((Button) v);
             }
         });
@@ -171,13 +169,20 @@ public class LevelActivity extends AppCompatActivity {
         });
 
         nextQuestion();
+
     }
+
+    @Override
+    public void onBackPressed(){}
 
     private void checkCorrectness(Button choice){
         if(!questionAnswered) {
             questionAnswered = true;
             countDownTimer.cancel();
-            if (choice.equals(correctButton)) {
+            if(choice == null){
+                correctButton.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
+            }
+            else if (choice.equals(correctButton)) {
                 choice.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
                 player.totalScore += 10;
             } else {
@@ -206,12 +211,15 @@ public class LevelActivity extends AppCompatActivity {
             correctButton = buttonList.get(0);
 
             for(Button btn: buttonList) btn.getBackground().setColorFilter(null);
+            findViewById(R.id.textView_Timer).setBackgroundColor(Color.TRANSPARENT);
             btn_next.getBackground().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
             countDownTimer.start();
         }
         else{
             //TODO quiz is done.
+            player.levelAttempts++;
             Intent intent = new Intent(this, ScoreCardActivity.class);
+            Log.v("score", Integer.toString(player.totalScore));
             startActivity(intent);
             finish();
         }
@@ -232,7 +240,7 @@ public class LevelActivity extends AppCompatActivity {
             int index = 0;
             while(answersTakenOff < 2){
                 if(!buttonList.get(index).equals(correctButton)){
-                    buttonList.get(index).getBackground().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
+                    buttonList.get(index).setBackgroundColor(Color.TRANSPARENT);
                     answersTakenOff++;
                 }
                 index++;
@@ -244,7 +252,7 @@ public class LevelActivity extends AppCompatActivity {
                 imageView_bulb.setImageDrawable(getResources().getDrawable(R.drawable.bulb_on));
 
             player.numHints--;
-            textView_numHints.setText(player.numHints);
+            textView_numHints.setText(Integer.toString(player.numHints));
             hintUsed = true;
         }
     }

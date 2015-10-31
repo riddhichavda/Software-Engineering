@@ -27,6 +27,8 @@ public class Player {
     public ArrayList<Continents> continentsTraveled;
     public Continents currentContinent;
 
+    public int levelAttempts;
+
     public Category selectedCategory;
 
     public int numHints;

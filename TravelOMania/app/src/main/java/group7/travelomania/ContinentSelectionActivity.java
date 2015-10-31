@@ -332,6 +332,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
     private void goToNextActivity(Continents nextContinent){
         if(nextContinent != null && !player.continentsTraveled.contains(nextContinent)) {
             //player.continentsTraveled.add(0,nextContinent);
+            player.selectedCategory = Category.Capitals;
             player.currentContinent = nextContinent;
             Intent intent;
             if(isNewGame){

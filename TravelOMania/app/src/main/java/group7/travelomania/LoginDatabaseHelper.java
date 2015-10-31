@@ -184,7 +184,7 @@ public class LoginDatabaseHelper
         updatedValues.put("CURRENT_LEVEL", "");
         updatedValues.put("LEVELS_COMPLETED", "");
         updatedValues.put("CURRENT_CATEGORY", "");
-        updatedValues.put("NUM_HINTS", 0);
+        updatedValues.put("NUM_HINTS", 1);
         updatedValues.put("TOTAL_SCORE", 0);
         updatedValues.put("LEVEL_SCORE", 0);
 
