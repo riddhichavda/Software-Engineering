@@ -219,7 +219,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 //selection.getLayoutParams().height = 30;
                 //selection.getLayoutParams().width = 30;
 
-                if(!player.continentsTraveled.contains(selectedContinent)) {
+                if(!player.continentsTraveled.contains(selectedContinent) & continentPositions != null) {
                     selection.setX((float) Math.floor(continentPositions.get(selectedContinent)[0] * mapWidth + mapX - (selection.getWidth() / 2)));
                     selection.setY((float) Math.floor(continentPositions.get(selectedContinent)[1] * mapHeight + mapY - (selection.getHeight() / 1.5)));
 
@@ -282,6 +282,16 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         }
         if(player.continentsTraveled.size() == 7){
             findViewById(R.id.btn_EndTest).setVisibility(View.VISIBLE);
+        }
+        if(continentPositions == null || continentPositions.size() == 0){
+            continentPositions = new HashMap<>(7);
+            continentPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
+            continentPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
+            continentPositions.put(Continents.Asia, new float[]{0.77f, 0.18f});
+            continentPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
+            continentPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
+            continentPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
+            continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
         }
 
     }

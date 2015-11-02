@@ -126,11 +126,11 @@ public class EndActivity extends AppCompatActivity {
 
         canvas = new Canvas(BitmapUtility.planePaths);
 
-        for(int continentIndex = 0; continentIndex < player.continentsTraveled.size(); continentIndex++) {
-            int currentLocationX = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex - 1))[0] * mapWidth + mapX - 45);
-            int currentLocationY = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex - 1))[1] * mapHeight + mapY - 15);
-            int newLocationX = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex))[0] * mapWidth + mapX - 45);
-            int newLocationY = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex))[1] * mapHeight + mapY - 15);
+        for(int continentIndex = 0; continentIndex < player.continentsTraveled.size() - 1; continentIndex++) {
+            int currentLocationX = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex))[0] * mapWidth + mapX - 45);
+            int currentLocationY = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex))[1] * mapHeight + mapY - 15);
+            int newLocationX = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex+1))[0] * mapWidth + mapX - 45);
+            int newLocationY = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex+1))[1] * mapHeight + mapY - 15);
             canvas.drawPath(getPlanePath(newLocationX, newLocationY, currentLocationX, currentLocationY), paint);
         }
     }
@@ -147,6 +147,7 @@ public class EndActivity extends AppCompatActivity {
     }
 
     private void goToNextActivity(){
+        player.newGame(player.userName);
         Intent intent = new Intent(this, HomeScreen.class);
         startActivity(intent);
         finish();
