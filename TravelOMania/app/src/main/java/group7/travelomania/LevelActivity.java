@@ -240,7 +240,7 @@ public class LevelActivity extends AppCompatActivity {
             int index = 0;
             while(answersTakenOff < 2){
                 if(!buttonList.get(index).equals(correctButton)){
-                    buttonList.get(index).setBackgroundColor(Color.TRANSPARENT);
+                    buttonList.get(index).getBackground().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
                     answersTakenOff++;
                 }
                 index++;

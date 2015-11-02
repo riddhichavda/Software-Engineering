@@ -57,7 +57,7 @@ public class LoginDatabaseHelper
         newValues.put("LEVELS_COMPLETED", "");
         newValues.put("CURRENT_CATEGORY", "");
         newValues.put("AVATAR", -1);
-        newValues.put("NUM_HINTS", 0);
+        newValues.put("NUM_HINTS", 1);
         newValues.put("TOTAL_SCORE", 0);
         newValues.put("LEVEL_SCORE", 0);
 
