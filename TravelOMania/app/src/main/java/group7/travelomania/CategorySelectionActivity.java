@@ -18,6 +18,7 @@ public class CategorySelectionActivity extends AppCompatActivity
 
     Category categorySelected;
 
+
     private ImageView category;
 
     Player player;
@@ -118,11 +119,12 @@ public class CategorySelectionActivity extends AppCompatActivity
                 }
             }
         });
+
 }
     private void goToNextActivity(){
         Intent intent = new Intent(this, LevelActivity.class);
         startActivity(intent);
-
+        player.selectedCategory = categorySelected;
 
     }
         }
