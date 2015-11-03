@@ -98,6 +98,12 @@ public class LevelActivity extends AppCompatActivity {
                                       player.selectedCategory.toString().toLowerCase());
         qdbh.close();
 
+
+        if(questions == null) {
+            Log.e("Questions", "There were no questions in the database for " + player.selectedCategory.toString() + " in " + player.currentContinent.toString());
+            Log.e("Questions", "Don't know what to do! Ending Application");
+        }
+
         for(Question q: questions)
             Log.v("Question", q.toString());
 
@@ -105,6 +111,7 @@ public class LevelActivity extends AppCompatActivity {
 
         for(Question q: questions)
             Log.v("Question", q.toString());
+
 
         questionIter = questions.iterator();
         questionCounter = 0;
