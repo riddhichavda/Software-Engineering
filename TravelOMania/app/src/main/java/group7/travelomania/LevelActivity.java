@@ -73,7 +73,10 @@ public class LevelActivity extends AppCompatActivity {
         textView_question = (TextView) findViewById(R.id.textView_question);
         textView_questionNumber = (TextView) findViewById(R.id.textView_questionNumber);
         textView_level = (TextView) findViewById(R.id.textView_level);
+        //if(player.continentsTraveled != null)
         textView_level.setText("LEVEL " + (player.continentsTraveled.size()+1));
+
+
         btn_hint = (RelativeLayout) findViewById(R.id.btn_hint);
         imageView_bulb = (ImageView) findViewById(R.id.imageView_bulb);
         textView_numHints = (TextView) findViewById(R.id.textView_numHints);

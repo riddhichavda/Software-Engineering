@@ -70,6 +70,7 @@ public class Player {
         loggedIn = true;
         userName = uname;
         continentsTraveled = loginDbHelper.getContinentsCompleted(userName);
+        Log.v("Continents Traveled Check", ""+continentsTraveled.size());
         currentContinent = loginDbHelper.getCurrentLevel(userName);
         numHints = loginDbHelper.getNumHints(userName);
         avatarId = loginDbHelper.getAvatar(userName);
