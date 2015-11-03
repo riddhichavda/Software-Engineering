@@ -20,11 +20,10 @@
     <ImageView
 
         android:id="@+id/imageView_avatar"
-        android:src="@drawable/avatar_na"
         android:contentDescription="@string/imageView_Avatar_Description"
         android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -40,7 +39,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="  next  level  "
+        android:text="Next Level"
 
         android:id="@+id/next_level"
         android:clickable="true"
@@ -53,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
+
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/good_job"
         />
@@ -113,8 +113,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/score"
         android:layout_marginLeft="50dp"
-        android:text="50"
-
         android:textSize="30sp"
         android:textAllCaps="true"
         android:textColor="#4466ff"
@@ -160,6 +158,6 @@
 
 
 
-    />
+
 
 </RelativeLayout>
