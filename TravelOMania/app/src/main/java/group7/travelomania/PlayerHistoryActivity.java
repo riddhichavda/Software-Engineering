@@ -47,7 +47,7 @@ public class PlayerHistoryActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed(){ Log.v("Back Pressed", "Back");}
+    public void onBackPressed(){}
 
     private void viewRules(){
         player.viewRules(this);

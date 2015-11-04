@@ -196,7 +196,11 @@ public class LevelActivity extends AppCompatActivity {
             }
             else if (choice.equals(correctButton)) {
                 choice.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
-                player.totalScore += 10;
+                if(player.currentContinent == Continents.Antarctica)
+                    player.totalScore += 70;
+                else {
+                    player.totalScore += 10;
+                }
             } else {
                 correctButton.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
                 choice.getBackground().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);

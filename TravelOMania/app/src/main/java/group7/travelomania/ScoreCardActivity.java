@@ -88,6 +88,8 @@ public class ScoreCardActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed(){}
     private void restartLevel(){
         Intent intent;
         intent = new Intent(this,LevelActivity.class);

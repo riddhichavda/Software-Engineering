@@ -152,6 +152,8 @@ public class NavigationActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){}
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus){

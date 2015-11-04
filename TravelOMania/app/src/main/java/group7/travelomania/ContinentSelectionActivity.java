@@ -264,6 +264,9 @@ public class ContinentSelectionActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed(){}
+
+    @Override
     protected void onResume(){
         super.onResume();
         avatar.setImageBitmap(player.avatar);

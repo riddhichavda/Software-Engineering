@@ -100,6 +100,8 @@ public class EndActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){}
 
     public void createPathsForEnd(){
 
@@ -152,6 +154,8 @@ public class EndActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
 
 
 }

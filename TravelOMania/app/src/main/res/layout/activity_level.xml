@@ -88,13 +88,10 @@
         android:layout_height="wrap_content"
         android:text="Washington DC"
         android:id="@+id/btn_option1"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:layout_below="@+id/textView_question"
-        />
+        android:layout_centerHorizontal="true" />
 
 
     <Button
@@ -102,36 +99,33 @@
         android:layout_height="wrap_content"
         android:text="New York city"
         android:id="@+id/btn_option2"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:layout_below="@+id/btn_option1" />
+        android:layout_below="@+id/btn_option1"
+        android:layout_alignLeft="@+id/btn_option1"
+        android:layout_alignStart="@+id/btn_option1" />
 
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Los Angeles"
         android:id="@+id/btn_option3"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:layout_below="@+id/btn_option2" />
+        android:layout_below="@+id/btn_option2"
+        android:layout_alignLeft="@+id/btn_option2"
+        android:layout_alignStart="@+id/btn_option2" />
 
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Ottawa"
         android:id="@+id/btn_option4"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:layout_below="@+id/btn_option3" />
+        android:layout_below="@+id/btn_option3"
+        android:layout_alignLeft="@+id/btn_option3"
+        android:layout_alignStart="@+id/btn_option3" />
 
     <Button
         android:layout_width="wrap_content"
@@ -139,9 +133,9 @@
         android:text="@string/btn_next_text"
         android:id="@+id/btn_next"
         android:clickable="true"
-        android:layout_marginTop="30dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/btn_option4" />
+        android:layout_alignParentEnd="true" />
 
     <RelativeLayout
         android:layout_width="wrap_content"

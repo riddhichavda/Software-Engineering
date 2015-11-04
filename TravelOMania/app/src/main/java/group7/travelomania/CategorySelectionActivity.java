@@ -121,6 +121,9 @@ public class CategorySelectionActivity extends AppCompatActivity
         });
 
 }
+    @Override
+    public void onBackPressed(){}
+
     private void goToNextActivity(){
         Intent intent = new Intent(this, LevelActivity.class);
         startActivity(intent);

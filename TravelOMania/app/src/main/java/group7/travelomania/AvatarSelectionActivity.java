@@ -122,6 +122,9 @@ public class AvatarSelectionActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){}
+
     private void updateSelected() {
         int selected = selectedIndex - avatarIndex;
         switch(selected){
