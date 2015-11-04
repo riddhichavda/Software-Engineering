@@ -88,11 +88,30 @@ public class ScoreCardActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public  void onResume(){
+        super.onResume();
+        Player.currentContext = this;
+        player = Player.getInstance(this);
+    }
+
+    @Override
+    public void onUserInteraction(){
+        if(player != null) {
+            if(!player.isTimerNull())
+                player.resetLogoutTimer();
+        }
+    }
+
     @Override
     public void onBackPressed(){}
+
+
+
     private void restartLevel(){
         Intent intent;
-        intent = new Intent(this,LevelActivity.class);
+        intent = new Intent(this, LevelActivity.class);
         startActivity(intent);
     }
     private void nextLevel(){

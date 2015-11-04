@@ -123,7 +123,24 @@ public class AvatarSelectionActivity extends AppCompatActivity {
     }
 
     @Override
+    public  void onResume(){
+        super.onResume();
+        Player.currentContext = this;
+        player = Player.getInstance(this);
+    }
+
+    @Override
+    public void onUserInteraction(){
+        if(player != null) {
+            if(!player.isTimerNull())
+                player.resetLogoutTimer();
+        }
+    }
+
+    @Override
     public void onBackPressed(){}
+
+
 
     private void updateSelected() {
         int selected = selectedIndex - avatarIndex;

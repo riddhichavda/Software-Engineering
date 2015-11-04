@@ -297,6 +297,17 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
         }
 
+        Player.currentContext = this;
+        player = Player.getInstance(this);
+
+    }
+
+    @Override
+    public void onUserInteraction(){
+        if(player != null) {
+            if(!player.isTimerNull())
+                player.resetLogoutTimer();
+        }
     }
 
     @Override

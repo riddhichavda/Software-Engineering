@@ -121,8 +121,25 @@ public class CategorySelectionActivity extends AppCompatActivity
         });
 
 }
+
+    @Override
+    public  void onResume(){
+        super.onResume();
+        Player.currentContext = this;
+        player = Player.getInstance(this);
+    }
+
+    @Override
+    public void onUserInteraction(){
+        if(player != null) {
+            if(!player.isTimerNull())
+                player.resetLogoutTimer();
+        }
+    }
+
     @Override
     public void onBackPressed(){}
+
 
     private void goToNextActivity(){
         Intent intent = new Intent(this, LevelActivity.class);

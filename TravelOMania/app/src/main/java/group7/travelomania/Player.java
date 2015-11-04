@@ -2,8 +2,10 @@ package group7.travelomania;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.os.CountDownTimer;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -19,6 +21,8 @@ import java.util.ArrayList;
 public class Player {
 
     private static volatile Player player;
+    public static volatile Context currentContext;
+
 
     public String userName;
     public boolean hasPlayed;
@@ -37,6 +41,8 @@ public class Player {
     public boolean loggedIn;
 
     private LoginDatabaseHelper loginDbHelper;
+
+    private CountDownTimer logoutTimer;
 
     public static Player getInstance(Context context){
 
@@ -63,7 +69,52 @@ public class Player {
         hasPlayed = false;
         loginDbHelper = new LoginDatabaseHelper(context);
         loginDbHelper.open();
+
+        logoutTimer = new CountDownTimer(180000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                Log.v("Time until logout", "" + millisUntilFinished);
+            }
+            @Override
+            public void onFinish() {
+                if(player!=null)
+                    player.logout();
+            }
+        };
+
+        logoutTimer.start();
     }
+
+    public void resetLogoutTimer(){
+        logoutTimer.cancel();
+        logoutTimer.start();
+    }
+
+    public void stopTimer(){
+        logoutTimer.cancel();
+    }
+
+    public void destroyTimer(){
+        logoutTimer = null;
+    }
+
+    public boolean isTimerNull(){
+        return logoutTimer == null;
+    }
+
+    private static void logout(){
+        if(player != null) {
+            player.saveProgress();
+            player.loggedIn = false;
+        }
+
+        Intent intent = new Intent(currentContext, HomeScreen.class);
+        currentContext.startActivity(intent);
+        player.stopTimer();
+        player.destroyTimer();
+        player = null;
+    }
+
 
 
     public void login(String uname){
@@ -129,7 +180,8 @@ public class Player {
         for(Continents c: continentsTraveled){
             ret = ret + c.toString() + ",";
         }
-        ret = ret.substring(0, ret.length()-1);
+        if(ret.length() > 0)
+            ret = ret.substring(0, ret.length()-1);
 
         Log.v("continentString", ret);
 

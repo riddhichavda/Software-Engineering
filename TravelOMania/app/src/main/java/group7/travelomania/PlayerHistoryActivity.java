@@ -49,6 +49,21 @@ public class PlayerHistoryActivity extends AppCompatActivity {
     @Override
     public void onBackPressed(){}
 
+    @Override
+    public  void onResume(){
+        super.onResume();
+        Player.currentContext = this;
+        player = Player.getInstance(this);
+    }
+
+    @Override
+    public void onUserInteraction(){
+        if(player != null) {
+            if(!player.isTimerNull())
+                player.resetLogoutTimer();
+        }
+    }
+
     private void viewRules(){
         player.viewRules(this);
     }
