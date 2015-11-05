@@ -145,7 +145,7 @@ public class Player {
             hasPlayed = true;
         }
 
-        logoutTimer = new CountDownTimer(18000, 1000) {
+        logoutTimer = new CountDownTimer(180000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 Log.v("Time until logout", "" + millisUntilFinished);
