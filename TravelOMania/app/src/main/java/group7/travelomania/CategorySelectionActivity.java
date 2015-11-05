@@ -51,14 +51,7 @@ public class CategorySelectionActivity extends AppCompatActivity
                 }
             });
 
-        final Button buttonNext = (Button) findViewById(R.id.buttonNext);
-        buttonNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToNextActivity();
 
-            }
-        });
         category.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -117,6 +110,14 @@ public class CategorySelectionActivity extends AppCompatActivity
                     }
                     return true;
                 }
+            }
+        });
+        final Button buttonNext = (Button) findViewById(R.id.buttonNext);
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToNextActivity();
+
             }
         });
 
