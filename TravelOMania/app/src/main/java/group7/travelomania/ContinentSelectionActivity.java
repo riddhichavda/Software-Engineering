@@ -269,6 +269,13 @@ public class ContinentSelectionActivity extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
+        Player.currentActivity = this;
+        player = Player.getInstance(this);
+        if(!player.loggedIn){
+            Intent intent = new Intent(this, HomeScreen.class);
+            startActivity(intent);
+            return;
+        }
         avatar.setImageBitmap(player.avatar);
         createBitmap();
         map.setImageBitmap(BitmapUtility.map_addition_selection);
@@ -297,10 +304,10 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
         }
 
-        Player.currentContext = this;
-        player = Player.getInstance(this);
+
 
     }
+
 
     @Override
     public void onUserInteraction(){

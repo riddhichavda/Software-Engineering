@@ -1,5 +1,6 @@
 package group7.travelomania;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -21,7 +22,8 @@ import java.util.ArrayList;
 public class Player {
 
     private static volatile Player player;
-    public static volatile Context currentContext;
+    //public static volatile Context currentContext;
+    public static volatile Activity currentActivity;
 
 
     public String userName;
@@ -70,19 +72,7 @@ public class Player {
         loginDbHelper = new LoginDatabaseHelper(context);
         loginDbHelper.open();
 
-        logoutTimer = new CountDownTimer(180000, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                Log.v("Time until logout", "" + millisUntilFinished);
-            }
-            @Override
-            public void onFinish() {
-                if(player!=null)
-                    player.logout();
-            }
-        };
 
-        logoutTimer.start();
     }
 
     public void resetLogoutTimer(){
@@ -107,12 +97,14 @@ public class Player {
             player.saveProgress();
             player.loggedIn = false;
         }
-
-        Intent intent = new Intent(currentContext, HomeScreen.class);
-        currentContext.startActivity(intent);
+        if(currentActivity.hasWindowFocus()) {
+            Intent intent = new Intent(currentActivity, HomeScreen.class);
+            currentActivity.startActivity(intent);
+        }
         player.stopTimer();
         player.destroyTimer();
         player = null;
+        currentActivity = null;
     }
 
 
@@ -152,6 +144,20 @@ public class Player {
         if(continentsTraveled.size() != 0){
             hasPlayed = true;
         }
+
+        logoutTimer = new CountDownTimer(18000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                Log.v("Time until logout", "" + millisUntilFinished);
+            }
+            @Override
+            public void onFinish() {
+                if(player!=null)
+                    player.logout();
+            }
+        };
+
+        logoutTimer.start();
     }
 
     public void saveProgress(){

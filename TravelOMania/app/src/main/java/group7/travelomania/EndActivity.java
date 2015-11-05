@@ -103,8 +103,12 @@ public class EndActivity extends AppCompatActivity {
     @Override
     public  void onResume(){
         super.onResume();
-        Player.currentContext = this;
+        Player.currentActivity = this;
         player = Player.getInstance(this);
+        if(!player.loggedIn){
+            Intent intent = new Intent(this, HomeScreen.class);
+            startActivity(intent);
+        }
     }
 
     @Override
