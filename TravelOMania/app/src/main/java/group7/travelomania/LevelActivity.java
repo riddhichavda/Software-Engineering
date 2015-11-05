@@ -94,7 +94,7 @@ public class LevelActivity extends AppCompatActivity {
         QuestionDatabaseHelper qdbh = new QuestionDatabaseHelper(this);
         qdbh.open();
         questions = qdbh.getQuestions(player.currentContinent.toString(),
-                                      player.continentsTraveled.size()+1 > 3 ? (player.continentsTraveled.size()+1 > 6 ? "hard":"medium"):"easy",
+                                      player.continentsTraveled.size()+1 > 3 ? (player.continentsTraveled.size()+1 >= 6 ? "hard":"medium"):"easy",
                                       player.selectedCategory.toString().toLowerCase());
         qdbh.close();
 

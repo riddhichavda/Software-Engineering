@@ -80,7 +80,7 @@ public class CategorySelectionActivity extends AppCompatActivity
                             categorySelected = Category.Geography_and_Geology;
                             break;
                         case -15412862:
-                            categorySelected = Category.History_of_Exploration;
+                            categorySelected = Category.Sports;
                             break;
                         case -3977263:
                             categorySelected = Category.Politics;

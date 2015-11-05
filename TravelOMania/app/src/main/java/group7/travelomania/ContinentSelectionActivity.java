@@ -97,7 +97,8 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         final Button btn_EndTest = (Button)findViewById(R.id.btn_EndTest);
 
 
-        btn_EndTest.setVisibility(View.VISIBLE);
+   //     btn_EndTest.setVisibility(View.VISIBLE);
+        btn_EndTest.setEnabled(false);
 
 
 
@@ -291,7 +292,9 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             isNewGame = true;
         }
         if(player.continentsTraveled.size() == 7){
-            findViewById(R.id.btn_EndTest).setVisibility(View.VISIBLE);
+            Button btn_EndTest = (Button)findViewById(R.id.btn_EndTest);
+            btn_EndTest.setVisibility(View.VISIBLE);
+            btn_EndTest.setEnabled(false);
         }
         if(continentPositions == null || continentPositions.size() == 0){
             continentPositions = new HashMap<>(7);
