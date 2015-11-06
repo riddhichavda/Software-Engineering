@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class PlayerHistoryActivity extends AppCompatActivity {
 
@@ -22,6 +23,9 @@ public class PlayerHistoryActivity extends AppCompatActivity {
         final Button btn_resume = (Button) findViewById(R.id.btn_resume);
         final Button btn_restart = (Button) findViewById(R.id.btn_restart);
         final Button btn_help = (Button) findViewById(R.id.btn_help);
+
+        final ImageView imageView_avatar = (ImageView)findViewById(R.id.imageView_avatar);
+        imageView_avatar.setImageBitmap(player.avatar);
 
         btn_help.setOnClickListener(new View.OnClickListener() {
             @Override
