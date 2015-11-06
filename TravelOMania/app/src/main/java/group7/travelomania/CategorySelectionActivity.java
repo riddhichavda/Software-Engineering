@@ -101,7 +101,7 @@ public class CategorySelectionActivity extends AppCompatActivity
                         case -16133868:
                             categorySelected = Category.Festivals;
                             break;
-                        case -12767980:
+                        case -5537993:
                             categorySelected = Category.Cuisines;
                             break;
                         case -990562:
