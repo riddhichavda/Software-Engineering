@@ -1,0 +1,775 @@
+1,1,NorthAmerica,easy,capitals,What is the capital of United States of America?,Washington D.C.,New York city,Mexico city,Kingston
+2,2,NorthAmerica,easy,capitals,Panama city is the capital of which country?,Panama,Cuba,Jamaica,Mexico
+3,3,NorthAmerica,easy,capitals,Castries is the capital of which country?,Saint Lucia,U.S.A.,Cuba,Jamaica
+4,4,NorthAmerica,easy,capitals,What is the capital of Mexico?,Mexico city,New York city,San Jose,Havana
+5,5,NorthAmerica,easy,capitals,Guatemala city is the capital of which country?,Guatemala,Jamaica,San Salvador,Bahamas
+6,6,NorthAmerica,easy,capitals,What is the capital of El Salvador?,San Salvador,Washington D.C.,Kingston,Havana
+7,7,NorthAmerica,easy,capitals,What is the capial of Canada?,Ottawa,Los Angeles,Kingston,Panama city
+8,1,NorthAmerica,medium,capitals,What is the capital of Cuba?,Havana,Kingstown,Port-au-Prince,San Jose
+9,2,NorthAmerica,medium,capitals,San Jose is the captial of which country?,Costa Rica,U.S.A.,Barbados,Jamaica
+10,3,NorthAmerica,medium,capitals,What is the capital of Haiti?,Port-au-Prince,Port of Spain,San Salvador,Castries
+11,4,NorthAmerica,medium,capitals,What is the capital of Saint Kitts and Navis?,Basseterre,Port of Spain,Barbados,Guatemala city
+12,5,NorthAmerica,medium,capitals,Managua is the capital of which country?,Nicaragua,Costa Rica,Dominica,Grenada
+13,6,NorthAmerica,medium,capitals,Bridgetown is the capital of which country?,Barbados,Belize,Haiti,Canada
+14,7,NorthAmerica,medium,capitals,What is the capital of Jamaica?,Kingston,Kingstown,Roseau,Port of Spain
+15,1,NorthAmerica,hard,capitals,What is the capital of Honduras?,Tegucigalpa,Mexico city,Havana,Ottawa
+16,2,NorthAmerica,hard,capitals,Port of Spain is the capital of which country?,Trinidad and Tobago,Saint Kitts and Nevis,Antigua and Barbuda,Saint Vincent and the Grenadines
+17,3,NorthAmerica,hard,capitals,What is the capital of Grenada?,St. George's,St. John's,San Salvador,San Jose
+18,4,NorthAmerica,hard,capitals,What is the capital of Barbados?,Bridgetown,Basseterre,Belmopan,Santo Domingo
+19,5,NorthAmerica,hard,capitals,What is the capital of Saint Lucia?,Castries,Port-au-Prince,Managua,Havana
+20,6,NorthAmerica,hard,capitals,Havana is the capital of which country?,Cuba,Costa Rica,Barbados,Belize
+21,7,NorthAmerica,hard,capitals,What is the capital of Nicaragua?,Managua,Castries,Guatemala City,Nassau
+22,1,SouthAmerica,easy,capitals,Brasília is the capital of which country?,Brazil,Chile,Peru,Uruguay
+23,2,SouthAmerica,easy,capitals,What is the capital of Argentina?,Buenos Aires,Quito,Montevideo,Lima
+24,3,SouthAmerica,easy,capitals,Bogota is the capital of which country?,Colombia,Chile,Peru,Suriname
+25,4,SouthAmerica,easy,capitals,Caracas is the capital of which country?,Venezuala,Chile,Bolivia,Uruguay
+26,5,SouthAmerica,easy,capitals,What is the capital of Peru?,Lima,Caracas,Buenos Aires,Montevideo
+27,6,SouthAmerica,easy,capitals,Sucre is the capital of country?,Bolivia,Colombia,Peru,Brazil
+28,7,SouthAmerica,easy,capitals,What is the capital of Uruguay?,Montevideo,Georgetown,Sucre,Quito
+29,1,SouthAmerica,medium,capitals,What is the capital of Venezuala?,Caracas,Sucre,Montevideo,Asunción
+30,2,SouthAmerica,medium,capitals,Georgetown is the capital of which country?,Guyana,Peru,Paraguay,Brazil
+31,3,SouthAmerica,medium,capitals,What is the capital of Chile?,Santiago,Sucre,Buenos Aires,Paramaribo
+32,4,SouthAmerica,medium,capitals,What is the capital of Colombia?,Bogota,Brasilia,Paramaribo,Lima
+33,5,SouthAmerica,medium,capitals,Quito is the capital of which country?,Ecuador,Uruguay,Chile,Peruguay
+34,6,SouthAmerica,medium,capitals,What is the capital of Bolivia?,Sucre,Quito,Caracas,Lima
+35,7,SouthAmerica,medium,capitals,Buenos Aires is the capital of which country?,Argentina,Colombia,Peru,Guyana
+36,1,SouthAmerica,hard,capitals,What is the capital of Ecuador?,Quito,Bogota,Sucre,Paramaribo
+37,2,SouthAmerica,hard,capitals,Santiago is the capital of which country?,Chile,Colombia,Peru,Paraguay
+38,3,SouthAmerica,hard,capitals,Lima is the capital of which country?,Peru,Uruguay,Brazil,Bolivia
+39,4,SouthAmerica,hard,capitals,Montevideo is the capital of which country?,Uruguay,Ecuador,Guyana,Venezuala
+40,5,SouthAmerica,hard,capitals,What is the capital of Guyana?,Georgetown,Bogota,Sucre,Lima
+41,6,SouthAmerica,hard,capitals,What is the capital of Ecuador?,Quito,Santiago,Caracas,Bogota
+42,7,SouthAmerica,hard,capitals,Asuncion is the captial of which country?,Paraguay,Guyana,Uruguay,Brazil
+43,1,Europe,easy,capitals,What is the capital of France?,Paris,Dublin,Athens,Berlin
+44,2,Europe,easy,capitals,Athens is the capital of which country?,Greece,Czech Republic,Minsk,Denmark
+45,3,Europe,easy,capitals,What is the capital of Germany?,Berlin,Vatican city,London,Moscow
+46,4,Europe,easy,capitals,Vatican city is the capital of which country?,Vatican city,Serbia,Spain,Russia
+47,5,Europe,easy,capitals,What is the capital of Luxembourg?,Luxembourg,Riga,Dublin,Budapest
+48,6,Europe,easy,capitals,Dublin is the capital of which country?,Ireland,Iceland,Finland,Belarus
+49,7,Europe,easy,capitals,What is the capital of Monaco?,Monaco,Oslo,San Marino,Belgrade
+50,1,Europe,medium,capitals,What is the capital of Switzerland?,Bern,Moscow,Budapest,Lisbon
+51,2,Europe,medium,capitals,Stockholm is the capital of which country?,Sweden,Spain,Slovakia,Serbia
+52,3,Europe,medium,capitals,What is the capital of Ukraine?,Kiev,Amsterdam,Monaco,Dublin
+53,4,Europe,medium,capitals,What is the capital of Albania?,Tirana,Sofia,Vienna,Berlin
+54,5,Europe,medium,capitals,Prague is the capital of which country?,Czech Republic,Austria,Germany,Hungary
+55,6,Europe,medium,capitals,What is the capital of Serbia?,Belgrade,Oslo,Kiev,Dublin
+56,7,Europe,medium,capitals,Zagreb is the capital of which country?,Croatia,Slovakia,Poland,Romania
+57,1,Europe,hard,capitals,What is the capital of Denmark?,Copenhagen,Sofia,Brussels,Vienna
+58,2,Europe,hard,capitals,What is the capital of Malta?,Valletta,Sofia,Berlin,Bern
+59,3,Europe,hard,capitals,Riga is the capital of which country?,Latvia,Moldova,Norway,Netherlands
+60,4,Europe,hard,capitals,What is the capital of Sweden?,Stockholm,Sarajevo,Sofia,San Marino
+61,5,Europe,hard,capitals,What is the capital of Poland?,Warsaw,Riga,Dublin,Budapest
+62,6,Europe,hard,capitals,Reykjavik is the capital of which country?,Iceland,Estonia,Lithuania,Malta
+63,7,Europe,hard,capitals,What is the capital of Norway?,Oslo,Budapest,Dublin,Riga
+64,1,Africa,easy,capitals,What is the capital of Tunisia?,Tunis,Lusaka,Conakry,Cairo
+65,2,Africa,easy,capitals,CapeTown is the capital of whhich country?,South Africa,Senegal,Angola,Lesotho
+66,3,Africa,easy,capitals,What is the capital of Egypt?,Cairo,Monrovia,Maputo,Kigali
+67,4,Africa,easy,capitals,What is the capital of Gambia?,Banjul,Accra,Rabat,Maseru
+68,5,Africa,easy,capitals,What is the capital of Algeria?,Algiers,Brazzaville,Bangui,Asmara
+69,6,Africa,easy,capitals,Djibouti is the capital of which country?,Djibouti,Malawi,Angola,Gabon
+70,7,Africa,easy,capitals,Nairobi is the capital of which country?,Kenya,Angola,Madagascar,Mali
+71,1,Africa,medium,capitals,Juba is the capital of which country?,South Sudan,Tanzania,Uganda,Zimbabwe
+72,2,Africa,medium,capitals,What is the capital of Nigeria?,Abuja,Victoria,Antananarivo,Kinshasa
+73,3,Africa,medium,capitals,Banjul is the capital of which country?,Gambia,Lesotho,Namibia,Burundi
+74,4,Africa,medium,capitals,What is the capital of Rwanda?,Kigali,Rabat,Cairo,Niamey
+75,5,Africa,medium,capitals,Port Louis is the capital of which country?,Mauritius,Guinea,Chad,Ethiopia
+76,6,Africa,medium,capitals,What is the capital of Guinea?,Conakry,Praia,Nairobi,Kigali
+77,7,Africa,medium,capitals,Astana is the capital of which country?,Kazakhstan,Kyrgyzstan,Mongolia,Myanmar
+78,1,Africa,hard,capitals,What is the capital of Libya?,Tripoli,Libreville,Abuja,Maputo
+79,2,Africa,hard,capitals,What is the capital of Mali?,Bamako,Libreville,Rabat,Maputo
+80,3,Africa,hard,capitals,Asmara is the capital of which country?,Eritrea,Libreville,Lisoto,Liseria
+81,4,Africa,hard,capitals,What is the capital of Gabon?,Libreville,Luanda,Bissau,Moroni
+82,5,Africa,hard,capitals,Victoria is the capital of which country?,Seychelles,Angola,Somalia,Morocco
+83,6,Africa,hard,capitals,What is the capital of Sudan?,Karthoum,Bissau,Banjul,Oslo
+84,7,Africa,hard,capitals,Mogadishu is the capital of which country?,Somalia,Morocco,Sudan,Niger
+85,1,Asia,easy,capitals,Dhaka is the capital of which country?,Bangladesh,Kazakhstan,Bhutan,Armenia
+86,2,Asia,easy,capitals,What is the capital of Kuwait?,Kuwait city,Baku,Kabul,Dili
+87,3,Asia,easy,capitals,What is the capital of India?,New Delhi,Astana,Manila,Hanoi
+88,4,Asia,easy,capitals,What is the capital of Kuwait?,Kuwait city,Muscat,Doha,Tokyo
+89,5,Asia,easy,capitals,Beijing is the capital of which country?,China,Iran,Kuwait,Jordan
+90,6,Asia,easy,capitals,What is the capital of Nepal?,Kathmandu,Abu Dhabi,Bangkok,Taipei
+91,7,Asia,easy,capitals,What is the capital of Iraq?,Baghdad,Muscat,Beijing,Manila
+92,1,Asia,medium,capitals,Abu Dhabi is the capital of which country?,United Arab Emirates,Sri Lanka,South Korea,Mongolia
+93,2,Asia,medium,capitals,What is the capital of Taiwan?,Taipei,Manila,Tokyo,Tbilisi
+94,3,Asia,medium,capitals,Bangkok is the capital of which country?,Thailand,Singapore,Nepal,Macau
+95,4,Asia,medium,capitals,What is the capital of Nigeria?,Abuja,Lusaka,Juba,Bamako
+96,5,Asia,medium,capitals,What is the capital of Qatar?,Doha,Muscat,Islamabad,Baghdad
+97,6,Asia,medium,capitals,Islamabad is the capital of which country?,Pakistan,Kazakhstan,Iran,Iraq
+98,7,Asia,medium,capitals,What is the capital of United Arab Emirates?,Abu Dhabi,Islamabad,Doha,Tehran
+99,1,Asia,hard,capitals,What is the capital of Uzbekistan?,Tashkent,Manila,Lusaka,Doha
+100,2,Asia,hard,capitals,Dakar is the capital of which country?,Senegal,Mongolia,Pakistan,India
+101,3,Asia,hard,capitals,Baghdad is the capital of which country?,Iraq,Pakistan,Iran,Indonesia
+102,4,Asia,hard,capitals,Seoul is the capital of which country?,South Korea,Malaysia,Macau,Japan
+103,5,Asia,hard,capitals,What is the capital of Saudi Arabia,Riyadh,Muscat,Gaza,Bangkok
+104,6,Asia,hard,capitals,Tehran is the capital of which country?,Iran,India,Iraq,Macau
+105,7,Asia,hard,capitals,What is the capital of North Korea?,Pyongyang,Beijing,Phnom Penh,Thimphu
+106,1,Oceania,easy,capitals,Wellington is the capital of which country?,New Zealand,Samoa,Kiribati,Guam
+107,2,Oceania,easy,capitals,What is the capital of Australia?,Canberra,Tarawa,Honiara,Saipan
+108,3,Oceania,easy,capitals,What is the capital of Fiji?,Suva,Apia,Papeete,Palikir
+109,4,Oceania,easy,capitals,Pago Pago is the capital of which country?,American Samoa,Ashmor and Cartier Islands,Palau,Samoa
+110,5,Oceania,easy,capitals,What is the capital of French Polynesia?,Papeete,Majuro,Tarawa,Pago Pago
+111,6,Oceania,easy,capitals,Tarawa is the capital of which country?,Kiribati,Kingman Reef,Jarvis Island,Guam
+112,7,Oceania,easy,capitals,Pilikir is the capital of which country?,Micronesia,Coral Sea Islands,Niue,Naura
+113,1,Oceania,medium,capitals,What is the capital of Solomon Islands?,Honiara,Noumea,Port Vila,Pago Pago
+114,2,Oceania,medium,capitals,Port Vila is the capital of which country?,Vanuatu,New Caledonia,Johnston Atoll,Howland Island
+115,3,Oceania,medium,capitals,What is the capital of Northern Mariana Islands?,Saipan,Ngerulmud,Honiara,Tarawa
+116,4,Oceania,medium,capitals,What is the capital of Norfolk island?,Kingston,Ngerulmud,Majuro,Suva
+117,5,Oceania,medium,capitals,Ngerulmund is the capital of which couuntry?,Palau,Vanuatu,Tonga,Samoa
+118,6,Oceania,medium,capitals,Alofi is the capital of which country?,Niue,Naura,Guam,Palau
+119,7,Oceania,medium,capitals,Suva is the capital of which country?,Fiji,Guam,Naura,Niue
+120,1,Oceania,hard,capitals,Adamstown is the capital of which country?,Pitcairn Islands,Marshall Islands,Northern Mariana Islands,Wake Island
+121,2,Oceania,hard,capitals,Honiara is the capital of which country?,Solomon Islands,Marshall Islands,Howland Island,Jarvis Island
+122,3,Oceania,hard,capitals,Mata-Utu is the capital of which country?,Wallis and Fatuna,Tonga,Guam,Naura
+123,4,Oceania,hard,capitals,Apia is the capital of which country?,Samoa,Palau,Guam,Niue
+124,5,Oceania,hard,capitals,What is the capital of Tonga?,Nukualofa,Funafuti,Port Moresby,Saipan
+125,6,Oceania,hard,capitals,Saipan is the capital of which country?,North Mariana Island,Solomon Island,Jarvis Island,Wake Island
+126,7,Oceania,hard,capitals,What is the capital of Palau?,Ngerulmud,Suva,Tarawa,Palikir
+127,1,Antarctica,easy,research_facilities,King Edward Point is the capital of which Islands?,South Georgia and the South Sandwich Islands,Heard Island and McDonald Islands,French Southern and Antarctic Lands,Bouvet Islands
+134,1,Antarctica,medium,research_facilities,King Edward Point is the capital of which Islands?,South Georgia and the South Sandwich Islands,Heard Island and McDonald Islands,French Southern and Antarctic Lands,Bouvet Islands
+141,1,Antarctica,hard,research_facilities,King Edward Point is the capital of which Islands?,South Georgia and the South Sandwich Islands,Heard Island and McDonald Islands,French Southern and Antarctic Lands,Bouvet Islands
+148,1,NorthAmerica,easy,landmarks,The Statue of Liberty is located in which country?,U.S.A.,Canada,Japan,China
+149,2,NorthAmerica,easy,landmarks,Madison Square Garden is located in which country?,U.S.A.,Canada,Argentina,Belgium
+150,3,NorthAmerica,easy,landmarks,Chichen Itza is located in which country?,Mexico,U.S.A.,Chile,Argentina
+151,4,NorthAmerica,easy,landmarks,Hollywood is located in which country?,U.S.A.,Canada,Mexico,Brazil
+152,5,NorthAmerica,easy,landmarks,Times Square is located in which city?,Manhattan,Chicago,Philadelphia,Los Angeles
+153,6,NorthAmerica,easy,landmarks,The White House is located in which country?,U.S.A.,Canada,Mexico,Argentina
+154,7,NorthAmerica,easy,landmarks,Which landmark lies on the border of U.S.A. and Canada?,Niagara Falls,The Great Wall,The Colosseum,The Grand Canyon
+155,1,NorthAmerica,medium,landmarks,Disneyland is located in which country?,U.S.A.,Canada,Mexico,Japan
+156,2,NorthAmerica,medium,landmarks,The Statue of Liberty is located in which city?,New York city,Los Angeles,San Francisco,Ottawa
+157,3,NorthAmerica,medium,landmarks,Madison Square Garden is located in which city?,New York city,Chicago,San Francisco,Los Angeles
+158,4,NorthAmerica,medium,landmarks,Hollywood is located in which city?,Los Angeles,New York city,Dallas,Chicago
+159,5,NorthAmerica,medium,landmarks,Disneyland is located in which city?,Los Angeles,New York city,San Francisco,Chicago
+160,6,NorthAmerica,medium,landmarks,Times Square is located which city?,Manhattan,New York city,New Jersey,Philadephia
+161,7,NorthAmerica,medium,landmarks,The White House is located in which city?,Washington D.C.,New York city,Chicago,Philadephia
+162,1,NorthAmerica,hard,landmarks,Teotihuacan Pyramids is located in which country?,Mexico,Peru,Argentina,Laos
+163,2,NorthAmerica,hard,landmarks,Yosemite National Park is located in which country?,U.S.A.,Japan,Taiwan,Canada
+164,3,NorthAmerica,hard,landmarks,Mammoth cave is located in which state in the U.S.A.?,Kentucky,Wyoming,Iowa,Kansas
+165,4,NorthAmerica,hard,landmarks,Where is the Lincoln tomb located?,Springfield,Ellis Grove,Boston,Charlottetown
+166,5,NorthAmerica,hard,landmarks,What is the Lone Star in Iowa?,A tow boat,A waterfall,A historical building,A bridge
+167,6,NorthAmerica,hard,landmarks,In which national park would you find the Ahwahnee?,Yosemite National Park,Big Bend National Park,Olympic National Park,Yellowstone National Park
+168,7,NorthAmerica,hard,landmarks,Which landmark was painted with International Orange?,The Golden Gate Bridge,Liberty Bell,Mammoth Cave,White House
+169,1,SouthAmerica,easy,landmarks,Christ The Redeemer Statue on Corcovado Mountain is located in which country?,Brazil,Hungary,Canada,China
+170,2,SouthAmerica,easy,landmarks,Machu Picchu is located in which country?,Peru,Jamaica,Cuba,Puerto Rico
+171,3,SouthAmerica,easy,landmarks,Which South American country is named after Cristopher Columbus?,Colombia,Mexico,Cuba,Jamaica
+172,4,SouthAmerica,easy,landmarks,Where is the Atacama desert is located in which country?,Chile,Bolivia,Jamaica,Cuba
+173,5,SouthAmerica,easy,landmarks,Cave of the crystals is located in which country?,Mexico,Peru,Cuba,Brazil
+174,6,SouthAmerica,easy,landmarks,Tikal is located in which country?,Guatemala,Peru,Cuba,Chile
+175,7,SouthAmerica,easy,landmarks,Angel Falls is located in which country?,Venezuala,U.S.A.,Barbados,Mexico
+176,1,SouthAmerica,medium,landmarks,Iguazu Falls is located between which two countries?,Argentina-Brazil,China-Nepal,India-Pakistan,Poland-Germany
+177,2,SouthAmerica,medium,landmarks,Angel Falls is located in which country?,Venezuala,Barbados,U.S.A.,Mexico
+178,3,SouthAmerica,medium,landmarks,The Petronas Twin Towers is located in which country?,Malaysia,Singapore,Thailand,Brazil
+179,4,SouthAmerica,medium,landmarks,Christ The Redeemer Statue on Corcovado Mountain is located in which city?,Rio De Janeiro,Quito,Lima,Brasilia
+180,5,SouthAmerica,medium,landmarks,The Desert Hand is located in which country?,Chile,Bolivia,Malaysia,Brazil
+181,6,SouthAmerica,medium,landmarks,The Salt Cathedral of Zipaquira is located in which country?,Colombia,Brazil,Bolivia,Chile
+182,7,SouthAmerica,medium,landmarks,The Nazca Lines are located in which country?,Peru,Mexico,Guyana,Uruguay
+183,1,SouthAmerica,hard,landmarks,The Darien Gap is a patch of rain forest that separates Panama and which South American country?,Colombia,Chile,Peru,Brazil
+184,2,SouthAmerica,hard,landmarks,Rapa Nui National Park is located in which country?,Chile,Barbados,Cuba,Venezuala
+185,3,SouthAmerica,hard,landmarks,Salar de Uyuni is locatedd in which country?,Bolivia,Chile,Peru,Mexico
+186,4,SouthAmerica,hard,landmarks,Cocora Valley is locatd in which country?,Colombia,Barbados,Chile,Peru
+187,5,SouthAmerica,hard,landmarks,The Marble Caves are located in which country?,Chile,Brazil,Barbados,Peru
+188,6,SouthAmerica,hard,landmarks,The Nazca Lines are located in which country?,Peru,Paraguay,Uruguay,Brazil
+189,7,SouthAmerica,hard,landmarks,The Salt Cathedral of Zipaquira is located in which country?,Colombia,Brazil,Bolivia,Chile
+190,1,Europe,easy,landmarks,The Colosseum is located n which country?,Italy,France,Norway,Germany
+191,2,Europe,easy,landmarks,Sistine Chapel is located in which country?,Vatican city,San Marino,Italy,Russia
+192,3,Europe,easy,landmarks,Leaning Tower of Pisa is located in which country?,Italy,France,Greece,Germany
+193,4,Europe,easy,landmarks,St. Basil’s Cathedral is located in which country?,Russia,Mongolia,Greece,Turkey
+194,5,Europe,easy,landmarks,Eiffel Tower is located which country?,France,Germany,Greece,England
+195,6,Europe,easy,landmarks,Big Ben is located in which country?,England,France,Germany,Italy
+196,7,Europe,easy,landmarks,The Buckingham Palace is located in which city?,London,Rome,Athens,Paris
+197,1,Europe,medium,landmarks,Great Mosque of Cordoba is located in which country?,Spain,Colombia,Argentina,Chile
+198,2,Europe,medium,landmarks,Mont Saint-Michel is located in which country?,France,Belgium,Austria,Switzerland
+199,3,Europe,medium,landmarks,Stonehenge is located in which country?,England,Scotland,The Netherlands,Ireland
+200,4,Europe,medium,landmarks,Big Ben is located in which city?,London,Paris,Rome,Athens
+201,5,Europe,medium,landmarks,Bradenburg gate is located in which country?,Germany,Greece,Italy,France
+202,6,Europe,medium,landmarks,"Hagia Sophia, also known as the “Church of the Holy Wisdom” is located in which country?",Turkey,Italy,Greece,Poland
+203,7,Europe,medium,landmarks,The Pantheon is located in which city?,Rome,Paris,Athens,London
+204,1,Europe,hard,landmarks,Cappadocia in Nevsehir is located in which country?,Turkey,Italy,Germany,France
+205,2,Europe,hard,landmarks,The State Hermitage Museum is located in which country?,Russia,France,U.S.A.,Moldova
+206,3,Europe,hard,landmarks,Great Mosque of Cordoba is located in which country?,Spain,Colombia,Argentina,Chile
+207,4,Europe,hard,landmarks,"Hagia Sophia, also known as the “Church of the Holy Wisdom” is located in which country?",Turkey,Italy,Greece,Poland
+208,5,Europe,hard,landmarks,Trevi Fountain is located in which country?,Italy,Poland,Bolivia,Turkey
+209,6,Europe,hard,landmarks,Arc de Triomphe is located in which country?,France,Germany,Italy,England
+210,7,Europe,hard,landmarks,The Tower Bridge is located in which city?,London,Dublin,Budapest,Monaco
+211,1,Africa,easy,landmarks,The Pyramids of Giza are located in which country?,Egypt,Algeria,Lebanon,Iraq
+212,2,Africa,easy,landmarks,Mt. Kilimanjaro is located in which country?,Tanzania,Nepal,Bhutan,Sudan
+213,3,Africa,easy,landmarks,Karnak Temple is located in which country?,Egypt,Tunisia,Lebanon,Libya
+214,4,Africa,easy,landmarks,"World's largest diamond mine, also known as the Big Hole is located in which country?",South Africa,Libya,Tanzania,Kenya
+215,5,Africa,easy,landmarks,Table Mountain is located in which country?,South Africa,Nepal,Nigeria,Egypt
+216,6,Africa,easy,landmarks,The original Library of Alexandria is located in which country?,Egypt,Algeria,Nigeria,South Africa
+217,7,Africa,easy,landmarks,The Sphinx is located in which city?,Cairo,Luxor,Cape Town,Fes
+218,1,Africa,medium,landmarks,Ngorongoro Crater is located in which country?,Tanzania,Mexico,U.S.A.,Chad
+219,2,Africa,medium,landmarks,Victoria Falls is located between which two countries?,Zambia & Zimbabwe,Ethiopia-Kenya,Senegal-Botswana,Tanzania-Kenya
+220,3,Africa,medium,landmarks,Valley of the Kings is located in which country?,Egypt,Tanzania,Turkey,Italy
+221,4,Africa,medium,landmarks,Fish River Canyon is located in which country?,Namibia,U.S.A.,Canada,India
+222,5,Africa,medium,landmarks,The tourist attraction of Table Mountain lies in which city?,Cape Town,Port Louis,Nairobi,Astana
+223,6,Africa,medium,landmarks,Okavango Delta is located in which country?,Botswana,South Africa,Zimbabwe,Ethiopia
+224,7,Africa,medium,landmarks,Obelisk of Queen Hatshepsut is located in which country?,Egypt,Turkey,South Africa,Paraguay
+225,1,Africa,hard,landmarks,Abu Simbel is located in which country?,Egypt,Nigeria,Algeria,Iran
+226,2,Africa,hard,landmarks,Robben Island is located in which city?,Cape Town,Luxer,Cairo,Fes
+227,3,Africa,hard,landmarks,Victoria Clock Tower is located in which country?,Seychelles,Lebanon,South Africa,Zimbabwe
+228,4,Africa,hard,landmarks,Fish River Canyon is located in which country?,Namibia,U.S.A.,Colombia,Sudan
+229,5,Africa,hard,landmarks,Ngorongoro Crater is located in which country?,Tanzania,Nigeria,Algeria,Ethiopia
+230,6,Africa,hard,landmarks,The Obelisk of Axum is located in which country?,Ethiopia,Nigeria,Uruguay,Paraguay
+231,7,Africa,hard,landmarks,Ramasseum is located in which country?,Egypt,India,Kenya,South Africa
+232,1,Asia,easy,landmarks,Petra is located in which country?,Jordan,Iraq,Lebanon,Iran
+233,2,Asia,easy,landmarks,The Great Wall of China is located in which country?,China,Japan,Korea,Indonesia
+234,3,Asia,easy,landmarks,Taj Mahal is located in which country?,India,China,Iran,Sri Lanka
+235,4,Asia,easy,landmarks,Mecca is located in which country?,Saudi Arabia,Oman,Bahrain,Kuwait
+236,5,Asia,easy,landmarks,Golden Temple of Amritsar is located in which country?,India,China,Japan,Iran
+237,6,Asia,easy,landmarks,Burj Al Arab is located in which country?,United Arab Emirates,Bahrain,Kuwait,Saudi Arabia
+238,7,Asia,easy,landmarks,The Kaaba is located in which country?,Saudi Arabia,Iran,Iraq,Pakistan
+239,1,Asia,medium,landmarks,The Forbidden City is located in which country?,China,Bhutan,Mongolia,Nepal
+240,2,Asia,medium,landmarks,Mount Everest is located on the border of which two countries?,China-Nepal,China-India,India-Nepal,India-Pakistan
+241,3,Asia,medium,landmarks,Bali is located in which country?,Indonesia,Malaysia,India,Philippines
+242,4,Asia,medium,landmarks,Taj Mahal is located in which country?,India,Pakistan,Bhutan,Nepal
+243,5,Asia,medium,landmarks,Golden Temple of Amritsar is located in which country?,India,Bhutan,Nepal,Sri Lanka
+244,6,Asia,medium,landmarks,Dead Sea is located in which two countries?,Israel-Jordan,Jordan-Lebanon,Iran-Iraq,Turkey-Iraq
+245,7,Asia,medium,landmarks,Big Buddha is located in which country?,China,Iran,Japan,United Arab Emirates
+246,1,Asia,hard,landmarks,Angkor Wat Temple is located in which country?,Cambodia,India,Bhutan,Vietnam
+247,2,Asia,hard,landmarks,Banaue Rice Terraces in Ifugao is located in which country?,Philippines,Bhutan,India,Burma
+248,3,Asia,hard,landmarks,Bagan Temples & Pagodas is located in which country?,Burma,India,Bhutan,Nepal
+249,4,Asia,hard,landmarks,Borobudur Temple in Magelang is located in which country?,Indonesia,Bhutan,Sri Lanka,India
+250,5,Asia,hard,landmarks,Shwedagon Pagoda in Yangon is located in which country?,Burma,India,Vietnam,Brunei
+251,6,Asia,hard,landmarks,Baalbek & Its Ruined Temples is located in which country?,Lebanon,Croatia,Luxembourg,Croatia
+252,7,Asia,hard,landmarks,Big Buddha is located in which country?,China,Bhutan,Nepal,Nepal
+253,1,Oceania,easy,landmarks,The Great Barrier Reef is located in which country?,Australia,China,Taiwan,South Africa
+254,2,Oceania,easy,landmarks,Lady Knox Geyser is located in which country?,New Zealand,American Samoa,Australia,Fiji
+255,3,Oceania,easy,landmarks,Bora Bora Lagoon is located in which country?,French Polynesia,France,Andaman and Nicobar Islands,Germany
+256,4,Oceania,easy,landmarks,Two Lover's Point is located in which country?,Guam,U.S.A.,Mexico,India
+257,5,Oceania,easy,landmarks,Wave Rock is located in which country?,Australia,Mexico,England,Spain
+258,6,Oceania,easy,landmarks,The Pinnacles is located in which country?,Australia,Egypt,Japan,Brazil
+259,7,Oceania,easy,landmarks,Which landmark is named after the governor of New Zealand Lady Constance Knox?,Lady Knox Geyser,Two Lover's Point,Bora Bora Lagoon,Sydney Opera House
+260,1,Oceania,medium,landmarks,The Sydney Opera House is located in which Australian state?,New South Wales,Queensland,Victoria,Tasmania
+261,2,Oceania,medium,landmarks,Nan Mandol is located in which country?,Micronesia,Indonesia,India,Tasmania
+262,3,Oceania,medium,landmarks,Bora Bora Lagoon is located in which country?,French Polynesia,New Zealand,Wake Island,Solomon Islands
+263,4,Oceania,medium,landmarks,Mount Cook is located in which country?,New Zealand,Australia,Jarvis Islands,Solomon Islands
+264,5,Oceania,medium,landmarks,Two Lover's Point is located in which country?,Guam,Fiji,Niue,Palau
+265,6,Oceania,medium,landmarks,Which is the adventure Tourism capital of New Zealand?,Queenstown,Canberra,Suva,Pohnpei
+266,7,Oceania,medium,landmarks,Sacrd Heart Cathedral Bendigo is located in which country?,New Zealand,Australia,Fiji,Solomon Islands
+267,1,Oceania,hard,landmarks,The Pinnacles are located in which National Park?,Nambung National Park,Yellowstone National Park,Big Bend National Park,Yosemite National Park
+268,2,Oceania,hard,landmarks,Which landmark is located near Mount Otemanu?,Bora Bora Lagoon,Mount Cook,Nan Mandol,Sydney Opera House
+269,3,Oceania,hard,landmarks,Pancake Rocks are located in which National Park?,Paparoa National Park,Nambung National Park,Yellowstone National Park,Mount Aspiring National Park
+270,4,Oceania,hard,landmarks,Rotorua is located in which country?,New Zealand,Samoa,Micronesia,Kiribati
+271,5,Oceania,hard,landmarks,NanMandol is located in which city?,Pohnpei,Canberra,Majuro,Suva
+272,6,Oceania,hard,landmarks,Mount Cook is located on which island/s?,South Island,Solomon Islands,Wake Island,Jarvis Islands
+273,7,Oceania,hard,landmarks,Wave Rock is located in which city?,Hyden,Wellington,Suva,Tarawa
+274,1,Antarctica,easy,geography_and_geology,Which landmark is located near a volcano source?,Deception Island,Paradise Harbor,Rose Ice Shelf,Jagged Mountain
+281,1,Antarctica,medium,geography_and_geology,Which landmark is located near a volcano source?,Deception Island,Paradise Harbor,Rose Ice Shelf,Jagged Mountain
+288,1,Antarctica,hard,geography_and_geology,Which landmark is located near a volcano source?,Deception Island,Paradise Harbor,Rose Ice Shelf,Jagged Mountain
+295,1,NorthAmerica,easy,festivals,Where is the Electric Daisy Carnival held?,Las Vegas,New York City,Chicago,Los Angeles
+296,2,NorthAmerica,easy,festivals,Where is the Great American Beer Festival held?,"Denver, Colorado","New York City, New York","Chicago, Illinois","Los Angeles, California"
+297,3,NorthAmerica,easy,festivals,Where does the Greenwich Village Halloween Parade take place?,"Denver, Colorado","New York City, New York","Chicago, Illinois","Los Angeles, California"
+298,4,NorthAmerica,easy,festivals,Where does Macy's Thanksgiving Day Parade take place?,"New York City, New York","Denver, Colorado","Chicago, Illinois","Los Angeles, California"
+299,5,NorthAmerica,easy,festivals,About where does the National Championship air Races take place?,Reno,New York City,Chicago,Los Angeles
+300,6,NorthAmerica,easy,festivals,Where is the Ney York Marathon?,"New York City, New York","Denver, Colorado","Chicago, Illinois","Los Angeles, California"
+301,7,NorthAmerica,easy,festivals,Where is the Mummers Parade?,"Philadelphia, Pennsylvania","Denver, Colorado","Chicago, Illinois","Los Angeles, California"
+302,1,NorthAmerica,medium,festivals,Where is the World Championship Punkin' Chunkin' Contest held?,"Lewes, DE",,,
+303,2,NorthAmerica,medium,festivals,When is the Mummers Parade?,January,February,March,December
+304,3,NorthAmerica,medium,festivals,When does Punxsutawney Phil come out of his burrow?,February,January,March,December
+305,4,NorthAmerica,medium,festivals,"If you were celebrating Mardi Gras and got beads, where would you be?","New Orleans, LA","New York City, NY","Chicago, IL","Los Angeles, CA"
+306,5,NorthAmerica,medium,festivals,The most famous comic-con is held in which city?,"San Diego, CA","New York City, NY","Chicago, IL","Los Angeles, CA"
+307,6,NorthAmerica,medium,festivals,Where is Lollapalooze held?,"Chicago, IL","New York City, NY","San Diego, CA","Los Angeles, CA"
+308,7,NorthAmerica,medium,festivals,Where is Burning Man?,"Black Rock City, NV","New York City, NY","San Diego, CA","Los Angeles, CA"
+309,1,NorthAmerica,hard,festivals,Where does Punxsutawney Phil live?,Gobbler's Knob,Gretta's Knob,Gobbler's Grottle,Gobbler's Arch
+310,2,NorthAmerica,hard,festivals,Where is the Big Apple Film Festival held?,"New York City, New York","Denver, Colorado","Chicago, Illinois","Los Angeles, California"
+311,3,NorthAmerica,hard,festivals,In which part of the city is the Pittsburgh Zombie Fest held? (2015),Monroeville,Greenfield,Hazelwood,Hays
+312,4,NorthAmerica,hard,festivals,"In 2016, where will the World Ice Arct Championship be held?","Fairbanks, AK","New York City, NY","San Diego, CA","Los Angeles, CA"
+313,5,NorthAmerica,hard,festivals,"If I were to go to a Jazz and Heritage Festival, which city would I most likely be in?","New Orleans, LA","New York City, NY","San Diego, CA","Los Angeles, CA"
+314,6,NorthAmerica,hard,festivals,Where is the All-American Soap Box Derby held?,"Akron, OH","New York City, NY","San Diego, CA","Los Angeles, CA"
+315,7,NorthAmerica,hard,festivals,Where is the Art Car Parade?,"Houston, TX","New York City, NY","San Diego, CA","Los Angeles, CA"
+316,1,SouthAmerica,easy,festivals,Carnival in blank is one of the best carnavals in Brazil.,Rio de Janeiro,Parintins,Sao Paulo,Salvador
+317,2,SouthAmerica,easy,festivals,Boi Bumba is found in which city of Brazil?,Parintins,Rio de Janeiro,Sao Paulo,Salvador
+318,3,SouthAmerica,easy,festivals,Brazil's International Animation Festival is held in which city?,Rio de Janeiro,Parintins,Sao Paulo,Salvador
+319,4,SouthAmerica,easy,festivals,The Brazilian Formula 1 Grand Prix is held where?,Sao Paulo,Rio de Janeiro,Parintins,Salvador
+320,5,SouthAmerica,easy,festivals,Where is the Buenos Aires International Theatre Festival held?,Buenos Aires,Salta,San Juan,La Plata
+321,6,SouthAmerica,easy,festivals,"La Fiesta de la Tradicion is celebrated by all Argentina, when is it?",November,October,December,Janurary
+322,7,SouthAmerica,easy,festivals,Limeira hosts what kind of fest every year?,Tattoo Fest,Beer Fest,Culture Fest,Not This One
+323,1,SouthAmerica,medium,festivals,Cirio De Nazare is held in which city?,Belem,Salta,San Juan,La Plata
+324,2,SouthAmerica,medium,festivals,Limeira hosts what kind of fest every year?,Tattoo Fest,Beer Fest,Culture Fest,Not This One
+325,3,SouthAmerica,medium,festivals,The Anima Mundi - International Animation Festival is held in which month?,July,June,March,May
+326,4,SouthAmerica,medium,festivals,When is the Buenos Aires Contemporary Dance Festival?,December,November,February,Janurary
+327,5,SouthAmerica,medium,festivals,When is the Buenos Aires International Independent Film Festival?,April,June,March,May
+328,6,SouthAmerica,medium,festivals,when is the Buenos Aires International Jazz Festival?,October,December,November,February
+329,7,SouthAmerica,medium,festivals,The Brazilian Formula 1 Grand Prix is held where?,Sao Paulo,Rio de Janeiro,Parintins,Salvador
+330,1,SouthAmerica,hard,festivals,When is the Buenos Aires Contemporary Dance Festival?,December,November,February,Janurary
+331,2,SouthAmerica,hard,festivals,When is the Buenos Aires International Independent Film Festival?,April,June,March,May
+332,3,SouthAmerica,hard,festivals,when is the Buenos Aires International Jazz Festival?,October,December,November,February
+333,4,SouthAmerica,hard,festivals,Where is the La Plata Jazz Festival held?,Buenos Aires,La Plata,Bariloche,Tucuman
+334,5,SouthAmerica,hard,festivals,Where is the Semana Musical Llao Llao held?,Bariloche,Buenos Aires,La Plata,Tucuman
+335,6,SouthAmerica,hard,festivals,When is the Buenos Aires International Theatre Festival?,October,December,November,February
+336,7,SouthAmerica,hard,festivals,When is Buenos Aires Pride?,November,December,October,February
+337,1,Europe,easy,festivals,Bastille Day is celebrated in what country?,France,England,Spain,Germany
+338,2,Europe,easy,festivals,Donauinselfest is held where?,Vienna,London,Paris,Madrid
+339,3,Europe,easy,festivals,Where is the Fest Major de Gracia held?,Spain,England,Italy,France
+340,4,Europe,easy,festivals,There is an International Oyster Festival in this city,Galway,London,Paris,Madrid
+341,5,Europe,easy,festivals,Wimbledon is held in which city?,London,Paris,Kent,Edinburough
+342,6,Europe,easy,festivals,Burn's Night is celebrated in which country?,Scotland,England,Italy,France
+343,7,Europe,easy,festivals,Calcio Sorico is celebrated in which country?,Italy,England,Belgium,France
+344,1,Europe,medium,festivals,Where is the Air Guitar World Championships held?,"Oulu, Finland","Akaa, Finland","Alavus, Finland","Forssa, Finland"
+345,2,Europe,medium,festivals,What color fills the streets during Amsterdam King's Day?,Orange,Blue,Purple,Red
+346,3,Europe,medium,festivals,When is Bastille Day?,July,June,March,May
+347,4,Europe,medium,festivals,When is Bestival in England?,September,November,October,August
+348,5,Europe,medium,festivals,When is the Berlin Jazz Festival?,November,December,October,February
+349,6,Europe,medium,festivals,Edinburgh Festival Fringe is held in which country?,Scotland,England,Italy,France
+350,7,Europe,medium,festivals,When is the Great British Beer Festival?,August,July,September,October
+351,1,Europe,hard,festivals,Hamburger Dom is in which country?,Germany,England,Belgium,France
+352,2,Europe,hard,festivals,The International Regatta of Bathtubs is held where?,Belgium,England,Germany,France
+353,3,Europe,hard,festivals,What color fills the streets during Amsterdam King's Day?,Orange,Blue,Purple,Red
+354,4,Europe,hard,festivals,Oktoberfest originated from which country?,Germany,England,Belgium,France
+355,5,Europe,hard,festivals,Where is the Ommegang held?,Belgium,England,Germany,France
+356,6,Europe,hard,festivals,Where is Vappu celebrated?,Finland,England,Germany,France
+357,7,Europe,hard,festivals,When is the Berlin Jazz Festival?,November,December,October,February
+358,1,Africa,easy,festivals,Flora Egypt Fair is held where?,Cairo,Alexandria,Giza,Port Said
+359,2,Africa,easy,festivals,Where is Pharaohs Rally held?,Cairo,Alexandria,Giza,Port Said
+360,3,Africa,easy,festivals,Where is the Sphink Festival held?,Cairo,Alexandria,Giza,Port Said
+361,4,Africa,easy,festivals,There is a Friendship Fest held in which city of Morocco?,Marrakech,Casablanca,Tangier,Fes
+362,5,Africa,easy,festivals,"AfrikaBurn, acclaimed cousin of Burning Man, is held in which African Country?",South Africa,Morocco,Egypt,Ethiopia
+363,6,Africa,easy,festivals,Cape Town Festival is held in which city?,Cape Town,Buffalo city,Johannesburg,Tshwane
+364,7,Africa,easy,festivals,Wacky Wine Weekend is held where?,Robertson,Cape Town,Buffalo city,Johannesburg
+365,1,Africa,medium,festivals,When is the Cairo International Fashion Exhibition?,October,December,November,February
+366,2,Africa,medium,festivals,When is the Cairo International Film Festival?,November,December,October,February
+367,3,Africa,medium,festivals,When is the Cairo International Book Fair?,January,December,October,February
+368,4,Africa,medium,festivals,the Marathon Des Sables is held in which city?,Ouarzazate,Casablanca,Tangier,Fes
+369,5,Africa,medium,festivals,When is the Cape Town International Kite Festival?,October,December,November,February
+370,6,Africa,medium,festivals,When is the Cape Town International Jazz Festival?,March,April,May,June
+371,7,Africa,medium,festivals,There is a Friendship Fest held in which city of Morocco?,Marrakech,Casablanca,Tangier,Fes
+372,1,Africa,hard,festivals,When is the Wellington Wine Harvest Festival?,March,April,May,June
+373,2,Africa,hard,festivals,When is the Cairo International Fashion Exhibition?,October,December,November,February
+374,3,Africa,hard,festivals,When is the Cairo International Film Festival?,November,December,October,February
+375,4,Africa,hard,festivals,When is the Cairo International Book Fair?,January,December,October,February
+376,5,Africa,hard,festivals,When is the Cape Town International Kite Festival?,October,December,November,February
+377,6,Africa,hard,festivals,When is the Cape Town International Jazz Festival?,March,April,May,June
+378,7,Africa,hard,festivals,Where is Pharaohs Rally held?,Cairo,Alexandria,Giza,Port Said
+379,1,Asia,easy,festivals,Dalian International Beer Festival is held where?,China,Korea,India,Russia
+380,2,Asia,easy,festivals,The Kunshan International Beer Festival is held in which month?,August,September,November,October
+381,3,Asia,easy,festivals,When did Beijing host the Olympics?,2008,2004,2010,2012
+382,4,Asia,easy,festivals,The Pushkar Camel Fair is held in which country?,India,China,South Korea,Japan
+383,5,Asia,easy,festivals,The Cherry Blossom Festival is found in which Japanese city?,Okinawa,Tokyo,Nagoya,Toyohashi
+384,6,Asia,easy,festivals,The Chichibu Night Festival is held in which country?,Japan,China,South Korea,India
+385,7,Asia,easy,festivals,The Japanese Tub race is held in which city?,Ito City,Tokyo,Nagoya,Toyohashi
+386,1,Asia,medium,festivals,The Bookworm International Literary Festival is held in which Chinese city?,Suzhou,Beijing,Gungzhou,Changzhou
+387,2,Asia,medium,festivals,The Chinese International Animation Festival is held in which city?,Changzhou,Suzhou,Beijing,Gungzhou
+388,3,Asia,medium,festivals,The Chinese Formula 1 Grand Prix is held in which city?,Shanghai,Changzhou,Suzhou,Beijing
+389,4,Asia,medium,festivals,The Navratri Festival is held in which city in India?,Gujarat,Mumbai,Delhi,Bangalore
+390,5,Asia,medium,festivals,The Mudslinging Festival is found in which Japanese city?,Chiba,Tokyo,Nagoya,Toyohashi
+391,6,Asia,medium,festivals,The Chichibu Night Festival is held in which country?,Japan,China,South Korea,India
+392,7,Asia,medium,festivals,When is the Shanghai Jazz Festival?,October,December,November,February
+393,1,Asia,hard,festivals,When is the Shanghai Fine Jewellery and Art Fair?,October,December,November,February
+394,2,Asia,hard,festivals,When is the Shanghai Jazz Festival?,October,December,November,February
+395,3,Asia,hard,festivals,The Pushkar Camel Fair is held when?,November,December,October,February
+396,4,Asia,hard,festivals,When is the Navratri Festival?,September,October,August,July
+397,5,Asia,hard,festivals,When is Rath Yatra?,June,July,May,April
+398,6,Asia,hard,festivals,Obon is held in which city?,Okinawa,Tokyo,Nagoya,Toyohashi
+399,7,Asia,hard,festivals,The Chinese Formula 1 Grand Prix is held in which city?,Shanghai,Changzhou,Suzhou,Beijing
+400,1,Oceania,easy,festivals,Moomba is found in which country?,Australia,New Zealand,Fiji,Tonga
+401,2,Oceania,easy,festivals,The Adelaide Festival of Arts is found in which country?,Australia,New Zealand,Fiji,Tonga
+402,3,Oceania,easy,festivals,Bathurst 1000 is found in which country?,Australia,New Zealand,Fiji,Tonga
+403,4,Oceania,easy,festivals,The Gold Coast Airport Marathon is held where?,Gold Coast,Levin,Rotorua,Melbourne
+404,5,Oceania,easy,festivals,Where is the Eco River Festival held?,Levin,Rotorua,Melbourne,Gold Coast
+405,6,Oceania,easy,festivals,Globalfest is held in which New Zealand city?,Rotorua,Levin,Melbourne,Gold Coast
+406,7,Oceania,easy,festivals,When is the Coolum Kite Festival held?,October,November,September,December
+407,1,Oceania,medium,festivals,Moomba is found in which city?,Melbourne,Levin,Rotorua,Gold Coast
+408,2,Oceania,medium,festivals,The Australian Formula 1 Grand Prix is held in which city?,Melbourne,Levin,Rotorua,Gold Coast
+409,3,Oceania,medium,festivals,Clipsal 500 is held in which city in Australia?,Adelaide,Levin,Rotorua,Gold Coast
+410,4,Oceania,medium,festivals,The Melbourne Wine and Food Festival is held when?,February,December,October,January
+411,5,Oceania,medium,festivals,Where is the Auckland Festival of Photography held?,Auckland,Wellington,Christchurch,Hamilton
+412,6,Oceania,medium,festivals,Where is the Eco River Festival held?,Levin,Rotorua,Melbourne,Gold Coast
+413,7,Oceania,medium,festivals,Globalfest is held in which New Zealand city?,Rotorua,Levin,Melbourne,Gold Coast
+414,1,Oceania,hard,festivals,When is the Coolum Kite Festival held?,October,September,November,December
+415,2,Oceania,hard,festivals,Where is the Grama Festival held?,Arnhem Land,Levin,Melbourne,Gold Coast
+416,3,Oceania,hard,festivals,Newtown Festival is held in which New Zealand city?,Wellington,Newtown,Christchurch,Hamilton
+417,4,Oceania,hard,festivals,The Souther Lakes Festival of Colour is held where in New Zealand?,Lake Wanaka,Newtown,Christchurch,Hamilton
+418,5,Oceania,hard,festivals,The World Buskers Festival is held in which city?,Christchurch,Buskers,Wellington,Newtown
+419,6,Oceania,hard,festivals,The Magma Short Film Festival is held where?,Rotorua,Levin,Melbourne,Gold Coast
+420,7,Oceania,hard,festivals,Waitangi Day is celebrated in which country?,New Zealand,Australia,Fiji,Tonga
+421,1,Antarctica,easy,research,What is the name of the largest research Station in Antarctica?,McMurdo Station,Princess Elisabeth Station,Casey Station,Bernardo O'Higgins Station
+428,1,Antarctica,medium,research,What is the world's first zero-emissions polar science station in Antarctica?,Princess Elisabeth Station,McMurdo Station,Byrd Station,Bernardo O'Higgins Station
+435,1,Antarctica,hard,research,The Byrd Station is owned by which country?,United States,India,Australia,Brazil
+442,1,NorthAmerica,easy,sports,This full contact game is popular in America.,Football,Soccer,Rugby,Tennis
+443,2,NorthAmerica,easy,sports,Which North American country has won the most gold medals in the Olympics?,United States,Canada,Mexico,Jamaica
+444,3,NorthAmerica,easy,sports,"This sport is known as ""America's National Pastime""",Baseball,Football,Golf,Swimming
+445,4,NorthAmerica,easy,sports,The NBA is the organization that manages which sport?,Basketball,Baseball,Volleyball,Soccer
+446,5,NorthAmerica,easy,sports,"While Formula 1 is popular in Europe, this type of car racing is more popular in America.",NASCAR,FastCar,Formula 2,Indianapolis 500
+447,6,NorthAmerica,easy,sports,This is the most popular sport in Mexico.,Soccer,Baseball,Rugby,Football
+448,7,NorthAmerica,easy,sports,Which of the following is Canada's national sport?,Hockey,Boxing,Soccer,Football
+449,1,NorthAmerica,medium,sports,This North American country took home the most medals in the 2010 Winter Olympics,Canada,United States,Mexico,Russia
+450,2,NorthAmerica,medium,sports,"Besides hockey, Canada has earned more medals than any other nation at this Winter Olympic sport.",Curling,Luge,Figure Skating,Speed Skating
+451,3,NorthAmerica,medium,sports,"In the United States, this sport has the largest number of College athletes.",Football,Basketball,Baseball,Soccer
+452,4,NorthAmerica,medium,sports,The 1968 Summer Olympics was hosted by this North American city.,Mexico City,Atlanta,Vancouver,Los Angeles
+453,5,NorthAmerica,medium,sports,The 1976 Summer Olympics were hosted in this North American city.,Montreal,Vancouver,Atlanta,Detroit
+454,6,NorthAmerica,medium,sports,This North American country has hosted the greatest number of Olypic Games,United States,Canada,Mexico,France
+455,7,NorthAmerica,medium,sports,"In the American sport of baseball, this player stands between second and third base.",Shortstop,Pitcher,Base coach,Outfielder
+456,1,NorthAmerica,hard,sports,"After soccer, this is the most popular sport in Mexico.",Boxing,Golf,Basketball,Baseball
+457,2,NorthAmerica,hard,sports,This annual award is given to an exceptional Canadian Athlete.,Lou Marsh Trophy,Wayne Gretsky Cup,Ben Johnson Medal,Kurt Browning Award
+458,3,NorthAmerica,hard,sports,This is the most popular college sport for females in the United States,Soccer,Track and Field,Basketball,Swimming
+459,4,NorthAmerica,hard,sports,"Other than hockey, what is Canada's other national sport?",Lacrosse,Soccer,Baseball,Curling
+460,5,NorthAmerica,hard,sports,This is the name of the national soccer league in Mexico.,Liga MX,Liga Uno,NFA,Liga de Futbol
+461,6,NorthAmerica,hard,sports,"Guatemala has earned one Olympic Medal, a silver, in this sport.",20km Walk,Marathon,Archery,400m sprint
+462,7,NorthAmerica,hard,sports,This NFL team won the Super Bowl in 2008.,New York Giants,New England Patriots,Green Bay Packers,Indianapolis Colts
+463,1,SouthAmerica,easy,sports,This is the first South American country to host the Olympics,Brazil,Chile,Columbia,Peru
+464,2,SouthAmerica,easy,sports,This sport is the most popular in all South American Countries,Association Football,Rugby,Golf,Lacrosse
+465,3,SouthAmerica,easy,sports,Basketball has the most popularity in this country.,Venezuela,Ecuador,Chile,Brazil
+466,4,SouthAmerica,easy,sports,This South American city will host the 2016 Summer Olympic Games,Rio de Janeiro,Bolivia,Bogota,Buenos Aires
+467,5,SouthAmerica,easy,sports,"Pele, the most famous soccer player of all time, is from this country.",Brazil,Colombia,Argentina,Mexico
+468,6,SouthAmerica,easy,sports,Which of the following soccer players are from South America?,All of them,Ronaldo,Messi,Ronaldinho
+469,7,SouthAmerica,easy,sports,This is the national sport of Chile,Chilean Rodeo,Association Football,Soccer,Rugby
+470,1,SouthAmerica,medium,sports,Carlos Monzon of Argentina is considered one of the greatest athletes to have lived in this sport,Boxing,Soccer,Formula One,Archery
+471,2,SouthAmerica,medium,sports,This is the name of the Argentina women's national Field Hockey team,Las Leonas,Las Caballos,Las Tigres,Las Pescados
+472,3,SouthAmerica,medium,sports,What is the most recent year that Peru has competed in the FIFA world cup?,1982,1930,1970,1978
+473,4,SouthAmerica,medium,sports,Edqin Zasquez won a Peru's only gold medal in this sport in 1948.,Shooting,Swimming,800m run,Sailing
+474,5,SouthAmerica,medium,sports,This country has won the Copa America 15 times.,Uruguay,Argentina,Peru,Bolivia
+475,6,SouthAmerica,medium,sports,Argentina won a gold medal in Men's Basketball in this year's summer olympics,2004,2000,2008,2012
+476,7,SouthAmerica,medium,sports,Chile took home the gold and bronze medals for this 2004 summer olympic sport,Tennis,Boxing,Weightlifting,Shooting
+477,1,SouthAmerica,hard,sports,"The Copa America is the longest running association football tournament, started in which year?",1916,1900,1905,1923
+478,2,SouthAmerica,hard,sports,A record 277 Brazilian athletes attended this year's Summer Olympics,2008,2012,1988,1992
+479,3,SouthAmerica,hard,sports,Brazilian atheletes have earned 6 gold medals in this Summer Olympic sport,Sailing,Shooting,Archery,Diving
+480,4,SouthAmerica,hard,sports,This is the national sport of Colombia,Tejo,Association Football,Basketball,Roller Skating
+481,5,SouthAmerica,hard,sports,"In Tejo, this type of object is thrown",Puck,Ball,Javelin,Chicken
+482,6,SouthAmerica,hard,sports,This driver has won 7 Formula One races,Juan Pablo Montoya,James Rodriguez,German Vargas Lleras,Juan Manuel Santos
+483,7,SouthAmerica,hard,sports,This is the national sport of Argentina,Pato,Polo,Field Hockey,Association Football
+484,1,Europe,easy,sports,"From 1971 to 1976 only two teams won the European Cup, predecessor of the Champions League. Both won it three times. Which teams?",Ajax and Bayern,Ajax and Liverpool,Ajax and Juventus,Liverpool and Bayern
+485,2,Europe,easy,sports,For many years during the 1990s these two countries have battled each other for the European Baseball championship. Which 2 countries?,Italy and The Netherlands,France and The Netherlands,Italy and Germany,Italy and France
+486,3,Europe,easy,sports,Which of these German cities does not have a team in the NFL Europe League (American Football)?,Munich,Dusseldorf,Berlin,Frankfurt
+487,4,Europe,easy,sports,In which discipline did Great Britain win most of their medals at the 2000 Olympics in Sydney?,Sailing,Track and Field,Judo,Swimming
+488,5,Europe,easy,sports,Which European city was home to the Summer Olympics twice other than Athens and London?,Paris,Berlin,Munich,Rome
+489,6,Europe,easy,sports,Which British team became the first ever British team to win the European Cup?,Celtic,Liverpool,Nottingham Forest,Man Utd
+490,7,Europe,easy,sports,Which of the following teams did Inter Milan not face on their journey to the 1967 European Cup Final?,Sporting Club de Portugal,Real Madrid,CSKA Sofia,Vasas SC
+491,1,Europe,medium,sports,"In 1978 Mario Andretti became the Formula 1 champion of the world in the Italian Grand Prix. In that same race, his teammate died in a crash. Who was he?",Ronnie Petterson,Patrick Depailler,Jochen Rindt,Tom Price
+492,2,Europe,medium,sports,"In 1989 American Greg Lemond won the Tour de France by 8 seconds, by far the smallest margin ever. Who did he beat in the final time trial?",Laurent Fignon,Pascal Simon,Jean Francois Bernard,Charlie Mottet
+493,3,Europe,medium,sports,Who was the last European to win the French Open tennis championships in the 1990s?,Carlos Moya,Thomas Muster,Sergi Brugera,Yevgeni Kafelnikov
+494,4,Europe,medium,sports,"Which English team got into the final of the UEFA Cup 2 years in a row, failing to win both times?",Birmingham,Leeds,Liverpool,Dundee Utd
+495,5,Europe,medium,sports,"From 1968 to 1973, the UEFA Cup was won by an English club. But which of the following clubs was not one of the four English teams to win the Uefa Cup during that period of English domination?",Wolves,Leeds,Arsenal,Tottenham
+496,6,Europe,medium,sports,Who was the first team ever to win the European Super Cup?,Ajax,Barcelona,Rangers,HSV
+497,7,Europe,medium,sports,Who won the 1990-91 European Cup?,Red Star,Marseille,Man Utd,Feyenoord
+498,1,Europe,hard,sports,In what year did the Romanian side of Steaua Bucharest first win the European Cup?,1985-86,1978-79,1983-84,1993-94
+499,2,Europe,hard,sports,Who did PSV Eindhoven beat in the final of the 1987-88?,Benfica,Barcelona,Real Madrid,Juventus
+500,3,Europe,hard,sports,"In the first 30 years of the UEFA Cup, which of the following teams won three cups?",Liverpool,Parma,Ajax,Galatasaray
+501,4,Europe,hard,sports,"In 2002, Real Madrid won their ________ European Cup title.",9th,3rd,14th,19th
+502,5,Europe,hard,sports,What team does Lionel Messi play for?,Barcelona,Madrid,Man Utd,Liverpool
+503,6,Europe,hard,sports,"Patrick Vieira is a French legend, but in which country was he born?",Senegal,Ivory Coast,Ghana,France
+504,7,Europe,hard,sports,Which European club did Arsene Wenger manage before his stint with Grampus 8 in Japan?,Monaco,Rennes,Levante,Paris St Germain
+505,1,Africa,easy,sports,Who played against South Africa in their first official One Day International in 1991/92?,India,Pakistan,Australia,England
+506,2,Africa,easy,sports,Where did Naas Botha play his first test match for South Africa?,Wanderers,Twickenham,Ellis Park,Danie Craven
+507,3,Africa,easy,sports,At which race course is the Durban July run every year?,Greyville,Clairwood,Scottsville,Turffontein
+508,4,Africa,easy,sports,Who was South Africa's first Olympic Gold Medal winner?,Reginald Walker,Brian Ellis,Frank Williams,Michael Hadley
+509,5,Africa,easy,sports,Which South African who played between 1949 and 1960 was named a Wisden Cricketer of the year in 1956?,Hugh Tayfield,Raymond le Roux,Allan Donald,Rupert Hanley
+510,6,Africa,easy,sports,"Which South African swimmer was the first woman ever to win both the 100m and 200m Olympic breaststroke event, this was achieved at the 1996 Olympics?",Penny Heyns,Karen Muir,Natalie du Toit,Kathleen Smith
+511,7,Africa,easy,sports,Which South African soccer (football) player was appointed captain of Leeds United in 1998?,Lucas Radebe,Kaizer Motaung,Benni McCarthy,Doc Khumalo
+512,1,Africa,medium,sports,Who won the WBA junior lightweight title in 1986 and sucessfully defended it 12 times?,Brian Mitchell,Vic Toweel,Gerrie Coetzee,Simon Zondo
+513,2,Africa,medium,sports,"Which South African boxing champion, standing at just 4ft10in (147cm), retired in 2002 with four world titles?",Baby Jake Matlala,Pillay Duiker,Fraser Plaatjie,Kirk Morris
+514,3,Africa,medium,sports,Which disabled South African made history by qualifying for the able bodied final of the 800m freestyle at the 2002 Commonwealth games?,Natalie du Toit,Trevor Jones,Emily Gray,Scott Field
+515,4,Africa,medium,sports,"Which South African has won the US Open twice, in 1994 and 1997?",Ernie Els,Trevor Immelman,Retief Goosen,Gary Player
+516,5,Africa,medium,sports,How many Rugby tests did Jan Ellis play for South Africa?,38,21,99,76
+517,6,Africa,medium,sports,Who was the first South African to make a century on his test debut?,Andrew Hudson,Kepler Wessels,Hansie Cronje,Gary Kirsten
+518,7,Africa,medium,sports,Who were the hosts of the 2012 Africa Cup of Nations?,Gabon and Equatorial Guinea,Gabon and Angola,Gabon and Guinea,Gabon and Nigeria
+519,1,Africa,hard,sports,Which of these former champions is the only country to have qualified for the 2012 Africa Cup of Nations?,Tunisia,Cameroon,Egypt,Nigeria
+520,2,Africa,hard,sports,Who is the Africa Cup of Nations tournament all-time top scorer?,Samuel Eto'o,Benni McCarthy,Didier Drogba,Patrick Mboma
+521,3,Africa,hard,sports,How many Premier League players took part in the 2012 Africa Cup of Nations?,12,10,14,16
+522,4,Africa,hard,sports,Which Briton managed Egypt to glory in the 1986 Cup of Nations finals?,Mike Smith,Bobby Gould,Brian Horton,Stuart Baxter
+523,5,Africa,hard,sports,Which of Africa's regional federations can claim more Cup of Nations title winners?,UNAF (North Africa),WAFU (West Africa),UNIFFAC (Central Africa),COSAFA (Southern Africa)
+524,6,Africa,hard,sports,"In the 1992 Cup of Nations final, how many penalties were taken in the shoot-out before Ivory Coast beat Ghana?",24,18,20,22
+525,7,Africa,hard,sports,Who is the only player to have twice been named the Africa Cup of Nations most valuable player?,Ahmed Hassan,Roger Milla,Abedi Pele,Jay-Jay Okocha
+526,1,Asia,easy,sports,"The Asian Games, a sports competition for athletes from all across Asia, were first held in what year?",1951,1947,1966,1973
+527,2,Asia,easy,sports,The Asian Games have been hosted by many countries in Asia. Where were the first games held?,"New Delhi, India","Manila, Philippines","Seoul, Korea","Bangkok, Thailand"
+528,3,Asia,easy,sports,The Asian Games are under the authority of which governing body?,Olympic Council of Asia,Wide World of Sports,Asian Sports Federation,United Nations
+529,4,Asia,easy,sports,How often are the Asian Games held?,Every four years,Every five years,Every six years,Every two years
+530,5,Asia,easy,sports,"One country dominated the Asian Games the first eight times they were held, leading in the medal count. Which country was this?",Japan,Indonesia,India,China
+531,6,Asia,easy,sports,"Of the many sports in the Asian Games, which of the following was not part of the competition at the initial Games?",Boxing,Swimming,Basketball,Athletics
+532,7,Asia,easy,sports,"Following the break-up of the Soviet Union, several former Soviet Republics began to take part in the Asian Games, including Kazakhstan, Kyrgystan, Tajikistan, Turkmenistan, and Uzbekistan. In 1996, which nation outside of Asia was officially denied entry to the games?",Australia,Egypt,Russia,USA
+533,1,Asia,medium,sports,"The Asian Games have not been without controversy. Which Asian nation has been officially excluded from the Olympic Council of Asia, and therefore unable to participate in Asiad?",Israel,Myanmar,Taiwan,North Korea
+534,2,Asia,medium,sports,The first Asian Winter Games were held in 1986 in which Japanese city?,Sapporo,Sendai,Aomori,Hakodate
+535,3,Asia,medium,sports,What is the motto of the Asian Games?,Ever Onward,United in Spirit,Unity Through Sports Development,Outwit - Outplay - Outlast
+536,4,Asia,medium,sports,"The Southeast Asian Games first used this name in 1977 upon the entry of three new countries. Before it was renamed the SEA Games, it was known as what?",Southeast Asian Peninsular Games,Southeast Asian Insular Games,MaPhilIndo Games,Southeast Asian Friendship Games
+537,5,Asia,medium,sports,When did Laos first host the biennial meet?,2009,2007,2005,2003
+538,6,Asia,medium,sports,"At the 15th edition of SEA Games (1989) in Kuala Lumpur, Malaysia, who was named as the Athlete of the Games?",Eric Buhain,Arwut Chinnapasaen,Elvin Chia,Quah Zheng Wen
+539,7,Asia,medium,sports,"What was the official mascot of the 1985 SEA Games in Bangkok, Thailand?",siamese cat,lion,eagle,garuda
+540,1,Asia,hard,sports,Which of the following edition of the SEA Games was *not* held in Thailand?,14th (1987),8th (1975),18th (1995),13th (1985)
+541,2,Asia,hard,sports,"At what edition of the games were Brunei, Indonesia and Philippines admitted as member nations?",9th (1977),11th (1981),10th (1979),12th (1983)
+542,3,Asia,hard,sports,Who officially opened the 1999 (20th) SEA Games?,Sultan Hassanal Bolkiah,Bhumibol Adulyadej,Ferdinand Marcos,Mahathir Mohamad
+543,4,Asia,hard,sports,What team won the basketball championships (men/women) at the 1991 SEA Games?,Philippines/Thailand,Thailand/Vietnam,Philippines/Malaysia,Indonesia/Philippines
+544,5,Asia,hard,sports,"At the 22nd edition of the SEA Games held in 2003, Timor-Leste participated for the first time. This edition was held where?","Hanoi, Vietnam","Manila, Philippines","Bangkok, Thailand","Kuala Lumpur, Malaysia"
+545,6,Asia,hard,sports,Which country was the first to host the SEA Games four times?,Indonesia,Thailand,Malaysia,Philippines
+546,7,Asia,hard,sports,This sport is a martial art distinctive to Korea and is increasing in popularity within the country. It is sometimes described as a combined form of judo and taekwondo. What is the name of this sport?,Hapkido,Sumo,Taichi,Krav maga
+547,1,Oceania,easy,sports,What is the name of the rugby all blacks chant?,Haka,Mala,Scream,Fight
+548,2,Oceania,easy,sports,"In a rugby union scrum, what is the name given to the space between opposition front rows through which the ball is fed?",Tunnel,Box,Gap,Space
+549,3,Oceania,easy,sports,"Due to problems at the scrum, a directive was applied (until mid-2013) which stated that the referee had to call out the four phases of the scrum. In what order were the phases?","Crouch, Touch, Pause, Engage","Crouch, Pause, Set, Engage","Stand, Crouch, Prepare, Engage","Stand, Pause, Prepare, Engage"
+550,4,Oceania,easy,sports,"A world champion from 1933 to 1950, Walter Lindrum defied all changes of rules that were designed to slow down his freakish scoring ability. What sport did he dominate?",Billiards,Table Tennis,Cricket,Golf
+551,5,Oceania,easy,sports,"Born in 1938, which tennis player was the first to win the Grand Slam twice?",Rod Laver,Lew Hoad,Tony Roach,Margaret Court
+552,6,Oceania,easy,sports,Which Sydney-born legend of swimming took up swimming to help overcome asthma. This person was the first swimmer to win the same event at three successive Olympics. Who is it?,Dawn Fraser,Keiren Perkins,Murray Rose,Susie O'Neill
+553,7,Oceania,easy,sports,"Which West Australian represented his state in cricket, and captained his country in field hockey?",Ric Charlesworth,Terry Walsh,Baeden Choppy,Mark Hager
+554,1,Oceania,medium,sports,"Between 1962 and 1977, Heather McKay dominated the world of squash. How many times did she win the British Open (recognised as the unofficial world championship) in those 16 years?",16,10,12,5
+555,2,Oceania,medium,sports,Which touring car driver was known as the 'King of the Mountain'?,Peter Brock,Alan Grice,Alan Moffat,Jim Richards
+556,3,Oceania,medium,sports,Which Australian racehorse was the first to exceed one million dollars in prizemoney?,Kingston Town,Gunsynd,Bonecrusher,Phar Lap
+557,4,Oceania,medium,sports,"Most Australian Rules football fans would be familiar with the song 'Up There, Cazaly', but do you know Cazaly's first name?",Roy,Steve,Bobby,Rod
+558,5,Oceania,medium,sports,"Who was the first Australian Aboriginal to win a world title, in any sport?",Lionel Rose,Bobby Sands,Johnny Famechon,Tony Mundine
+559,6,Oceania,medium,sports,What did tuna fisherman Dean Lukin do at the 1984 Los Angeles Olympics that had never been achieved by an Australian?,He won a weight-lifting gold medal.,He broke the world record for the decathlon.,He received a perfect score in the gymnastics floor exercise.,He was the first Australian to win two medals at the same Games.
+560,7,Oceania,medium,sports,Which Australian was voted France's most popular sportsman in 1928?,Sir Hubert Oppermann- cyclist,Bobby Pearce- sculler,Andrew 'Boy' Charlton- swimming,Sir Donald Bradman- cricketer
+561,1,Oceania,hard,sports,"Who was Australia's first Olympian, and also Australia's first Olympic gold medallist?",Edwin Flack,Lou Richards,Dally Messenger,Fanny Durack
+562,2,Oceania,hard,sports,Which Rugby League player kicked 7 goals from 7 attempts to help Queensland win the inaugural State of Origin game?,Mal Meninga,Wally Lewis,Chris Close,Gene Miles
+563,3,Oceania,hard,sports,"Kerry Saxby (later Saxby-Junna) set 27 National records, held 32 world marks and appeared in three Olympics in her chosen sport. What sport?",Walking,Heptathlon,Pole Vault,Swimming
+564,4,Oceania,hard,sports,"Who won four successive surfing titles and was inducted into the Surfing Walk of Fame, California, in 1995?",Mark Richards,Martin Potter,Cheyne Horan,Wayne Bartholomew
+565,5,Oceania,hard,sports,Sir Jack Brabham holds a unique record in Formula 1 racing. What is it?,The only driver to win a Championship in a car of his own construction.,The only driver to win at the same circuit six times.,The first driver to win five Championships.,He invented the detachable steering wheel.
+566,6,Oceania,hard,sports,Which Australian swimming champion saved a swimmer from a shark attack in 1922 and won six Olympic medals spread over 16 years?,Frank Beaurepaire,Maurice 'Moss' Christie,Andrew 'Boy' Charlton,Ernest Henry
+567,7,Oceania,hard,sports,"Which Queensland-born netball player retired in 1999, with 99 international caps to her credit?",Vicki Wilson,Jacqui Delaney,Carissa Tombs,Anne Sergeant
+568,1,Antarctica,easy,sports,"During the summer months, this sport, popular in Oceania, is played between neighboring research bases.",Rugby,Soccer,Basketball,Golf
+575,1,Antarctica,medium,sports,"During the summer months, this sport, popular in Oceania, is played between neighboring research bases.",Rugby,Soccer,Basketball,Golf
+582,1,Antarctica,hard,sports,"During the summer months, this sport, popular in Oceania, is played between neighboring research bases.",Rugby,Soccer,Basketball,Golf
+589,1,NorthAmerica,easy,politics,Which two political parties traditionally contest American elections?,Democrats and Republicans,Democrats and Liberals,Congress and Senate,Liberals and Republicans
+590,2,NorthAmerica,easy,politics,The two American Houses of Congress comprise the Senate and which other?,The House Of Representatives,The House Of Lords,The House Of Parliament,The House Of Deputies
+591,3,NorthAmerica,easy,politics,Who served as President of the USA between 1993 and 2001?,Bill Clinton,George Bush senior,Al Gore,Jimmy Carter
+592,4,NorthAmerica,easy,politics,"At election time, which American state has the most electoral votes?",California,Alabama,Missouri,Pennsylvania
+593,5,NorthAmerica,easy,politics,Which American President resigned from office in 1974?,Richard Nixon,Gerald Ford,Jimmy Carter,Lyndon Johnson
+594,6,NorthAmerica,easy,politics,What size of majority did George W Bush achieve in the 2004 Presidential election?,35 electoral votes,2 electoral votes,12 electoral votes,127 electoral votes
+595,7,NorthAmerica,easy,politics,From which state did American President Jimmy Carter originate?,Georgia,Maine,Nebraska,New Mexico
+596,1,NorthAmerica,medium,politics,Who won 266 electoral votes at the US Presidential election of November 2000?,Al Gore,Colin Powell,Dan Quayle,Bill Clinton
+597,2,NorthAmerica,medium,politics,Who contested the USA Presidential election in November 2004 for the Democrats?,John Kerry,John Berry,John Perry,John Terry
+598,3,NorthAmerica,medium,politics,Who was sworn in as California's Governor in November 2003?,Arnold Schwarzenegger,Charlton Heston,Clint Eastwood,Harrison Ford
+599,4,NorthAmerica,medium,politics,To where did civil rights advocate Rosa Parks move from Alabama?,Detroit,Chicago,New York,Pittsburgh
+600,5,NorthAmerica,medium,politics,What role did Ralph Nader play during the 2000 American election?,Led the Green Party,Chaired the recount team in Florida,Handled Bush's publicity campaign,Predicted a Gore landslide
+601,6,NorthAmerica,medium,politics,"When was Communist ""witch hunter"" Joseph McCarthy censured by the US Senate?",Demcember 1954,December 1951,December 1952,December 1953
+602,7,NorthAmerica,medium,politics,The 17th and 36th American Presidents shared a surname - what was it?,Johnson,Adams,Bush,Roosevelt
+603,1,NorthAmerica,hard,politics,Which future American President was Eisenhower's Vice President?,Richard Nixon,Gerald Ford,John Kennedy,Lyndon Johnson
+604,2,NorthAmerica,hard,politics,How many electoral votes did Texas have in the 2004 Presidential elections?,34,44,54,64
+605,3,NorthAmerica,hard,politics,"Under the US Constitution, how old must the President be?",At least 35 years old,At least 25 years old,At least 29 years old,At least 32 years old
+606,4,NorthAmerica,hard,politics,Which is the only American state not to have two state legislature houses?,Nebraska,Nevada,New Mexico,New York
+607,5,NorthAmerica,hard,politics,In 1968 where did Carl Stokes become the first black mayor of a major US city?,Cleveland,Buffalo,Detroit,Miami
+608,6,NorthAmerica,hard,politics,Where must American senators be resident?,The state where they are elected,In the USA,The USA or its overseas territories,Anywhere they like
+609,7,NorthAmerica,hard,politics,Who is current Secretary of State of US?,John Kerry,Hillary Clinton,Wiliam Seward,Henry Clay
+610,1,SouthAmerica,easy,politics,Who is the first woman to be elected as the President of Argentina?,Cristina Fernandez de Kirchner,Corazin Aquino,Eva Peron,Isabella Peron
+611,2,SouthAmerica,easy,politics,Who was the President of Argentina during its war with UK in 1982?,Leopoldo Galtieri,Carlos Menem,Juan Peron,Raul Alfonsin
+612,3,SouthAmerica,easy,politics,Who deposed Isabel Peron in 1976?,Jorge Videla,Agustino Pinochet,Roberto Viola,Manuel Belgrano
+613,4,SouthAmerica,easy,politics,"Argentina federal government is composed of follow braches,except which one?",Censor,Legislative,Executive,Judicial
+614,5,SouthAmerica,easy,politics,Who is the President of Argentina now?,Néstor Kirchner,Domingo Matheu,Fernando de la Rúa,"Duhalde, Kirchner"
+615,6,SouthAmerica,easy,politics,Which one is Argentina's autonomous city?,Buenos Aires,La Rioja,Mendoza,Chubut
+616,7,SouthAmerica,easy,politics,Which organization's founding members do not include Argetina?,CBA,UN,WBG,"NATO
+"
+617,1,SouthAmerica,medium,politics,Which one is not Argentina National Defense System?,Argentine Police,Argentine Air Force,Argentine Army,Argentine Navy
+618,2,SouthAmerica,medium,politics,Who is the President of Bolivia now?,Evo Morales,Manuel de Sarratea,Álvaro García Linera,Hugo Banzer Suárez
+619,3,SouthAmerica,medium,politics,Which one is not Bolivian Air Force's air bases,Posadas,La Paz,Sucre,Santa Cruz
+620,4,SouthAmerica,medium,politics,"When did Bolivia have its own port facilities in the Bolivian Free Port in Rosario,Argentina?",1964,1966,1968,1972
+621,5,SouthAmerica,medium,politics,How many years term the president of Brazil is elected for?,four,six,five,three
+622,6,SouthAmerica,medium,politics,Which one is not the fundamental principles of Brazil's federation?,casual friday,sovereignty,citizenship,human dignity
+623,7,SouthAmerica,medium,politics,Which one is not a political party of Brazil?,Progress Party,Social Democracy Party,Workers' Party,Democrats
+624,1,SouthAmerica,hard,politics,Which one is not the guiding pricinple of Brazils's relationshipt with other countries?,domination,non-intervention,self-determination,self-control
+625,2,SouthAmerica,hard,politics,How many seats of senate does the congress of Chile have?,38,30,28,24
+626,3,SouthAmerica,hard,politics,When did Chile's last congressional elections were held?,2013,2014,2012,2015
+627,4,SouthAmerica,hard,politics,Which one is not included in Chile's judiciary?,a system of police,a constitutional tribunal,a system of military courts,a court of appeal
+628,5,SouthAmerica,hard,politics,Who won the Chile's sixth presidential election since the end of the Pinochet era?,Michelle Bachelet,Evelyn Matthei,Milenko E. Skoknic,Leopoldo Galtieri
+629,6,SouthAmerica,hard,politics,Which one is not the part of Colombia's legislative branch?,Party,Speaker of the House,Congress,Chamber of Representatives
+630,7,SouthAmerica,hard,politics,Which one is not the member states of The Pacific Alliance,Brazil,Chile,Colombia,Peru
+631,1,Europe,easy,politics,Which political party does German Chancellor Angela Merkel represent?,Christian Democratic Union,Free Democratic Party,National Democratic Party,Social Democratic Party
+632,2,Europe,easy,politics,In which country was Viktor Yushchenko inaugurated as President in January 2005?,Ukraine,Belarus,Moldova,Slovakia
+633,3,Europe,easy,politics,Which European country did Konrad Adenauer lead between 1949 and 1963?,West Germany,Austria,East Germany,Switzerland
+634,4,Europe,easy,politics,Who became the President of Hungary on 5th August 2005?,Laszlo Solyom,Ferenc Gyurcsany,Ferenc Madl,Katalin Szili
+635,5,Europe,easy,politics,"What is the official title of ""The Maastricht Treaty""?",Treaty on European Union,Treaty on European Citizenship,Treaty on European Consolidation,Treaty on European Co-operation
+636,6,Europe,easy,politics,Which country joined the EC in 1973 at the same time as Ireland and the UK?,Denmark,Austria,Norway,Sweden
+637,7,Europe,easy,politics,Of which country did Andrus Ansip become Prime Minister in April 2005?,Estonia,Finland,Latvia,Lithuania
+638,1,Europe,medium,politics,Where did the European Free Trade Association establish its headquarters?,Geneva,Montreux,Oslo,Zürich
+639,2,Europe,medium,politics,Under whom was Greek democracy restored in 1974?,Karamanlis,Mitsotakis,Papandreou,Stephanopoulos
+640,3,Europe,medium,politics,lvaro Cunhal died in 2005. Which Portuguese political party had he led?,Portuguese Communist Party,Portuguese Ecology Party,Social Democratic Party,Socialist Party
+641,4,Europe,medium,politics,"When elected as Conservative Party leader, who did David Cameron defeat?",David Davies,George Osborne,John Redwood,Ken Clarke
+642,5,Europe,medium,politics,Who became Chancellor Of The Exchequer in May 1997?,Gordon Brown,John Prescott,Margaret Beckett,Robin Cook
+643,6,Europe,medium,politics,What in politics does SNP stand for?,Scottish National Party,Socialist Natural Party,South Northamptonshire Party,Standard Neutral Party
+644,7,Europe,medium,politics,If election candidates do not achieve a minimum number of votes what happens?,They lose their deposit,They are not allowed to stand again,They receive an official caution,They make a public apology
+645,1,Europe,hard,politics,Who replaced Charles Clarke as Home Secretary in 2006?,John Reid,Claire Short,David Blunkett,Tessa Jowell
+646,2,Europe,hard,politics,How are a British Prime Minister's senior ministers and advisers collectively known?,Cabinet,Congress,Senate,Think-Tank
+647,3,Europe,hard,politics,Who resigned as leader of the Liberal Democrats in January 2006?,Charles Kennedy,David Steel,Menzies Campbell,Paddy Ashdown
+648,4,Europe,hard,politics,"In the 2005 General Election, which party gained 600,000 votes but won no seats?",UK Independence,Plaid Cymru,Respect,Veritas
+649,5,Europe,hard,politics,What was Margaret Thatcher's maiden name?,Roberts,Ralphs,Richards,Rogers
+650,6,Europe,hard,politics,Which political party did Prime Minister Clement Attlee lead?,Labour,Conservative,Liberal,Social Democrat
+651,7,Europe,hard,politics,How many Scottish seats did the Conservatives win in the 2005 General Election?,1,2,3,4
+652,1,Africa,easy,politics,"By 2009, The African National Congress (ANC) was the majority party controlling eight of the country's nine provinces. The province it did not control was ... ?",Western Cape,Free State,KwaZulu-Natal,North West
+653,2,Africa,easy,politics,"""Umkhonto we Sizwe"" was the armed wing of the African National Congress (ANC) which fought against the South African apartheid government. Its name is tranlated as ""? of the nation""",Spear,Sword,Gun,Terror
+654,3,Africa,easy,politics,Which of these is not a South African political party ?,Orange Democratic Movement,Democratic Alliance,Pan Africanist Congress,African People's Convention
+655,4,Africa,easy,politics,Which among these leaders was not a South African president ?,Chaka Zulu,Pieter Botha,Jacob Zuma,FW de Klerk
+656,5,Africa,easy,politics,"In 1993 Constand Viljoen, former chief of the South African Defence Force, formed the FF+ polical party. The partys full name was ... ?",Freedom Front Plus,Full Force Plus,Freedom Fighter Plus,"Freedom, Freedom Plus"
+657,6,Africa,easy,politics,"In 1913 Land Act was introduced in South Africa.in order to prevent blacks, except those living in Cape Province, from ... ?",Buying land outside reserves,Travelling,Building permanent houses,Forming Political Parties
+658,7,Africa,easy,politics,Who of these has NOT been a Senate President?,Arthur Nzeribe,Iyorchia Ayu,Adolphus Wabara,Joseph Wayas
+659,1,Africa,medium,politics,Who was the first civilian Governor of Plateau State?,Solomon Lar,Tartari Ali,Paul Unongo,Jolly Nyame
+660,2,Africa,medium,politics,"Who was the president of ""Kalakuta Republic""?",Fela Anikulapo-Kuti,Uche Onwubuya,Gani Fawehinmi,Ikeja Bridge
+661,3,Africa,medium,politics,What state is President Olusegun Obasanjo from?,Ogun,Edo,He is not Nigerian,Niger
+662,4,Africa,medium,politics,Who was the presidential candidate of the All Progressives Grand Alliance or APGA in the April 2003 general election?,Emeka Odumegwu-Ojukwu,Muhammadu Buhari,Toto Repairer,Alex Ekwueme
+663,5,Africa,medium,politics,"This guy is a popular ""419"" chairman?",Fred Ajudua,Afilaka Fileje,Aigboje Igbafe,Tunde Debasco
+664,6,Africa,medium,politics,"A - ANC, the largest political party in South Africa. What does ANC stand for?",African National Congress,Africa's New Coalition,African National Commission,Afrikaner National Coalition
+665,7,Africa,medium,politics,B - Black Consciousness Movement. Which leader of the Black Consciousness Movement in South Africa was killed in police custody in 1977?,Steve Biko,Walter Boipeteng,Sipho Bengali,Oliver Badebe
+666,1,Africa,hard,politics,"C - Which political party, in 1922, used the slogan ""Workers of the world, unite and fight for a white South Africa!""",Communist Party, Conservative Party,Correct Supremists,Cape Peoples Party
+667,2,Africa,hard,politics,"E - Education, one of the biggest challenges in South Africa. Is schooling free (paid for by the government)?","Only at fee-free schools, in identified poverty-stricken areas",Only if you can't afford to pay,No - all schools charge fees,Yes - at all Government schools
+668,3,Africa,hard,politics,G - Government. What type of government does South Africa have?,Republic,Federal Republic,Dictatorship,Confederation
+669,4,Africa,hard,politics,H - Houses of Parliament. Which of the Houses of Parliament represented the Asian South African vote under the tricameral parliament system between 1984 and 1994?,House of Delegates,House of Representatives,House of Orientals,House of Assembly
+670,5,Africa,hard,politics," I - This political party is associated with the Zulu tribe, and in particular with rural Zulu people. The party was founded by Mangosuthu Buthelezi in 1975.",Inkatha Freedom Party,Inkandla Democratic Party,Independent Socialists,Impi Congress
+671,6,Africa,hard,politics,K - Which K is the town where the Freedom Charter was adopted by the ANC in 1955?,Kliptown,Kraaifontein,Kimberley,Krugersdorp
+672,7,Africa,hard,politics,"L - Patricia de Lille, the leader of the Independent Democrats. Which party did she leave in order to start her own political party?",Pan Africanist Congress,Minority Front,National Party,Azanian People's Party
+673,1,Asia,easy,politics,When did China get back Hong Kong?,1997,1949,1964,1982
+674,2,Asia,easy,politics,When did China get back Macao?,1999,2001,2004,1984
+675,3,Asia,easy,politics,Which country was annexed by China in 1950?,Mongolia,Tibet,Nepal,Vietnam
+676,4,Asia,easy,politics,Which country was attacked by China in 1962?,India,USSR,Pakistan,Ceylon
+677,5,Asia,easy,politics,Who ruled China when Marco Polo reached there in 1266?,Chengiz Khan,Kublai Khan,Babur,Akbar
+678,6,Asia,easy,politics,Who became the President of China in 1912?,Mao Zedong,Hua Kuo Feng,Sun Yat Sen,Lin Piao
+679,7,Asia,easy,politics,Which country is considered a renegade province by China?,Taiwan,Japan,North Korea,South Korea
+680,1,Asia,medium,politics,Who became the President of South Korea in 1988?,Roh Tae-Woo,Kim Young-Sam,Kim Novak,Roh Moo-Hyun
+681,2,Asia,medium,politics,Which parallel divides North Korea and South Korea?,38th,23rd,27th,42nd
+682,3,Asia,medium,politics,When did Hirohito rule Japan?,1926-1989,1846-1867,1867-1912,1817-1846
+683,4,Asia,medium,politics,Which country was defeated by Japan in 1904-1905?,Russia,USA,China,Philippines
+684,5,Asia,medium,politics,Who became the Prime Minister of Japan on 26 April 2001?,Junichiro Koizumi,Shinzo Abe,Keizo Obuchi,Kakuei Tanama
+685,6,Asia,medium,politics,Which is National Foundation Day?,11 February,29 April,4 May,15 September
+686,7,Asia,medium,politics,Which is Japan’s national legislature?,Diet,Congress,Duma,Parliament
+687,1,Asia,hard,politics,Which political party has governed Japan throughout the post war period until the end of the 20th Century?,The Liberal Democratic Party,The Japan Socialist Party,The Green Party,The Sakura Party
+688,2,Asia,hard,politics,Who was the first American envoy in Japan?,Townsend Harris,Douglas MacArthur,Commodore Perry,Laccadio Hearn
+689,3,Asia,hard,politics,Who was second longest serving Japanese Prime Minister during the 20th century?,Eisaku Sato,Shigeru Yoshida,Taro Katsura,Nobusuke Kishi
+690,4,Asia,hard,politics,The post war constitution of Japan was promulgated by which group?,24 US Military personnel in February 1946,The Japanese Diet or Parliament,By the Genro or elder statemen of Japan,An academic advisory board
+691,5,Asia,hard,politics,Who was the ultimate strategist for the Japanese attack on Pearl Harbor in 1941?, Isoroku Yamamoto,Hideki Tojo,Genji Monogatari,Tomoyuki Yamashita
+692,6,Asia,hard,politics,"Japanese politicians normally have support groups known as ""Koenkai"" in Japanese. Which Japanese politician is generally credited with initiating this approach to garnering local support?",Kakuei Tanaka,Hayato Ikeda, Yasuhiro Nakasone,Masayoshi Ohira
+693,7,Asia,hard,politics,Who was the first commoner Prime Minister of Japan?,Kei Hara,Soh Yamamura,Fumimaro Konoye,Zenko Suzuki
+694,1,Oceania,easy,politics,"""Life was not meant to be easy"" is a famous quote from the then future Prime Minister Malcolm Fraser. From which well-known author did he paraphrase the quotation?",George Bernard Shaw, William Shakespeare,Samuel Taylor Coleridge,Dr Seuss
+695,2,Oceania,easy,politics,"""A Goods and Services Tax is not on our agenda, never ever."" This was a promise made by which politician, in 1995?",John Howard,Paul Keating,Wilson Tuckey,Bob Hawke
+696,3,Oceania,easy,politics,"In 1963, Prime Minister Robert Menzies said ""I did but see her passing by, but I will love her till I die."" Who is ""her""?",Queen Elizabeth II,"His future wife, Pattie Leckie","Margaret Smith, Australian Open tennis champion","Sophia Loren, Italian actress"
+697,4,Oceania,easy,politics, How often are federal elections held in Australia?,Exactly 4 years apart,Never. Australia is not a democracy,No less than 5 years apart,No more than 3 years and 140 days apart
+698,5,Oceania,easy,politics,"In an Australian federal election, we usually vote for two separate things. What are they?",The Speaker and the Governor-General,Parliament and the Leader of the Government,Senate and the House of Representatives,President and the referendum question
+699,6,Oceania,easy,politics,How do we usually record our vote in an Australian election?,Pencil and paper,Punch cards,A show of hands,Supercomputer
+700,7,Oceania,easy,politics,On which day of the week are Australian elections held?,Sunday,Whatever day is the first of the month,Tuesday,Saturday
+701,1,Oceania,medium,politics,What do many voters traditionally enjoy on election day throughout Australia?,A sausage sizzle,A horse race,A swim in Sydney Harbour,A punch-up with the Leader of the Opposition
+702,2,Oceania,medium,politics,What is the legal voting age in Australia?,21 years for everyone,"18 years for men, 21 years for women",18 years for everyone," 18 years for Australian-born citizens, 21 years for migrants"
+703,3,Oceania,medium,politics,Which of these was the last group to gain full voting rights in Australia?,Aboriginal people,21 year olds,Women,Citizens born overseas
+704,4,Oceania,medium,politics,What counting system is used to determine the winner of a ballot in an Australian federal election?,Preferential voting,Simple majority,First past the post,Multi-round system
+705,5,Oceania,medium,politics,In a normal federal election in Australia we vote for (roughly) half of the Senate. What is the name for an unusual election scenario where the entire Senate is replaced?,Double dissolution,Clean sweep,Full complement,his situation is not permitted by the Constitution
+706,6,Oceania,medium,politics,Who was Australia's first Prime Minister?,Edmund Barton,Derek Barton, Edward Barton,Edmund Hillary
+707,7,Oceania,medium,politics,Which of these Prime Ministers of Australia held the office for the shortest term?,Frank Forde,Ford Fiesta,Holden Forde,Fred Forde
+708,1,Oceania,hard,politics,Which of these Prime Ministers was dismissed from office by the Governor-General?,Gough Whitlam, John Kerr,Margaret Whitlam,Gough Gilmour
+709,2,Oceania,hard,politics,Which of these Prime Ministers served the longest consecutive term?,Robert Menzies,Robert Williams,Hotel Menzies,William Roberts
+710,3,Oceania,hard,politics,Which of these was the youngest when he first became Prime Minister?,Chris Watson,James Watson,Sherlock Watson,Chris James
+711,4,Oceania,hard,politics,Which of these was the oldest when he first became Prime Minister?,John McEwen,James McEwan, John McApple, Les McKeon
+712,5,Oceania,hard,politics,Who was Australia's 13th Prime Minister?,Arthur Fadden, Francis Forde,Robert Menzies,Ben Chifley
+713,6,Oceania,hard,politics,Which former Prime Minister was literally caught with his pants down?,Malcolm Fraser,Billy McMahon,Bob Hawke,William Morris Hughes
+714,7,Oceania,hard,politics,Who was the only Australian Prime Minister from the Free Trade Party?,George Reid,Mark Reid,George Red,Georgia Reed
+715,1,Antarctica,easy,politics,What kind of activity does Antarctic Treaty prohibits?,Military ,Politics,Festival,Sports
+722,1,Antarctica,medium,politics,Which country govern Antarctica? ,None,United States,China,UK
+729,1,Antarctica,hard,politics,Which organization issued Antarctica Service Medal?,United States military,Chinese government,German,North Korea
+736,1,NorthAmerica,easy,cuisines,Which country is best known for their Maple Syrup?,Canada,United States,Puerto Rico,Dominican Republic
+737,2,NorthAmerica,easy,cuisines,Which country's national cuisines have not had major influence from Spain?,United States,Cuba,Mexico,Jamaica
+738,3,NorthAmerica,easy,cuisines,The taco's origin can be traced to which countries territory?,Mexico,Cuba,Dominican Republic,Puerto Rico
+739,4,NorthAmerica,easy,cuisines,What type of liqour can only be produced in Mexico?,Tequilla,Rum,Vodka,Gin
+740,5,NorthAmerica,easy,cuisines,The Philly Cheese Steak was invented in which city?,Philadelphia,New York,Portland,Chicago
+741,6,NorthAmerica,easy,cuisines,Guacamole's main ingredient is...,Avocados,Cheese,Squash,Peanuts
+742,7,NorthAmerica,easy,cuisines,"This is a flat Mexican bread, made from flour or corn used to make many Mexican dishes",Toritilla,Blintz,Flatbread,Pancake
+743,1,NorthAmerica,medium,cuisines,What type of Deep Dish Pizza is best known in which city?,Chicago,Toronto,New York,Boston
+744,2,NorthAmerica,medium,cuisines,Which of these is not a famous US Chef?,Paul Bocuse,Paul Bertolli,Paula Dean,Alton Brown
+745,3,NorthAmerica,medium,cuisines,Which beer was the top selling beer in America between 2001 and 2008?,Bud Light,Budweiser,Miller Light,Heineken
+746,4,NorthAmerica,medium,cuisines,Which of the following is not a main feature of the Chicago Style Hotdog?,Ketchup,Mustard,Onion,Relish
+747,5,NorthAmerica,medium,cuisines,"In Saskatchewan, Canada there is a city named for a berry.  What is this city?",Saskatoon,Loganberry,Batoche,Mulberry
+748,6,NorthAmerica,medium,cuisines,"A staple of the mexican diet, what is a nopales, or nopalitos?",Cactus,Asparagus,Green Beans,Mushrooms
+749,7,NorthAmerica,medium,cuisines,Which of these is a cold drink made from rice and almonds?,Horchata,Jamaica,Tamarindo,Soda
+750,1,NorthAmerica,hard,cuisines,Suaasat is the national dish of which country?,Greenland,Guatemala,Mexico,Iceland
+751,2,NorthAmerica,hard,cuisines,Which vegetable did not originate in North America?,Carrot,Tomato,Corn,Dew Berry
+752,3,NorthAmerica,hard,cuisines,What was Bob Payton credited with bringing to the UK?,American Style Pizza,Barbecue,Corn,Spare Ribs
+753,4,NorthAmerica,hard,cuisines,What is the most widley drunk beer in Haiti?,Prestige,Abner,Haze,Coriolis
+754,5,NorthAmerica,hard,cuisines,This traditional Quebecois dish is a staple on Chrismas Eve at the post-Midnight Mass feast.,Tourtiere,Creme Brulee,Maple Syrup Pie,Maple Syrup Mousse
+755,6,NorthAmerica,hard,cuisines,What is the name of the black mushroon that grows on ears of corn?,Huitlacoche,Champignons de Paris,Porcini,Shitake
+756,7,NorthAmerica,hard,cuisines,Which of these is not an ingredient of Black Mole Sauce,Saffron,Chocolate,Sesame seeds,Burnt Tortilla chips
+757,1,SouthAmerica,easy,cuisines,What is large cuncks of meat cooked on skewers known as in Brazil?,Churrasco,Acaraje,Picadinho de Jacare,Pamonha
+758,2,SouthAmerica,easy,cuisines,Goiabada is a paste made with sugar and water and normally served with cheese is also made from which fruit?,Guava,Strawberry,Grape,Pineapple
+759,3,SouthAmerica,easy,cuisines,"Bistec a lo Pobre is a meal in Chile consisting of steak, french fries, fried onions and is topped with what?",Fried eggs,Jam,Gravy,Oysters
+760,4,SouthAmerica,easy,cuisines,"Chicken soup with pieces of meat, potatoes, green beans or peas, rice or noodles in it.",Cazuela de Ave,Cazuela de Rice,Cazuela de Pavo,Cazuela de Potatoes
+761,5,SouthAmerica,easy,cuisines,A flat bread made from conmeal that accompanies most Colombian meals.,Arepa,Hogao,Papya,Sour Dough Bread
+762,6,SouthAmerica,easy,cuisines,"A soup containing tripe with potatoes, peas, carrots, coriander and corn served in Columbia.",Sopa de Mondongo,Arroz de Coco,Tamales,Sobrebarriga Bogotana
+763,7,SouthAmerica,easy,cuisines,Cachitos de Jamon is similar to which French baked good?,Croissant,Sour dough bread,Pretzel,Fruit Cake
+764,1,SouthAmerica,medium,cuisines,In Brazil what is Churrasco?,Meat cooked on skewers.,A desert,Roasted meat,Fish cooked in a frier
+765,2,SouthAmerica,medium,cuisines,"Found in the Northern amazon region, what is picadinho de jacare made from?",Alligator,Chicken,Beef,Fish
+766,3,SouthAmerica,medium,cuisines,A simple bread roll with cheese accompanies most meals in Brazil.  What is it called?,Pao de Queijo,Acaraje,Coxinha,Pamonha
+767,4,SouthAmerica,medium,cuisines,In Chile this food comprises of sliced tomatoes and onions with an oil dressing.,Ensalada a la chilena,Pebre,Empanada de queso,Curanto en olla
+768,5,SouthAmerica,medium,cuisines,Frijoles con garra is a Colombian food containing red beans and thickened with what?,Pigs' Trotter,Pigs' Belly,Pigs' Hooves,Pigs' Snout
+769,6,SouthAmerica,medium,cuisines,What is the main ingridient in Encocado (an Ecuadorian dish)?,Prawns,Pork,Coconut milk,Crab
+770,7,SouthAmerica,medium,cuisines,Fried green plantains (a type of banana that isn't so sweet) squashed into thick pancakes.,Patacones,Fritada,Librillo,Churrasco
+771,1,SouthAmerica,hard,cuisines,In Brazil what is tapioca pudding cooked in coconut milk and sugar called?,Cuscuz Branco,Coxinha,Brigadeiro,Papo de Anjo
+772,2,SouthAmerica,hard,cuisines,A common snack in Brazil which is minced chicken shaped like a drumstick and deep fried in batter until golden brown.,Coxinha,Pamonha,Acaraje,Picadinho de Jacare
+773,3,SouthAmerica,hard,cuisines,These are boiled corn leaf rolls filled with seasoned ground corn.,Humitas,Pastel de Choclo,Charquican,Sopaipilla
+774,4,SouthAmerica,hard,cuisines,"An Ecuadorian creamy potato soup garnished with cheese, avocado and hot sauce.",Locro de Papas,Mote Pillo,Churrasco,Librillo
+775,5,SouthAmerica,hard,cuisines,A Venezuelan coastal region specialty and contains pieces of shredded goat cooked in coconut milk.,chivo al coco,hallaca,cachitos de jamon,cachapa
+776,6,SouthAmerica,hard,cuisines,Also known as Patacones and are Plantains (banana) fried twice!,Tostones,Casabe,Mandoca,Tajadas
+777,7,SouthAmerica,hard,cuisines,"Classic Venezuelan party food, this bite size treats are small balls of dough filled with gooey white cheese that is then fried.",Tequeno,Yo-yo,Tacano,Guasacaca
+778,1,Europe,easy,cuisines,Fish and chips is popular in which country?,United Kingdom,Spain,France,Romania
+779,2,Europe,easy,cuisines,What type of animal's milk is Roquefort cheese made from?,Ewe,Cow,Goat,Mare
+780,3,Europe,easy,cuisines,"From Italian Cuisin, What is 'gnocchi'?",Dumplings,Cheese,Salty fish,A dessert
+781,4,Europe,easy,cuisines,"From Italian Cuisine, What is marsala?",A fortified wine,An aged cheese,A sof drink,A house in Tuscany
+782,5,Europe,easy,cuisines,"Originating in Italy, Mozzarella, Parmigiano, ricotta, gorgonzola and provolone are all examples of what?",Cheese,Sauce,Antipasto,Pasta
+783,6,Europe,easy,cuisines,What type of cheese in Greek cuisin is made from goat's or sheep's milk that is usually soft and brined?,Feta,Haloumi,Roquefort,Edam
+784,7,Europe,easy,cuisines,Which of the following would you not expect to see in a traditional Greek salad?,Lettuce,Feta Cheese,Cucumbers,Tomatoes
+785,1,Europe,medium,cuisines,What type of cheese is traditionally used in Bavarian Leberkase?,No cheese,Blue cheese,Cream cheese,Goat's milk cheese
+786,2,Europe,medium,cuisines,What is a Rollmop in Germany?,Pickled herring,Ryebread roll,Rolled sourdough bread,Rolled beef roast
+787,3,Europe,medium,cuisines,Which chees originated from the Normandy region in northern France?,Camembert,Roquefort,Brie,Rocamadour
+788,4,Europe,medium,cuisines,"In relation to French food, what are 'cuisses de grenouille'?",Frogs legs,Pig trotters,Shelled snails,Duck brains
+789,5,Europe,medium,cuisines,Crécy soup is a hearty and warming dish served throughout France. What is the main ingredient?,Carrots,Onions,Peppers,Asparagus
+790,6,Europe,medium,cuisines,"In Spain which of these is a dish, but not a cooking vessel or pot?",parrillada,gazpachero,paellera,cazoleta
+791,7,Europe,medium,cuisines,Which of these is not a manufacturer of English tea?,Harrods Fusion,Lipton,Twinings,Yorkshire Tea
+792,1,Europe,hard,cuisines,Fleischpflanzerl is the Bavarian name for a dish that looks mostly like...,a hamburger,a sausage,a steak,a roast
+793,2,Europe,hard,cuisines,Tellerfleisch contains what kind of meat?,beef,veal,pork,lamp
+794,3,Europe,hard,cuisines,"Which region of France grows, nationally, the most artichokes, cauliflowers and shallots?",Brittany,Aquitaine,Normandy,Midi Pyrenees
+795,4,Europe,hard,cuisines,Which fishing port in Easter Brittany is famous for its oysters?,Cancale,Vannes,Roscoff,Brest
+796,5,Europe,hard,cuisines,Which of these is a popular soft drink in Italy?,crodino,crostata,farinata,bruschetta
+797,6,Europe,hard,cuisines,What is crema catalana?,a custard sweet,a type of cream cheese,a spicy cream soup,a type of cottage cheese
+798,7,Europe,hard,cuisines,Which of these Spanish drinks is made of apples?,sidra,amontillado,cerveza,ponche caballero
+799,1,Africa,easy,cuisines,Which of these is a traditional dessert in South Africa?,Melktert,Hot Dogs,Mac and Cheese,Barbecue
+800,2,Africa,easy,cuisines,What is the South African 'Koeksister' a type of?,Sweet,Stew,Soup,Salad
+801,3,Africa,easy,cuisines,What would you expect to be served if you ordered wali at a restaurant?,Cooked Rice,Bread,Chips,Pasta
+802,4,Africa,easy,cuisines,What is a braai?,Barbecue,Underwear,Bacon,An Umbrella
+803,5,Africa,easy,cuisines,Pickled fish is eaten all year round in South Africa but is traditionally eaten during which holiday?,Easter,Halloween,Groundhogs day,Independence day
+804,6,Africa,easy,cuisines,What is Amarula cream?,Cream liqueur,Sour milk,Frothy beer,Goats milk
+805,7,Africa,easy,cuisines,"What type of dried mean, similar to jerky is a favourite of most South Africans?",Biltong,Kaaswors,Boerewors,Braaiwors
+806,1,Africa,medium,cuisines,Which of these is a traditional dessert in South Africa?,Melktert,Boerewors,Braaiwors,Goats milk
+807,2,Africa,medium,cuisines,"In South Africa, what is 'Boerewors'?",Sausage,Pizza,A dessert,A roasted pig
+808,3,Africa,medium,cuisines,What is Bobotie traditionally served with?,Yellow Rice,Gravy,Mashed Potatoes,Bread & Jam
+809,4,Africa,medium,cuisines,What is the South African 'Braaivleis' equivalent to?,Barbecue,A Stew,Beer,Roasting
+810,5,Africa,medium,cuisines,Which nut is most commonly sold by street vendors in Tanzania,Cashew nut,Peanut,Hazel nut,Almond
+811,6,Africa,medium,cuisines,What are pilipili in Tanazia?,Hot peppers,Mushrooms,Corn,A Fruit
+812,7,Africa,medium,cuisines,Which of these would you find in an omelet served 'kavu sana'?,Potato chips,Onions,Bacon,Tomatoes
+813,1,Africa,hard,cuisines,"Melktert, a traditional South African desert is typically sprinkled with which spice?",Cinnamon,Mixed Spice,Pepper,Nutmeg
+814,2,Africa,hard,cuisines,What is the main ingredient of 'Skilpadjies'?,Liver,Beef,Pork,Chicken
+815,3,Africa,hard,cuisines,In South Africa they are not called kebabs but...,Sosaties,Boerekos,Boerewors,Droewors
+816,4,Africa,hard,cuisines,"In Tanzania, Which of these are the main ingrediencts for ugali?",Maize and cassava flour,Maize and meat,Maize and tomatoes,Cassava flour and meat
+817,5,Africa,hard,cuisines,What is the general name given to the sauce which is usually served with ugali?,Mchuzi,Mboga,Ugala,Ndondo
+818,6,Africa,hard,cuisines,"Which dish is like stew made with beans, onions, meat and whole kernels of maize?",Kande,Barafu,Bia,Pombe
+819,7,Africa,hard,cuisines,Mashonzha is traditionally a free source of food for the rural poor of South Africa. What is Mashonzha?,Caterpillars,Termites,Moth,Snail
+820,1,Asia,easy,cuisines,What shape is a Wok traditionally?,Round Bottom,Flat Bottom,Square Bottom,Grill Shape
+821,2,Asia,easy,cuisines,The wok originated in which country?,China,Korea,Japan,Thailand
+822,3,Asia,easy,cuisines,In which country does sushi originate?,Japan,Korea,India,China
+823,4,Asia,easy,cuisines,Which of these is an important ingredient of South Indian cooking?,Coconut oil,Ghee,Lassi,Curd
+824,5,Asia,easy,cuisines,Which of the following terms refers to Vietnamese rice noodles?,Pho,Mien,Me,Com
+825,6,Asia,easy,cuisines,What fruit's nectar is commonly used in Vietnamese desserts?,Coconut,Durian,Longan,Papaya
+826,7,Asia,easy,cuisines,Which of the following ar NOT used in Thai cooking?,Pecan,Peanut,Walnut,Cashew
+827,1,Asia,medium,cuisines,This fruit has a round rose-colored peel and white interior that is scattered with black sesame-like seeds,Pitaya & Pitahaya,Jackfruit,Durian,Longan
+828,2,Asia,medium,cuisines,What is the national fruit of Bangladesh?,Jackfruit,Coconut,Banana,Durian
+829,3,Asia,medium,cuisines,Which is never used to make sushi rice?,Soy sauce,Sake,Vinegar,Sugar
+830,4,Asia,medium,cuisines,This South Indian curry is prepared mainly with the juices of tamarind or tomato along with a few spices.,Rasam,Sambar,Raita,Kadi
+831,5,Asia,medium,cuisines,Which of these is a popular dish from the Udupi cuisine?,Dosa,Wada,Poha,Puri
+832,6,Asia,medium,cuisines,This dish is made of red kidney beans with assorted spices. It is a delicacy of North India.,Rajma,Chana dal,Kheer,Moong dal
+833,7,Asia,medium,cuisines,Which beer is the best-selling Vietnamese made brew?,33,27,99,54
+834,1,Asia,hard,cuisines,What are zongzi traditionally wrapped with before they are steamed?,Bamboo leaves,Rice paper,Cabbage,Eggroll
+835,2,Asia,hard,cuisines,Which of these 'exotic' items is not a part of Chinese cuisine?,Rhino horn,Sea cucumber,Bird's saliva,Jellyfish
+836,3,Asia,hard,cuisines,Which of these is an actual name for a Chinese dish?,Drunken Chicken,Disesteemed Shrimp,Unhappy Pig,Frustrated Cow
+837,4,Asia,hard,cuisines,Which country's cuisine would you be eating if you were at a Yaki Niku restaurant in Japan?,Korean,American,Chinese,Thai
+838,5,Asia,hard,cuisines,Which of the following beers are not Japanese?,Tiger,Yebisu,Sapporo,Asahi
+839,6,Asia,hard,cuisines,What is 'okonomiyaki' best described as?,Cabbage Pancakes,Deep Fried Tripe,Grated dried fish,Balls of soft batter
+840,7,Asia,hard,cuisines,The Hyderabadi cuisine is not a blend of which of the following cuisines?,Assamese,Mughlai,Lucknowi,Persian
+841,1,Oceania,easy,cuisines,"Vegemite is an Australian food that, when first tasted tends to evoke which reaction from new tasters?",Repulsion,Coma,Death,Laziness
+842,2,Oceania,easy,cuisines,Which Australian city first produced Victoria Bitter?,Melbourne,Sydney,Brisbane,Perth
+843,3,Oceania,easy,cuisines,"This meat is high in protein, low in fat, and said to be ideal for its anti-cancer and anti-diabetes properties.",Kangaroo,Emu,Crocodile,Kookaburra
+844,4,Oceania,easy,cuisines,Every meal could be finished off with a much loved treat which was named after a former governor of Queensland. What is it?,Lamington,Peach Melba,Chocolate Chip Cookie,Cheesecake
+845,5,Oceania,easy,cuisines,"When a whole pig is not available, people often use this substitute during a luau.",Pork butts,Pig heads,Cow butts,Chicken gizzards
+846,6,Oceania,easy,cuisines,"This fruit grown in New Zealand, shares its name with a bird.",Kiwi,Strawberry,Grape,Pineapple
+847,7,Oceania,easy,cuisines,"Hawaii, the only US state in Oceania, produces more than one-third of the worlds' commercial what?",Pineapple,Guava,Passionfruit,Papaya
+848,1,Oceania,medium,cuisines,What is the main ingredient of Vegemite?,Yeast extract,Soy,Beef extract,Molasses
+849,2,Oceania,medium,cuisines,An Australian (and New Zealand) dessert is named after which famous Russian ballerina?,Nina Ananiashvili,Galina Ulanova,Anna Pavlova,Alicia Markova
+850,3,Oceania,medium,cuisines,"A Hawaiian favorite, Poi, is made from...",Fermented root,Pineapple,Passionfruit,Papaya
+851,4,Oceania,medium,cuisines,How is a Hawaiian traditional Kalua Pig made?,Underground oven,Deep fryer,Confectioners oven,Traditional oven
+852,5,Oceania,medium,cuisines,What is the mname of the unleavened bread traditionally cooked by Australian bush people?,Damper,Baguette,Bagel,Pide
+853,6,Oceania,medium,cuisines,Which of these is not an original Australian beer?,Heineken,Toohey's,XXXX,Hahn
+854,7,Oceania,medium,cuisines,Taro can be made into a thick slightly purplish-gray substance called...,Poi,Lomilomi,Laulau,Luau
+855,1,Oceania,hard,cuisines,Vegemite is a product high in which vitamin?,B,A,C,D
+856,2,Oceania,hard,cuisines,"Used in jam, particularly, which of the following is true blue Aussie Bush Tucker?",Davidsons Plum,Angelina Plum,Plumcot,Mariposa Plum
+857,3,Oceania,hard,cuisines,When you cook coconul milk with some cornstarch you get a dessert called..,Haupia,Poi,Pua,Waipio
+858,4,Oceania,hard,cuisines,"In New Zealand, what is 'huhu'?",A grub,A bird,A small native pig,A barbeque
+859,5,Oceania,hard,cuisines,"In New Zealand, what is a 'paua'?",A large shellfish,A small fish,A native bird,A seafood Sausage
+860,6,Oceania,hard,cuisines,"In New Zealand, what is 'koura'?",Crayfish,Lobster,Crab,Snail
+861,7,Oceania,hard,cuisines,"What fish is in kokodo, a delicacy in Fiji?",Mahi Mahi,Tuna,Salmon,Talapia
+862,1,Antarctica,easy,biodiversity,Which of these animals is NOT native to Antarctica,Polar Bear,Penguin,Blue Whale,Fur Seals
+869,1,Antarctica,medium,biodiversity,"""True Seals"" have another name, shared with a British captain.",Weddell Penguin,Sharon Penguin,Loxheart Penguin,Oxenherd Penguin
+876,1,Antarctica,hard,biodiversity,In which season does the Emperor Penguin Breed?,Winter,Summer,Spring,Fall

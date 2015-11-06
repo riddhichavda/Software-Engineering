@@ -94,11 +94,10 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
         final Button btn_Next = (Button)findViewById(R.id.btn_Next);
         final Button btn_Help = (Button)findViewById(R.id.btn_help);
-        final Button btn_EndTest = (Button)findViewById(R.id.btn_EndTest);
 
 
-   //     btn_EndTest.setVisibility(View.VISIBLE);
-        btn_EndTest.setEnabled(false);
+
+
 
 
 
@@ -113,12 +112,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 showRules();
             }
         });
-        btn_EndTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToEnd();
-            }
-        });
+
 
 
         map.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -291,11 +285,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         else {
             isNewGame = true;
         }
-        if(player.continentsTraveled.size() == 7){
-            Button btn_EndTest = (Button)findViewById(R.id.btn_EndTest);
-            btn_EndTest.setVisibility(View.VISIBLE);
-            btn_EndTest.setEnabled(false);
-        }
+
         if(continentPositions == null || continentPositions.size() == 0){
             continentPositions = new HashMap<>(7);
             continentPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
@@ -380,22 +370,6 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         }
     }
 
-    private void goToEnd(){
-
-        player.continentsTraveled.clear();
-
-        player.continentsTraveled.add(Continents.Africa);
-        player.continentsTraveled.add(Continents.Antarctica);
-        player.continentsTraveled.add(Continents.Oceania);
-        player.continentsTraveled.add(Continents.Asia);
-        player.continentsTraveled.add(Continents.NorthAmerica);
-        player.continentsTraveled.add(Continents.SouthAmerica);
-        player.continentsTraveled.add(Continents.Europe);
-
-        Intent intent = new Intent(this, EndActivity.class);
-        startActivity(intent);
-        finish();
-    }
 
 
 

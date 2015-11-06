@@ -64,14 +64,5 @@
         android:layout_alignParentStart="true"
         android:src="@drawable/arrow_right" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EndTest"
-        android:id="@+id/btn_EndTest"
-        android:layout_alignTop="@+id/btn_Next"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:visibility="invisible" />
+
 </RelativeLayout>

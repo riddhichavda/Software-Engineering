@@ -78,6 +78,28 @@ public class LoginDatabaseHelper
         return password;
     }
 
+    public String getPlayerQuestion(String userName)
+    {
+        Cursor cursor=getPlayerRow(userName);
+        if(cursor == null)
+            return "NOT EXIST";
+        cursor.moveToFirst();
+        String question= cursor.getString(cursor.getColumnIndex("security_question"));
+        cursor.close();
+        return question;
+    }
+
+    public String getPlayerAnswer(String userName)
+    {
+        Cursor cursor=getPlayerRow(userName);
+        if(cursor == null)
+            return "NOT EXIST";
+        cursor.moveToFirst();
+        String answer= cursor.getString(cursor.getColumnIndex("security_answer"));
+        cursor.close();
+        return answer;
+    }
+
     public int getPlayerId(String userName)
     {
         Cursor cursor = getPlayerRow(userName);
