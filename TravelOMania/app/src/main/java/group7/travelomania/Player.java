@@ -75,6 +75,7 @@ public class Player {
         loginDbHelper.open();
         selectedCategory = null;
         categoryCount = 0;
+        selectedCategory = null;
     }
 
 
