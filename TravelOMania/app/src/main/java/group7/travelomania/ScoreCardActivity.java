@@ -113,7 +113,7 @@ public class ScoreCardActivity extends AppCompatActivity {
     private void restartLevel(){
         Intent intent = new Intent(this, CategorySelectionActivity.class);
         startActivity(intent);
-        player.categorycount++;
+        player.categoryCount++;
     }
     private void nextLevel(){
         player.continentsTraveled.add(0,player.currentContinent);

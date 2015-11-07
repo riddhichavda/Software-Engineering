@@ -13,6 +13,5 @@ public enum Category {
     Research_Facilities,
     Biodiversity,
     Research,
-    Geography_and_Geology,
-    Null
+    Geography_and_Geology
 }

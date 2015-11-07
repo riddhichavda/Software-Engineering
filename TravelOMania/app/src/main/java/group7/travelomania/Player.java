@@ -29,15 +29,16 @@ public class Player {
     public boolean hasPlayed;
     public Bitmap avatar;
     public int avatarId;
-    public int categorycount;
+    public int categoryCount;
     public ArrayList<Continents> continentsTraveled;
     public Continents currentContinent;
 
     public int levelAttempts;
 
     public Category selectedCategory;
-    public ArrayList<Category> CategorySelected;
+    //public int a[] = new int[3];
 
+    public ArrayList<Category> CategorySelected;
     public int numHints;
     public int totalScore;
 
@@ -73,7 +74,7 @@ public class Player {
         loginDbHelper = new LoginDatabaseHelper(context);
         loginDbHelper.open();
         selectedCategory = null;
-        categorycount = 0;
+        categoryCount = 0;
     }
 
 

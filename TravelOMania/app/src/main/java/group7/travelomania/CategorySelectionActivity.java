@@ -21,7 +21,7 @@ public class CategorySelectionActivity extends AppCompatActivity
 
     private ImageView category;
     Player player;
-
+    private int pixel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class CategorySelectionActivity extends AppCompatActivity
         categorySelected = null;
         player = Player.getInstance(this);
 
-        if(player.categorycount == 3){
+        if(player.categoryCount == 3){
 
         }
         if(player.currentContinent == Continents.Antarctica){
@@ -64,33 +64,33 @@ public class CategorySelectionActivity extends AppCompatActivity
                 Log.v("Touch X, Y", Integer.toString(touchX) + " " + Integer.toString(touchY));
 
 
-                int pixel = ((BitmapDrawable) category.getDrawable()).getBitmap().getPixel(touchX, touchY);
+                pixel = ((BitmapDrawable) category.getDrawable()).getBitmap().getPixel(touchX, touchY);
                 Log.v("pixel color", Integer.toString(pixel));
 
                 if (player.currentContinent == Continents.Antarctica) {
-
-                    switch (pixel) {
-                        case -313229:
-                            categorySelected = Category.Research_Facilities;
-                            break;
-                        case -16524679:
-                            categorySelected = Category.Biodiversity;
-                            break;
-                        case -13176842:
-                            categorySelected = Category.Research;
-                            break;
-                        case -3575364:
-                            categorySelected = Category.Geography_and_Geology;
-                            break;
-                        case -15412862:
-                            categorySelected = Category.Sports;
-                            break;
-                        case -3977263:
-                            categorySelected = Category.Politics;
-                            break;
+                        switch (pixel) {
+                            case -313229:
+                                categorySelected = Category.Research_Facilities;
+                                break;
+                            case -16524679:
+                                categorySelected = Category.Biodiversity;
+                                break;
+                            case -13176842:
+                                categorySelected = Category.Research;
+                                break;
+                            case -3575364:
+                                categorySelected = Category.Geography_and_Geology;
+                                break;
+                            case -15412862:
+                                categorySelected = Category.Sports;
+                                break;
+                            case -3977263:
+                                categorySelected = Category.Politics;
+                                break;
+                        }
+                        return true;
                     }
-                    return true;
-                } else {
+                else {
                     switch (pixel) {
                         case -14882191:
                             categorySelected = Category.Sports;
@@ -120,16 +120,22 @@ public class CategorySelectionActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                if(player.categorycount ==3)
+                if(player.categoryCount == 3)
                 {
-                  player.categorycount = 0;
-                  new AlertDialog.Builder(CategorySelectionActivity.this).setTitle("test").setMessage("TEST").setPositiveButton("OK",null).show();
-                  goToContinentActivity();
+                    player.categoryCount = 0;
+                    new AlertDialog.Builder(CategorySelectionActivity.this).setTitle("test").setMessage("TEST").setPositiveButton("OK",null).show();
+                    goToContinentActivity();
+
                 }
-                else if (player.categorycount <3)
+                else if (player.categoryCount <3)
                 {
-                    goToNextActivity();
+                    if (player.selectedCategory != null  && player.CategorySelected.contains(categorySelected)){
+                        new AlertDialog.Builder(CategorySelectionActivity.this).setTitle("test").setMessage("TEST").setPositiveButton("OK",null).show();
+                    }else {
+                        goToNextActivity();
+                    }
                 }
+
             }
         });
 
@@ -162,13 +168,15 @@ public class CategorySelectionActivity extends AppCompatActivity
         Intent intent = new Intent(this, LevelActivity.class);
         startActivity(intent);
         player.selectedCategory = categorySelected;
-
+        //player.a[player.categoryCount-1] = pixel;
+        player.CategorySelected.add(player.categoryCount-1, categorySelected);
     }
     private void goToContinentActivity(){
         Intent intent = new Intent(this, ContinentSelectionActivity.class);
         startActivity(intent);
         player.selectedCategory = categorySelected;
-
+        //player.a[player.categoryCount-1] = pixel;
+        player.CategorySelected.add(player.categoryCount-1, categorySelected);
     }
         }
 
