@@ -35,4 +35,6 @@
     <string name="end_play_again_button">Play again</string>
     <string name="history_resume">Resume Game</string>
     <string name="history_restart">Restart Game</string>
+    <string name="score"><u><b>SCORE</b></u></string>
+    <string name="hints"><u><b>HINTS</b></u></string>
 </resources>

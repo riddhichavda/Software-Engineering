@@ -57,56 +57,49 @@
         android:layout_below="@+id/good_job"
         />
 
-    <!--<ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/scoretemplate"
-        android:layout_above="@+id/restart_level"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />-->
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Score card"
+        android:text="Score Details"
         android:textSize="40dp"
         android:textAllCaps="true"
-        android:textColor="#00ff77"
+        android:textColor="#009900"
         android:textStyle="bold"
         android:id="@+id/score_card"
         android:layout_below="@+id/imageView_avatar"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:paddingTop="50dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Good Job!"
         android:textSize="30dp"
         android:textAllCaps="true"
-        android:textColor="#ff0000"
+        android:textColor="#cc0000"
         android:textStyle="bold"
-
         android:id="@+id/good_job"
         android:layout_below="@+id/score_card"
         android:layout_centerHorizontal="true" />
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_vertical_margin"
-
-        android:text="score"
+        android:padding="10dp"
+        android:text="@string/score"
         android:textSize="30dp"
         android:textAllCaps="true"
-        android:textColor="#4466ff"
+        android:textColor="#4466cc"
         android:textStyle="bold"
         android:id="@+id/score"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/imageView"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_below="@id/imageView"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -115,42 +108,52 @@
         android:layout_marginLeft="50dp"
         android:textSize="30sp"
         android:textAllCaps="true"
-        android:textColor="#4466ff"
+        android:textColor="#4444ff"
         android:textStyle="bold"
         android:id="@+id/score_value"
+        android:layout_alignParentLeft="true"
+
 
 
         />
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Hints"
-        android:id="@+id/hints"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="#ffffff"
+        android:text="@string/hints"
         android:textSize="30dp"
         android:textAllCaps="true"
-        android:textColor="#4466ff"
+        android:textColor="#4466cc"
         android:textStyle="bold"
+        android:id="@+id/hints"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/imageView"
-        android:layout_alignRight="@id/score"
-        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_below="@id/imageView"
+        android:padding="10dp"
 
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"
-        android:textSize="30dp"
+        android:layout_below="@+id/hints"
+        android:textSize="30sp"
         android:textAllCaps="true"
-        android:textColor="#4466ff"
+        android:textColor="#4444ff"
         android:textStyle="bold"
         android:id="@+id/number_of_hints"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:layout_marginRight="60dp"
+        />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:id="@+id/hint_bulb"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/hints"
-        android:layout_alignRight="@id/score_value"
-        android:layout_marginRight="50dp"
+        android:src="@drawable/bulb_real_on"
         />
 
 

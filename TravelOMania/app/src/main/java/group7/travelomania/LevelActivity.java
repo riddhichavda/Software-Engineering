@@ -234,6 +234,10 @@ public class LevelActivity extends AppCompatActivity {
         if(questionIter.hasNext()) {
             questionAnswered = false;
             hintUsed = false;
+            if(Build.VERSION.SDK_INT >= 21)
+                imageView_bulb.setImageDrawable(getDrawable(R.drawable.bulb_off));
+            else
+                imageView_bulb.setImageDrawable(getResources().getDrawable(R.drawable.bulb_off));
             questionCounter++;
             textView_questionNumber.setText(questionCounter + "/" + questions.size());
             currentQuestion = questionIter.next();

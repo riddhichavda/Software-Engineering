@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -12,7 +13,8 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="279dp"
-        android:layout_weight="0.92">
+        android:layout_weight="0.92"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -127,21 +129,21 @@
 
     </GridLayout>
 
+
     <Button
         android:id="@+id/buttonCreateAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create Account"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="20dp"
         android:layout_row="10"
         android:layout_column="1" />
 
     <!--<Button-->
-        <!--android:id="@+id/buttonCreateAccount2"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="A new button!"-->
-        <!--android:layout_marginBottom="60dp" />-->
-
+    <!--android:id="@+id/buttonCreateAccount2"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="A new button!"-->
+    <!--android:layout_marginBottom="60dp" />-->
 
 </LinearLayout>

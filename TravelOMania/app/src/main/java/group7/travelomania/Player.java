@@ -29,16 +29,15 @@ public class Player {
     public boolean hasPlayed;
     public Bitmap avatar;
     public int avatarId;
-    public int categoryCount;
     public ArrayList<Continents> continentsTraveled;
     public Continents currentContinent;
 
     public int levelAttempts;
 
     public Category selectedCategory;
-    //public int a[] = new int[3];
-
     public ArrayList<Category> CategorySelected;
+    public int categoryCount;
+    
     public int numHints;
     public int totalScore;
 

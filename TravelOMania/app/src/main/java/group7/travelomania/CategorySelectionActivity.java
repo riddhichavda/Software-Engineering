@@ -88,6 +88,7 @@ public class CategorySelectionActivity extends AppCompatActivity
                                 categorySelected = Category.Politics;
                                 break;
                         }
+                        player.selectedCategory = categorySelected;
                         return true;
                     }
                 else {
@@ -111,6 +112,7 @@ public class CategorySelectionActivity extends AppCompatActivity
                             categorySelected = Category.Capitals;
                             break;
                     }
+                    player.selectedCategory = categorySelected;
                     return true;
                 }
             }
@@ -120,23 +122,23 @@ public class CategorySelectionActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                if(player.categoryCount == 3)
-                {
-                    player.categoryCount = 0;
-                    new AlertDialog.Builder(CategorySelectionActivity.this).setTitle("Warning").setMessage("You can't play same level more than three times!").setPositiveButton("OK",null).show();
-                    goToContinentActivity();
-
-                }
-                else if (player.categoryCount <3)
-                {
-                    if (player.selectedCategory != null  && player.CategorySelected.contains(categorySelected)){
+//                if(player.categoryCount == 3)
+//                {
+//                    player.categoryCount = 0;
+//                    new AlertDialog.Builder(CategorySelectionActivity.this).setTitle("Warning").setMessage("You can't play same level more than three times!").setPositiveButton("OK",null).show();
+//                    goToContinentActivity();
+//
+//                }
+                //else if (player.categoryCount <3)
+                //{
+                    if (player.selectedCategory == null || player.CategorySelected.contains(categorySelected)){
                         new AlertDialog.Builder(CategorySelectionActivity.this).setTitle("Warning").setMessage("Please choose other category!").setPositiveButton("OK",null).show();
                     }else {
                         goToNextActivity();
                     }
                 }
 
-            }
+            //}
         });
 
 }
@@ -165,15 +167,14 @@ public class CategorySelectionActivity extends AppCompatActivity
 
 
     private void goToNextActivity(){
-
         player.selectedCategory = categorySelected;
         //player.a[player.categoryCount-1] = pixel;
         player.CategorySelected.add(0, categorySelected);
         Intent intent = new Intent(this, LevelActivity.class);
         startActivity(intent);
     }
-    private void goToContinentActivity(){
 
+    private void goToContinentActivity(){
         player.selectedCategory = null;
         player.CategorySelected.clear();
         player.newGame(player.userName);
@@ -181,6 +182,6 @@ public class CategorySelectionActivity extends AppCompatActivity
         startActivity(intent);
         finish();
     }
-        }
+}
 
 
