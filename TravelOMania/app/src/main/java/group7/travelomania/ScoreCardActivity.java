@@ -41,7 +41,7 @@ public class ScoreCardActivity extends AppCompatActivity {
         if(total_score>=50 && total_score<=70)
         {
             hintText = "+1";
-            player.numHints ++;
+            player.numHints++;
             ImageView img = (ImageView)findViewById(R.id.imageView);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 img.setBackground(ContextCompat.getDrawable(this, R.drawable.excellent));

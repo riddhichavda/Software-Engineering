@@ -42,8 +42,6 @@ public class CategorySelectionActivity extends AppCompatActivity
             else category.setImageDrawable(getResources().getDrawable(R.drawable.antarctica));
         }
 
-
-
             category.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                 @Override
                 public void onGlobalLayout() {
@@ -122,15 +120,6 @@ public class CategorySelectionActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-//                if(player.categoryCount == 3)
-//                {
-//                    player.categoryCount = 0;
-//                    new AlertDialog.Builder(CategorySelectionActivity.this).setTitle("Warning").setMessage("You can't play same level more than three times!").setPositiveButton("OK",null).show();
-//                    goToContinentActivity();
-//
-//                }
-                //else if (player.categoryCount <3)
-                //{
                     if (player.selectedCategory == null || player.CategorySelected.contains(categorySelected)){
                         new AlertDialog.Builder(CategorySelectionActivity.this).setTitle("Warning").setMessage("Please choose other category!").setPositiveButton("OK",null).show();
                     }else {
