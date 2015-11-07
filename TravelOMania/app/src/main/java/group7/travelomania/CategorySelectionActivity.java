@@ -165,18 +165,21 @@ public class CategorySelectionActivity extends AppCompatActivity
 
 
     private void goToNextActivity(){
+
+        player.selectedCategory = categorySelected;
+        //player.a[player.categoryCount-1] = pixel;
+        player.CategorySelected.add(0, categorySelected);
         Intent intent = new Intent(this, LevelActivity.class);
         startActivity(intent);
-        player.selectedCategory = categorySelected;
-        //player.a[player.categoryCount-1] = pixel;
-        player.CategorySelected.add(player.categoryCount-1, categorySelected);
     }
     private void goToContinentActivity(){
+
+        player.selectedCategory = null;
+        player.CategorySelected.clear();
+        player.newGame(player.userName);
         Intent intent = new Intent(this, ContinentSelectionActivity.class);
         startActivity(intent);
-        player.selectedCategory = categorySelected;
-        //player.a[player.categoryCount-1] = pixel;
-        player.CategorySelected.add(player.categoryCount-1, categorySelected);
+        finish();
     }
         }
 
