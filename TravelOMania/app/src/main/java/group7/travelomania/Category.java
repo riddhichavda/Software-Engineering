@@ -14,5 +14,5 @@ public enum Category {
     Biodiversity,
     Research,
     Geography_and_Geology,
-    History_of_Exploration
+    Null
 }

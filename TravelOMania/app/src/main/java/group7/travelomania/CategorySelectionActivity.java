@@ -1,5 +1,4 @@
 package group7.travelomania;
-
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
@@ -11,6 +10,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.app.AlertDialog;
 
 
 public class CategorySelectionActivity extends AppCompatActivity
@@ -20,8 +20,8 @@ public class CategorySelectionActivity extends AppCompatActivity
 
 
     private ImageView category;
-
     Player player;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,9 @@ public class CategorySelectionActivity extends AppCompatActivity
         categorySelected = null;
         player = Player.getInstance(this);
 
+        if(player.categorycount == 3){
+
+        }
         if(player.currentContinent == Continents.Antarctica){
             if(Build.VERSION.SDK_INT >= 21){
                 category.setImageDrawable(getDrawable(R.drawable.antarctica));
@@ -115,9 +118,18 @@ public class CategorySelectionActivity extends AppCompatActivity
         final Button buttonNext = (Button) findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                goToNextActivity();
-
+            public void onClick(View v)
+            {
+                if(player.categorycount ==3)
+                {
+                  player.categorycount = 0;
+                  new AlertDialog.Builder(CategorySelectionActivity.this).setTitle("test").setMessage("TEST").setPositiveButton("OK",null).show();
+                  goToContinentActivity();
+                }
+                else if (player.categorycount <3)
+                {
+                    goToNextActivity();
+                }
             }
         });
 
@@ -148,6 +160,12 @@ public class CategorySelectionActivity extends AppCompatActivity
 
     private void goToNextActivity(){
         Intent intent = new Intent(this, LevelActivity.class);
+        startActivity(intent);
+        player.selectedCategory = categorySelected;
+
+    }
+    private void goToContinentActivity(){
+        Intent intent = new Intent(this, ContinentSelectionActivity.class);
         startActivity(intent);
         player.selectedCategory = categorySelected;
 

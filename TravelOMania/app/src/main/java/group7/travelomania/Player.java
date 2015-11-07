@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -30,12 +29,14 @@ public class Player {
     public boolean hasPlayed;
     public Bitmap avatar;
     public int avatarId;
+    public int categorycount;
     public ArrayList<Continents> continentsTraveled;
     public Continents currentContinent;
 
     public int levelAttempts;
 
     public Category selectedCategory;
+    public ArrayList<Category> CategorySelected;
 
     public int numHints;
     public int totalScore;
@@ -71,9 +72,11 @@ public class Player {
         hasPlayed = false;
         loginDbHelper = new LoginDatabaseHelper(context);
         loginDbHelper.open();
-
-
+        selectedCategory = null;
+        categorycount = 0;
     }
+
+
 
     public void resetLogoutTimer(){
         logoutTimer.cancel();

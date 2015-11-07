@@ -1,12 +1,10 @@
 package group7.travelomania;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -115,6 +113,7 @@ public class ScoreCardActivity extends AppCompatActivity {
     private void restartLevel(){
         Intent intent = new Intent(this, CategorySelectionActivity.class);
         startActivity(intent);
+        player.categorycount++;
     }
     private void nextLevel(){
         player.continentsTraveled.add(0,player.currentContinent);
