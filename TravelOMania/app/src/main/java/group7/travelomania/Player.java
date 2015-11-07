@@ -76,6 +76,7 @@ public class Player {
         selectedCategory = null;
         categoryCount = 0;
         selectedCategory = null;
+        CategorySelected = new ArrayList<>();
     }
 
 
