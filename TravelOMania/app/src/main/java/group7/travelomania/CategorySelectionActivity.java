@@ -23,6 +23,7 @@ public class CategorySelectionActivity extends AppCompatActivity
     Player player;
     private int pixel;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,8 @@ public class CategorySelectionActivity extends AppCompatActivity
         category = (ImageView) findViewById(R.id.imageView_category);
         categorySelected = null;
         player = Player.getInstance(this);
+
+
 
         if(player.categoryCount == 3){
 
@@ -129,7 +132,7 @@ public class CategorySelectionActivity extends AppCompatActivity
                 }
                 else if (player.categoryCount <3)
                 {
-                    if (player.selectedCategory != null  && player.CategorySelected.contains(categorySelected)){
+                    if (player.categoryCount > 0 && player.selectedCategory != null  && player.CategorySelected.contains(categorySelected)){
                         new AlertDialog.Builder(CategorySelectionActivity.this).setTitle("Warning").setMessage("Please choose other category!").setPositiveButton("OK",null).show();
                     }else {
                         goToNextActivity();
@@ -168,7 +171,7 @@ public class CategorySelectionActivity extends AppCompatActivity
 
         player.selectedCategory = categorySelected;
         //player.a[player.categoryCount-1] = pixel;
-        player.CategorySelected.add(0, categorySelected);
+        player.CategorySelected.add(player.categoryCount, categorySelected);
         Intent intent = new Intent(this, LevelActivity.class);
         startActivity(intent);
     }
