@@ -41,6 +41,11 @@
         </activity>
         <activity android:name=".EndActivity" >
         </activity>
+        <activity
+            android:name=".IdentifyLandmarkActivity"
+            android:label="@string/title_activity_identify_landmark"
+            android:theme="@style/AppTheme" >
+        </activity>
     </application>
 
 </manifest>

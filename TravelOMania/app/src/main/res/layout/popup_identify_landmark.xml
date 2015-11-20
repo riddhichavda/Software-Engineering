@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/LinearLayout_MainView"
+    android:background="#ffff"
+    android:padding="10sp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView_chosenLandmark"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView_popup_question"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/identify_landmark_popup_text"
+        android:paddingTop="10sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_answer"
+        android:layout_gravity="center_horizontal"
+        android:hint="Country"
+        android:paddingTop="40sp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:id="@+id/button_submit"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

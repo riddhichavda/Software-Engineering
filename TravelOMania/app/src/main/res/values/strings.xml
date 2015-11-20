@@ -37,4 +37,7 @@
     <string name="history_restart">Restart Game</string>
     <string name="score"><u><b>SCORE</b></u></string>
     <string name="hints"><u><b>HINTS</b></u></string>
+    <string name="title_activity_identify_landmark">IdentifyLandmarkActivity</string>
+    <string name="identify_landmark_popup_text">Which country is this landmark located?</string>
+    <string name="submit">Submit</string>
 </resources>

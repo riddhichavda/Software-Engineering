@@ -157,16 +157,9 @@ public class ScoreCardActivity extends AppCompatActivity {
     }
 
     private void nextLevel(){
-        player.continentsTraveled.add(0,player.currentContinent);
-        player.currentContinent = null;
-        player.categoryCount = 0;
-        player.CategorySelected.clear();
+        player.continentsTraveled.add(0, player.currentContinent);
         player.saveProgress();
-        Intent intent;
-        if (player.continentsTraveled.size() == 7)
-            intent = new Intent(this, EndActivity.class);
-        else
-            intent = new Intent(this, ContinentSelectionActivity.class);
+        Intent intent = new Intent(this, IdentifyLandmarkActivity.class);
         startActivity(intent);
     }
 }
