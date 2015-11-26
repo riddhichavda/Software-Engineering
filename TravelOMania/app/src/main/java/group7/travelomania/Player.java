@@ -9,6 +9,7 @@ import android.os.CountDownTimer;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Matt on 10/27/15.
@@ -31,6 +32,8 @@ public class Player {
     public int avatarId;
     public ArrayList<Continents> continentsTraveled;
     public Continents currentContinent;
+
+    public HashMap<Continents, String> landmarksAquired;
 
     public int levelAttempts;
 
@@ -118,7 +121,8 @@ public class Player {
         loggedIn = true;
         userName = uname;
         continentsTraveled = loginDbHelper.getContinentsCompleted(userName);
-        Log.v("Continents Traveled Check", "" + continentsTraveled.size());
+        landmarksAquired = new HashMap<>();
+        //Log.v("Continents Traveled Check", "" + continentsTraveled.size());
         currentContinent = loginDbHelper.getCurrentLevel(userName);
         numHints = loginDbHelper.getNumHints(userName);
         avatarId = loginDbHelper.getAvatar(userName);
@@ -166,7 +170,7 @@ public class Player {
     }
 
     public void saveProgress(){
-        loginDbHelper.saveProgress(userName,0,currentContinent == null ? "":currentContinent.toString(),getContinentString(),"", numHints, totalScore, 0, avatarId);
+        loginDbHelper.saveProgress(userName, 0, currentContinent == null ? "" : currentContinent.toString(), getContinentString(), "", numHints, totalScore, 0, avatarId);
     }
 
     public static void viewRules(Context context){
@@ -199,6 +203,16 @@ public class Player {
         return ret;
     }
 
+
+    public String getLandmarkString(){
+        String ret = "";
+        for(Continents c: landmarksAquired.keySet()){
+
+            ret += c.toString()+":"+landmarksAquired.get(c)+";";
+
+        }
+        return ret;
+    }
 
 
 

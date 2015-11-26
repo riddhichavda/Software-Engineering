@@ -33,6 +33,8 @@ public class NavigationActivity extends AppCompatActivity {
 
     private HashMap<Continents, float[]> continentPositions;
 
+    public HashMap<Continents, float[]> landmarkPositions;
+
 
     private ImageView plane;
     private ImageView map;
@@ -76,10 +78,17 @@ public class NavigationActivity extends AppCompatActivity {
         planePaths = (ImageView) findViewById(R.id.imageView_paths);
 
 
+        landmarkPositions = new HashMap<>(7);
+        landmarkPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
+        landmarkPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
+        landmarkPositions.put(Continents.Asia, new float[]{0.77f, 0.18f});
+        landmarkPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
+        landmarkPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
+        landmarkPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
+        landmarkPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
+
         createBitmap();
         map.setImageBitmap(BitmapUtility.map_addition_navigation);
-
-
 
         continentPositions = new HashMap<>(7);
         continentPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
@@ -112,6 +121,8 @@ public class NavigationActivity extends AppCompatActivity {
                         Float.toString(mapY));
                 //createBitmap();
                 //Now you can get the width and height from content
+
+
             }
         });
 
@@ -304,6 +315,17 @@ public class NavigationActivity extends AppCompatActivity {
             canvas.drawBitmap(BitmapUtility.map_sa, 0, 0, paint);
         }
         //map.setImageBitmap(BitmapUtility.map_addition);
+
+        for(Continents c: player.landmarksAquired.keySet()){
+            String res = "landmark_" + c.toString().toLowerCase() + "_" + player.landmarksAquired.get(c);
+            Log.v("HELp", res);
+            int resID = getResources().getIdentifier(res, "drawable", getPackageName());
+            Log.v("HELp", String.valueOf(resID));
+            Bitmap temp = BitmapUtility.decodeSampledBitmapFromResource(getResources(), resID, 32, 32);
+            if(temp == null) Log.v("Damn it", "Yup");
+            canvas.drawBitmap(temp,landmarkPositions.get(c)[0]*BitmapUtility.map_addition_navigation.getWidth(), landmarkPositions.get(c)[1]*BitmapUtility.map_addition_navigation.getHeight(), paint);
+
+        }
     }
 
     private void goToNextActivity(){

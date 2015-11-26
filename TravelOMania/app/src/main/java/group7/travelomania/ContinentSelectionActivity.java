@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -39,6 +40,8 @@ public class ContinentSelectionActivity extends AppCompatActivity {
     private boolean isNewGame;
 
     public HashMap<Continents, float[]> continentPositions;
+
+    public HashMap<Continents, float[]> landmarkPositions;
 
     private float mapWidth, mapHeight;
     private float mapX, mapY;
@@ -79,8 +82,16 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         selection.setRotation(90f);
 
 
-        createBitmap();
-        map.setImageBitmap(BitmapUtility.map_addition_selection);
+        landmarkPositions = new HashMap<>(7);
+        landmarkPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
+        landmarkPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
+        landmarkPositions.put(Continents.Asia, new float[]{0.77f, 0.18f});
+        landmarkPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
+        landmarkPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
+        landmarkPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
+        landmarkPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
+
+
 
         continentPositions = new HashMap<>(7);
         continentPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
@@ -92,13 +103,9 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
 
 
+
         final Button btn_Next = (Button)findViewById(R.id.btn_Next);
         final Button btn_Help = (Button)findViewById(R.id.btn_help);
-
-
-
-
-
 
 
         btn_Next.setOnClickListener(new View.OnClickListener() {
@@ -137,6 +144,9 @@ public class ContinentSelectionActivity extends AppCompatActivity {
 
                 Log.v("Map W, H, X, Y", Integer.toString(BitmapUtility.mapKey.getWidth()) + " " +
                         Integer.toString((int) Math.floor(BitmapUtility.mapKey.getHeight())));
+
+                createBitmap();
+                map.setImageBitmap(BitmapUtility.map_addition_selection);
 
                 //selection.setX();
 
@@ -272,8 +282,8 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             return;
         }
         avatar.setImageBitmap(player.avatar);
-        createBitmap();
-        map.setImageBitmap(BitmapUtility.map_addition_selection);
+        //createBitmap();
+        //map.setImageBitmap(BitmapUtility.map_addition_selection);
         if(selectionAnimation != null){
             selectionAnimation.cancel();
         }
@@ -297,8 +307,16 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             continentPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
         }
 
-
-
+        if(landmarkPositions == null || landmarkPositions.size() == 0){
+            landmarkPositions = new HashMap<>(7);
+            landmarkPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
+            landmarkPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
+            landmarkPositions.put(Continents.Asia, new float[]{0.77f, 0.18f});
+            landmarkPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
+            landmarkPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
+            landmarkPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
+            landmarkPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
+        }
     }
 
 
@@ -351,6 +369,19 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             canvas.drawBitmap(BitmapUtility.map_sa, 0, 0, paint);
         }
         //map.setImageBitmap(BitmapUtility.map_addition);
+
+        for(Continents c: player.landmarksAquired.keySet()){
+            String res = "landmark_" + c.toString().toLowerCase() + "_" + player.landmarksAquired.get(c);
+            Log.v("HELp", res);
+            int resID = getResources().getIdentifier(res, "drawable", getPackageName());
+            Log.v("HELp", String.valueOf(resID));
+            Bitmap temp = BitmapUtility.decodeSampledBitmapFromResource(getResources(), resID, 32, 32);
+            if(temp == null) Log.v("Damn it", "Yup");
+            canvas.drawBitmap(temp,landmarkPositions.get(c)[0]*BitmapUtility.map_addition_selection.getWidth(), landmarkPositions.get(c)[1]*BitmapUtility.map_addition_selection.getHeight(), paint);
+
+        }
+
+
     }
 
     private void goToNextActivity(Continents nextContinent){

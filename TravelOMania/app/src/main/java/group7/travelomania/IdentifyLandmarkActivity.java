@@ -25,6 +25,8 @@ public class IdentifyLandmarkActivity extends AppCompatActivity {
     private PopupWindow popup;
     private FrameLayout frameLayout;
 
+    private String landmarkChosen;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,11 +124,14 @@ public class IdentifyLandmarkActivity extends AppCompatActivity {
         else
             imageView.setImageDrawable(getResources().getDrawable(resID));
 
+        landmarkChosen = getLandmarkName(chosenView).toLowerCase();
+
         Button btn = (Button) layout.findViewById(R.id.button_submit);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //popup.dismiss();
+                player.landmarksAquired.put(player.currentContinent, landmarkChosen);
                 nextLevel();
             }
         });
