@@ -38,7 +38,123 @@
     <string-array name="landmark_antartica_johnsoncontrols">
         <item>Johnson Controls</item>
     </string-array>
-
-
-
+    <string-array name="landmark_asia_burjalarab">
+        <item>Burj Al Arab</item>
+    </string-array>
+    <string-array name="landmark_asia_greatwallofchina">
+        <item>Great Wall of China</item>
+        <item>The Great Wall of China</item>
+    </string-array>
+    <string-array name="landmark_asia_stbasilscathedral">
+        <item>St. Basils Cathedral</item>
+        <item>Saint Basils Cathedral</item>
+        <item>Basils Cathedral</item>
+        <item>St. Basil\'s Cathedral</item>
+        <item>Saint Basil\'s Cathedral</item>
+        <item>Basil\'s Cathedral</item>
+    </string-array>
+    <string-array name="landmrak_asia_tajmahal">
+        <item>Taj Mahal</item>
+    </string-array>
+    <string-array name="landmark_asia_thegoldentemple">
+        <item>The Golden Temple</item>
+        <item>Golden Temple</item>
+    </string-array>
+    <string-array name="landmark_asia_tiantanbuddha">
+        <item>Tian Tan Buddha</item>
+    </string-array>
+    <string-array name="landmark_europe_bigben">
+        <item>Big Ben</item>
+    </string-array>
+    <string-array name="landmark_europe_buckinghampalace">
+        <item>Buckingham Palace</item>
+    </string-array>
+    <string-array name="landmark_europe_colosseum">
+        <item>Colosseum</item>
+    </string-array>
+    <string-array name="landmark_europe_eiffeltower">
+        <item>Eiffel Tower</item>
+    </string-array>
+    <string-array name="landmark_europe_leaningtowerofpisa">
+        <item>Leaning Tower of Pisa</item>
+    </string-array>
+    <string-array name="landmark_europe_thepantheon">
+        <item>The Pantheon</item>
+        <item>Pantheon</item>
+    </string-array>
+    <string-array name="landmark_europe_towerbridge">
+        <item>Tower Bridge</item>
+        <item>London Bridge</item>
+    </string-array>
+    <string-array name="landmark_northamerica_disneyland">
+        <item>Disney</item>
+        <item>Disney Land</item>
+        <item>Disney World</item>
+        <item>Disneyland</item>
+        <item>Disneyworld</item>
+    </string-array>
+    <string-array name="landmark_northamerica_hollywood">
+        <item>Hollywood</item>
+    </string-array>
+    <string-array name="landmark_northamerica_mtrushmore">
+        <item>Mt. Rushmore</item>
+        <item>Rushmore</item>
+        <item>Mount Rushmore</item>
+        <item>Mt Rushmore</item>
+    </string-array>
+    <string-array name="landmark_northamerica_niagrafalls">
+        <item>Niagara Falls</item>
+    </string-array>
+    <string-array name="landmark_northamerica_statueofliberty">
+        <item>Statue of Liberty</item>
+        <item>Lady Liberty</item>
+    </string-array>
+    <string-array name="landmark_northamerica_thewhitehouse">
+        <item>The White House</item>
+        <item>White house</item>
+    </string-array>
+    <string-array name="landmark_oceania_boraboralagoon">
+        <item>Bora Bora Lagoon</item>
+    </string-array>
+    <string-array name="landmark_oceania_greatbarrierreef">
+        <item>Great Barrier Reef</item>
+        <item>The Great Barrier Reef</item>
+    </string-array>
+    <string-array name="landmark_oceania_ladyknoxgeyser">
+        <item>Lady Knox Geyser</item>
+    </string-array>
+    <string-array name="landmark_oceania_sydneyharborbridge">
+        <item>Sydney Harbor Bridge</item>
+        <item>Harbor Bridge</item>
+        <item>The Sydney Harbor Bridge</item>
+        <item>The Harbor Bridge</item>
+    </string-array>
+    <string-array name="landmark_oceania_sydneyoperahouse">
+        <item>Sydney Opera House</item>
+        <item>The Sydney Opera House</item>
+    </string-array>
+    <string-array name="landmark_oceania_thepinnacles">
+        <item>The Pinnacles</item>
+    </string-array>
+    <string-array name="landmark_southamerica_angelfalls">
+        <item>Angel Falls</item>
+    </string-array>
+    <string-array name="landmark_southamerica_caveofthecrystals">
+        <item>Cave of the Crystals</item>
+    </string-array>
+    <string-array name="landmark_southamerica_christtheredeemerstatue">
+        <item>Christ the Redeemer Statue</item>
+        <item>Christ the Redeemer</item>
+    </string-array>
+    <string-array name="landmark_southamerica_machupicchu">
+        <item>Machu Picchu</item>
+    </string-array>
+    <string-array name="landmark_southamerica_petronastwintowers">
+        <item>Petronas Twin Towers</item>
+        <item>Petronas Towers</item>
+    </string-array>
+    <string-array name="landmark_southamerica_thedeserthand">
+        <item>The Desert Hand</item>
+        <item>Desert Hand</item>
+    </string-array>
 </resources>

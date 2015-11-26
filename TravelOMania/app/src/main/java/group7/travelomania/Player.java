@@ -120,8 +120,9 @@ public class Player {
     public void login(String uname){
         loggedIn = true;
         userName = uname;
-        continentsTraveled = loginDbHelper.getContinentsCompleted(userName);
         landmarksAquired = new HashMap<>();
+        continentsTraveled = loginDbHelper.getContinentsCompleted(userName,landmarksAquired);
+
         //Log.v("Continents Traveled Check", "" + continentsTraveled.size());
         currentContinent = loginDbHelper.getCurrentLevel(userName);
         numHints = loginDbHelper.getNumHints(userName);
@@ -187,13 +188,17 @@ public class Player {
         totalScore = 0;
         currentContinent = null;
         continentsTraveled.clear();
+        landmarksAquired.clear();
     }
 
     public String getContinentString(){
         String ret = "";
 
         for(Continents c: continentsTraveled){
-            ret = ret + c.toString() + ",";
+            ret = ret + c.toString() + ":";
+            if(landmarksAquired.containsKey(c)){
+                ret = ret + landmarksAquired.get(c).toString() + ",";
+            }
         }
         if(ret.length() > 0)
             ret = ret.substring(0, ret.length()-1);
@@ -202,19 +207,5 @@ public class Player {
 
         return ret;
     }
-
-
-    public String getLandmarkString(){
-        String ret = "";
-        for(Continents c: landmarksAquired.keySet()){
-
-            ret += c.toString()+":"+landmarksAquired.get(c)+";";
-
-        }
-        return ret;
-    }
-
-
-
 
 }

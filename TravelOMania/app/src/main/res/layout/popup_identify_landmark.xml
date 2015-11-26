@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText_answer"
         android:layout_gravity="center_horizontal"
-        android:hint="Country"
+        android:hint="Name"
         android:paddingTop="40sp" />
 
     <Button

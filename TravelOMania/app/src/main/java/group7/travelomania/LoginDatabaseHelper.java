@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class LoginDatabaseHelper
 {
@@ -111,7 +112,7 @@ public class LoginDatabaseHelper
         return id;
     }
 
-    public ArrayList<Continents> getContinentsCompleted(String userName){
+    public ArrayList<Continents> getContinentsCompleted(String userName, HashMap<Continents, String> landmarksAquired){
         ArrayList<Continents> ret = new ArrayList<>();
         Cursor cursor = getPlayerRow(userName);
         if(cursor == null)
@@ -122,7 +123,12 @@ public class LoginDatabaseHelper
         String[] level_arr = all_levels.split(",");
         for (String s : level_arr) {
             try {
-                ret.add(Continents.valueOf(s));
+                String t[] = s.split(":");
+                Log.v("Login", t[0] + " " + t[1]);
+                ret.add(Continents.valueOf(t[0]));
+                if(t[1].length() > 0){
+                    landmarksAquired.put(Continents.valueOf(t[0]), t[1]);
+                }
             }
             catch (Exception e){
                 Log.e("Exception", e.toString());
