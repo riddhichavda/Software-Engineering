@@ -225,6 +225,7 @@ public class ContinentSelectionActivity extends AppCompatActivity {
                 //selection.getLayoutParams().width = 30;
 
                 if(!player.continentsTraveled.contains(selectedContinent) & continentPositions != null) {
+
                     selection.setX((float) Math.floor(continentPositions.get(selectedContinent)[0] * mapWidth + mapX - (selection.getWidth() / 2)));
                     selection.setY((float) Math.floor(continentPositions.get(selectedContinent)[1] * mapHeight + mapY - (selection.getHeight() / 1.5)));
 

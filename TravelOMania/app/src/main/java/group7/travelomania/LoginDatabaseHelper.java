@@ -124,10 +124,16 @@ public class LoginDatabaseHelper
         for (String s : level_arr) {
             try {
                 String t[] = s.split(":");
-                Log.v("Login", t[0] + " " + t[1]);
-                ret.add(Continents.valueOf(t[0]));
-                if(t[1].length() > 0){
-                    landmarksAquired.put(Continents.valueOf(t[0]), t[1]);
+                if(t.length == 2) {
+                    Log.v("Login", t[0] + " " + t[1]);
+                    ret.add(Continents.valueOf(t[0]));
+                    if (t[1].length() > 0) {
+                        landmarksAquired.put(Continents.valueOf(t[0]), t[1]);
+                    }
+                }
+                else {
+                    Log.v("Login", t[0]);
+                    ret.add(Continents.valueOf(t[0]));
                 }
             }
             catch (Exception e){

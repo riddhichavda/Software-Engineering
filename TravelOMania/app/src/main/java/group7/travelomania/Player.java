@@ -199,6 +199,9 @@ public class Player {
             if(landmarksAquired.containsKey(c)){
                 ret = ret + landmarksAquired.get(c).toString() + ",";
             }
+            else{
+                ret = ret + ",";
+            }
         }
         if(ret.length() > 0)
             ret = ret.substring(0, ret.length()-1);

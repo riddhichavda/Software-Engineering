@@ -147,7 +147,7 @@ public class IdentifyLandmarkActivity extends AppCompatActivity {
     private void stringMatch(String txt){
         String res = "landmark_" + player.currentContinent.toString().toLowerCase() + "_" + landmarkChosen;
         int resID = getResources().getIdentifier(res, "array", getPackageName());
-        Log.v("id", resID +"");
+        Log.v("id", resID + " " + res);
         String[] possibleNames = getResources().getStringArray(resID);
         for (String name : possibleNames) {
             Log.v("name", name);
