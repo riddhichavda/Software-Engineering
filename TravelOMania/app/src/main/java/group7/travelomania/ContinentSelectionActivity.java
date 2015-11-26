@@ -86,10 +86,10 @@ public class ContinentSelectionActivity extends AppCompatActivity {
         landmarkPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
         landmarkPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
         landmarkPositions.put(Continents.Asia, new float[]{0.77f, 0.18f});
-        landmarkPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
+        landmarkPositions.put(Continents.Antarctica, new float[]{0.73f, 0.93f});
         landmarkPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
         landmarkPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
-        landmarkPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
+        landmarkPositions.put(Continents.SouthAmerica, new float[]{0.25f, 0.57f});
 
 
 
@@ -312,10 +312,10 @@ public class ContinentSelectionActivity extends AppCompatActivity {
             landmarkPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
             landmarkPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
             landmarkPositions.put(Continents.Asia, new float[]{0.77f, 0.18f});
-            landmarkPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
+            landmarkPositions.put(Continents.Antarctica, new float[]{0.73f, 0.93f});
             landmarkPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
             landmarkPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
-            landmarkPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
+            landmarkPositions.put(Continents.SouthAmerica, new float[]{0.25f, 0.57f});
         }
     }
 

@@ -82,10 +82,10 @@ public class NavigationActivity extends AppCompatActivity {
         landmarkPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
         landmarkPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
         landmarkPositions.put(Continents.Asia, new float[]{0.77f, 0.18f});
-        landmarkPositions.put(Continents.Antarctica, new float[]{0.73f, 0.96f});
+        landmarkPositions.put(Continents.Antarctica, new float[]{0.73f, 0.93f});
         landmarkPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
         landmarkPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
-        landmarkPositions.put(Continents.SouthAmerica, new float[]{0.29f, 0.57f});
+        landmarkPositions.put(Continents.SouthAmerica, new float[]{0.25f, 0.57f});
 
         createBitmap();
         map.setImageBitmap(BitmapUtility.map_addition_navigation);
@@ -318,9 +318,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         for(Continents c: player.landmarksAquired.keySet()){
             String res = "landmark_" + c.toString().toLowerCase() + "_" + player.landmarksAquired.get(c);
-            Log.v("HELp", res);
             int resID = getResources().getIdentifier(res, "drawable", getPackageName());
-            Log.v("HELp", String.valueOf(resID));
             Bitmap temp = BitmapUtility.decodeSampledBitmapFromResource(getResources(), resID, 32, 32);
             if(temp == null) Log.v("Damn it", "Yup");
             canvas.drawBitmap(temp,landmarkPositions.get(c)[0]*BitmapUtility.map_addition_navigation.getWidth(), landmarkPositions.get(c)[1]*BitmapUtility.map_addition_navigation.getHeight(), paint);

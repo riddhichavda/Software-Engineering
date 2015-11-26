@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -39,14 +41,13 @@ public class IdentifyLandmarkActivity extends AppCompatActivity {
         frameLayout.getForeground().setAlpha(0);
 
         int numLandmarks = 6;
-        if(player.currentContinent == Continents.Antarctica)
-            numLandmarks = 2;
 
         for(int i = 0; i < numLandmarks; i++){
             String res = "imageView_landmark" + String.valueOf(i);
             int resID = getResources().getIdentifier(res, "id", getPackageName());
             ImageView imageView_landmark = (ImageView) findViewById(resID);
             res = "landmark_" + player.currentContinent.toString().toLowerCase() + "_" + getLandmarkName(i).toLowerCase();
+            Log.v("Resource", res);
             resID = getResources().getIdentifier(res, "drawable", getPackageName());
             if(Build.VERSION.SDK_INT >= 21)
                 imageView_landmark.setImageDrawable(getDrawable(resID));
@@ -131,7 +132,10 @@ public class IdentifyLandmarkActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //popup.dismiss();
-                player.landmarksAquired.put(player.currentContinent, landmarkChosen);
+                //player.landmarksAquired.put(player.currentContinent, landmarkChosen);
+                String txt = ((EditText)(popup.getContentView().findViewById(R.id.editText_answer))).getText().toString();
+                Log.v("text", txt);
+                stringMatch(txt);
                 nextLevel();
             }
         });
@@ -140,6 +144,20 @@ public class IdentifyLandmarkActivity extends AppCompatActivity {
 
     }
 
+    private void stringMatch(String txt){
+        if(player.currentContinent == Continents.Africa || player.currentContinent == Continents.Antarctica) {
+            String res = "landmark_" + player.currentContinent.toString().toLowerCase() + "_" + landmarkChosen;
+            int resID = getResources().getIdentifier(res, "array", getPackageName());
+            Log.v("id", resID +"");
+            String[] possibleNames = getResources().getStringArray(resID);
+            for (String name : possibleNames) {
+                Log.v("name", name);
+                if (txt.toLowerCase().equals(name.toLowerCase())) {
+                    player.landmarksAquired.put(player.currentContinent, landmarkChosen);
+                }
+            }
+        }
+    }
 
 
     private String getLandmarkName(int view){
@@ -174,6 +192,18 @@ public class IdentifyLandmarkActivity extends AppCompatActivity {
                         break;
                     case 1:
                         name = "RoseIceShelf";
+                        break;
+                    case 2:
+                        name = "DeceptionIsland";
+                        break;
+                    case 3:
+                        name = "BelgianPolarResearchCenter";
+                        break;
+                    case 4:
+                        name = "HalleyVI";
+                        break;
+                    case 5:
+                        name = "JohnsonControls";
                         break;
                 }
                 break;
@@ -268,7 +298,7 @@ public class IdentifyLandmarkActivity extends AppCompatActivity {
             case SouthAmerica:
                 switch (view){
                     case 0:
-                        name = "aveOfTheCrystals";
+                        name = "CaveOfTheCrystals";
                         break;
                     case 1:
                         name = "ChristTheRedeemerStatue";

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="landmark_africa_karnaktemple">
+        <item>Karnak Temple</item>
+        <item>Karnak</item>
+    </string-array>
+    <string-array name="landmark_africa_mtkilimanjaro">
+        <item>Kilimanjaro</item>
+    </string-array>
+    <string-array name="landmark_africa_obelisk">
+        <item>Obelisk</item>
+    </string-array>
+    <string-array name="landmark_africa_pyramid">
+        <item>Pyramid</item>
+    </string-array>
+    <string-array name="landmark_africa_tablemountain">
+        <item>Table Montain</item>
+    </string-array>
+    <string-array name="landmark_africa_victoriafalls">
+        <item>Victoria Falls</item>
+    </string-array>
+    <string-array name="landmark_antartica_emperorpenguin">
+        <item>Emperor penguin</item>
+        <item>Penguin</item>
+    </string-array>
+    <string-array name="landmark_antarctica_roseiceshelf">
+        <item>Rose Ice Shelf</item>
+    </string-array>
+    <string-array name="landmark_antarctica_belgianpolarresearchcenter">
+        <item>Belgian Polar Research Center</item>
+    </string-array>
+    <string-array name="landmark_antarctica_deceptionisland">
+        <item>Deception Island</item>
+    </string-array>
+    <string-array name="landmark_antartica_halleyvi">
+        <item>Halley VI</item>
+    </string-array>
+    <string-array name="landmark_antartica_johnsoncontrols">
+        <item>Johnson Controls</item>
+    </string-array>
+
+
+
+</resources>

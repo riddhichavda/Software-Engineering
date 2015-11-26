@@ -26,6 +26,8 @@ public class EndActivity extends AppCompatActivity {
 
     private HashMap<Continents, float[]> continentPositions;
 
+    private HashMap<Continents, float[]> landmarkPositions;
+
     //private Admin admin;
     private Player player;
 
@@ -46,6 +48,15 @@ public class EndActivity extends AppCompatActivity {
         map = (ImageView)findViewById(R.id.imageView_map);
         planePaths = (ImageView)findViewById(R.id.imageView_planePaths);
         map.setImageBitmap(BitmapUtility.map_addition_navigation);
+
+        landmarkPositions = new HashMap<>(7);
+        landmarkPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
+        landmarkPositions.put(Continents.Oceania, new float[]{0.93f, 0.64f});
+        landmarkPositions.put(Continents.Asia, new float[]{0.77f, 0.18f});
+        landmarkPositions.put(Continents.Antarctica, new float[]{0.73f, 0.93f});
+        landmarkPositions.put(Continents.Europe, new float[]{0.57f, 0.14f});
+        landmarkPositions.put(Continents.NorthAmerica, new float[]{0.13f, 0.30f});
+        landmarkPositions.put(Continents.SouthAmerica, new float[]{0.25f, 0.57f});
 
         continentPositions = new HashMap<>(7);
         continentPositions.put(Continents.Africa, new float[]{0.56f, 0.46f});
@@ -138,6 +149,17 @@ public class EndActivity extends AppCompatActivity {
         canvas.drawBitmap(BitmapUtility.map_na, 0, 0, paint);
         canvas.drawBitmap(BitmapUtility.map_sa, 0, 0, paint);
 
+        for(Continents c: player.landmarksAquired.keySet()){
+            String res = "landmark_" + c.toString().toLowerCase() + "_" + player.landmarksAquired.get(c);
+            Log.v("HELp", res);
+            int resID = getResources().getIdentifier(res, "drawable", getPackageName());
+            Log.v("HELp", String.valueOf(resID));
+            Bitmap temp = BitmapUtility.decodeSampledBitmapFromResource(getResources(), resID, 32, 32);
+            if(temp == null) Log.v("Damn it", "Yup");
+            canvas.drawBitmap(temp,landmarkPositions.get(c)[0]*BitmapUtility.map_addition_selection.getWidth(), landmarkPositions.get(c)[1]*BitmapUtility.map_addition_selection.getHeight(), paint);
+
+        }
+
         paint.setColor(Color.MAGENTA);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
@@ -156,6 +178,8 @@ public class EndActivity extends AppCompatActivity {
             int newLocationY = (int) Math.floor(continentPositions.get(player.continentsTraveled.get(continentIndex+1))[1] * mapHeight + mapY - 15);
             canvas.drawPath(getPlanePath(newLocationX, newLocationY, currentLocationX, currentLocationY), paint);
         }
+
+
     }
 
     private Path getPlanePath(int newLocationX, int newLocationY, int currentLocationX, int currentLocationY){
